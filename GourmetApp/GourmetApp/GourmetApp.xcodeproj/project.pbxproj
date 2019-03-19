@@ -15,6 +15,9 @@
 		DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3C5ECA22413C2E00625893 /* LaunchScreen.storyboard */; };
 		DA3C5ED722413C2E00625893 /* GourmetAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5ED622413C2E00625893 /* GourmetAppTests.swift */; };
 		DA3C5EE222413C2E00625893 /* GourmetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EE122413C2E00625893 /* GourmetAppUITests.swift */; };
+		DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF122413FCD00625893 /* CookingIngredients.swift */; };
+		DA3C5EF42241406100625893 /* CookingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF32241406100625893 /* CookingMethod.swift */; };
+		DA3C5EF62241411D00625893 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF52241411D00625893 /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		DA3C5EDD22413C2E00625893 /* GourmetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3C5EE122413C2E00625893 /* GourmetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAppUITests.swift; sourceTree = "<group>"; };
 		DA3C5EE322413C2E00625893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA3C5EF122413FCD00625893 /* CookingIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingIngredients.swift; sourceTree = "<group>"; };
+		DA3C5EF32241406100625893 /* CookingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingMethod.swift; sourceTree = "<group>"; };
+		DA3C5EF52241411D00625893 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +146,9 @@
 		DA3C5EF022413EBA00625893 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				DA3C5EF122413FCD00625893 /* CookingIngredients.swift */,
+				DA3C5EF32241406100625893 /* CookingMethod.swift */,
+				DA3C5EF52241411D00625893 /* Recipe.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -275,7 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA3C5EF42241406100625893 /* CookingMethod.swift in Sources */,
 				DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */,
+				DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */,
+				DA3C5EF62241411D00625893 /* Recipe.swift in Sources */,
 				DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */,
 				DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */,
 			);
