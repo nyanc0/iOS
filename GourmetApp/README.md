@@ -1,0 +1,3 @@
+- SDWebImage
+- RealmSwift
+- Codable protocol
