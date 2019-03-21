@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17EF2247009A89DADE0C2C2E /* Pods_GourmetAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98623BB4F4FA3220586FF008 /* Pods_GourmetAppUITests.framework */; };
+		587B639C3B30C489A761439C /* Pods_GourmetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */; };
+		B479C86F6FBEAECF250E4362 /* Pods_GourmetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693E73CC845B153384924A2C /* Pods_GourmetAppTests.framework */; };
 		DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EBE22413C2B00625893 /* AppDelegate.swift */; };
 		DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EC022413C2B00625893 /* ViewController.swift */; };
 		DA3C5EC422413C2B00625893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3C5EC222413C2B00625893 /* Main.storyboard */; };
@@ -18,6 +21,10 @@
 		DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF122413FCD00625893 /* CookingIngredients.swift */; };
 		DA3C5EF42241406100625893 /* CookingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF32241406100625893 /* CookingMethod.swift */; };
 		DA3C5EF62241411D00625893 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF52241411D00625893 /* Recipe.swift */; };
+		DA3C5EFB2243B1EF00625893 /* RecipeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EFA2243B1EF00625893 /* RecipeRepository.swift */; };
+		DA3C5EFE2243B7B700625893 /* RecipeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EFD2243B7B700625893 /* RecipeUseCase.swift */; };
+		DA3C5F042243C55E00625893 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5F032243C55E00625893 /* WebAPI.swift */; };
+		DA3C5F062243C6CC00625893 /* WebAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5F052243C6CC00625893 /* WebAPITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D166013F9CFA9AD2723F274 /* Pods-GourmetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.debug.xcconfig"; path = "Target Support Files/Pods-GourmetApp/Pods-GourmetApp.debug.xcconfig"; sourceTree = "<group>"; };
+		2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		693E73CC845B153384924A2C /* Pods_GourmetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98623BB4F4FA3220586FF008 /* Pods_GourmetAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E5EAEB612395286AD924B87 /* Pods-GourmetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.release.xcconfig"; path = "Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		BFC4F384EEE45B5AC12C65C9 /* Pods-GourmetAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4DAC3D0BAF27BB7F30D1CE2 /* Pods-GourmetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.release.xcconfig"; path = "Target Support Files/Pods-GourmetApp/Pods-GourmetApp.release.xcconfig"; sourceTree = "<group>"; };
+		D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA3C5EBB22413C2B00625893 /* GourmetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3C5EBE22413C2B00625893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA3C5EC022413C2B00625893 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +70,11 @@
 		DA3C5EF122413FCD00625893 /* CookingIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingIngredients.swift; sourceTree = "<group>"; };
 		DA3C5EF32241406100625893 /* CookingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingMethod.swift; sourceTree = "<group>"; };
 		DA3C5EF52241411D00625893 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		DA3C5EFA2243B1EF00625893 /* RecipeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRepository.swift; sourceTree = "<group>"; };
+		DA3C5EFD2243B7B700625893 /* RecipeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeUseCase.swift; sourceTree = "<group>"; };
+		DA3C5F032243C55E00625893 /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		DA3C5F052243C6CC00625893 /* WebAPITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPITest.swift; sourceTree = "<group>"; };
+		DC00F4CE58DFAEDB773E6D59 /* Pods-GourmetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587B639C3B30C489A761439C /* Pods_GourmetApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B479C86F6FBEAECF250E4362 /* Pods_GourmetAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +98,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17EF2247009A89DADE0C2C2E /* Pods_GourmetAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28E153B689C6B70C3E055EAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */,
+				693E73CC845B153384924A2C /* Pods_GourmetAppTests.framework */,
+				98623BB4F4FA3220586FF008 /* Pods_GourmetAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6665EB0B752B54688F83B90F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D166013F9CFA9AD2723F274 /* Pods-GourmetApp.debug.xcconfig */,
+				C4DAC3D0BAF27BB7F30D1CE2 /* Pods-GourmetApp.release.xcconfig */,
+				BFC4F384EEE45B5AC12C65C9 /* Pods-GourmetAppTests.debug.xcconfig */,
+				9E5EAEB612395286AD924B87 /* Pods-GourmetAppTests.release.xcconfig */,
+				D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */,
+				DC00F4CE58DFAEDB773E6D59 /* Pods-GourmetAppUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DA3C5EB222413C2B00625893 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +135,8 @@
 				DA3C5ED522413C2E00625893 /* GourmetAppTests */,
 				DA3C5EE022413C2E00625893 /* GourmetAppUITests */,
 				DA3C5EBC22413C2B00625893 /* Products */,
+				6665EB0B752B54688F83B90F /* Pods */,
+				28E153B689C6B70C3E055EAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +153,7 @@
 		DA3C5EBD22413C2B00625893 /* GourmetApp */ = {
 			isa = PBXGroup;
 			children = (
+				DA3C5EFF2243C15B00625893 /* Data */,
 				DA3C5EEF22413EA800625893 /* Domain */,
 				DA3C5EBE22413C2B00625893 /* AppDelegate.swift */,
 				DA3C5EC022413C2B00625893 /* ViewController.swift */,
@@ -122,6 +171,7 @@
 			children = (
 				DA3C5ED622413C2E00625893 /* GourmetAppTests.swift */,
 				DA3C5ED822413C2E00625893 /* Info.plist */,
+				DA3C5F052243C6CC00625893 /* WebAPITest.swift */,
 			);
 			path = GourmetAppTests;
 			sourceTree = "<group>";
@@ -138,6 +188,8 @@
 		DA3C5EEF22413EA800625893 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DA3C5EFC2243B79600625893 /* UseCase */,
+				DA3C5EF92243B1C100625893 /* Repository */,
 				DA3C5EF022413EBA00625893 /* Entities */,
 			);
 			path = Domain;
@@ -153,6 +205,30 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		DA3C5EF92243B1C100625893 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				DA3C5EFA2243B1EF00625893 /* RecipeRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		DA3C5EFC2243B79600625893 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				DA3C5EFD2243B7B700625893 /* RecipeUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		DA3C5EFF2243C15B00625893 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DA3C5F032243C55E00625893 /* WebAPI.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3C5EE622413C2E00625893 /* Build configuration list for PBXNativeTarget "GourmetApp" */;
 			buildPhases = (
+				E950BB215744EBD40C9B8314 /* [CP] Check Pods Manifest.lock */,
 				DA3C5EB722413C2B00625893 /* Sources */,
 				DA3C5EB822413C2B00625893 /* Frameworks */,
 				DA3C5EB922413C2B00625893 /* Resources */,
+				DA3C5EF72243AAB500625893 /* ShellScript */,
+				6CE9ED498A835E89CC6A3ED4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +256,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3C5EE922413C2E00625893 /* Build configuration list for PBXNativeTarget "GourmetAppTests" */;
 			buildPhases = (
+				D4C87CDD79769C1C6062E992 /* [CP] Check Pods Manifest.lock */,
 				DA3C5ECE22413C2E00625893 /* Sources */,
 				DA3C5ECF22413C2E00625893 /* Frameworks */,
 				DA3C5ED022413C2E00625893 /* Resources */,
@@ -195,6 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3C5EEC22413C2E00625893 /* Build configuration list for PBXNativeTarget "GourmetAppUITests" */;
 			buildPhases = (
+				BA2ABE3E1DE68E17CB2BB4C9 /* [CP] Check Pods Manifest.lock */,
 				DA3C5ED922413C2E00625893 /* Sources */,
 				DA3C5EDA22413C2E00625893 /* Frameworks */,
 				DA3C5EDB22413C2E00625893 /* Resources */,
@@ -279,6 +360,120 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6CE9ED498A835E89CC6A3ED4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GourmetApp/Pods-GourmetApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GourmetApp/Pods-GourmetApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA2ABE3E1DE68E17CB2BB4C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GourmetAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4C87CDD79769C1C6062E992 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GourmetAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA3C5EF72243AAB500625893 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\nswiftlint autocorrect --format\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		E950BB215744EBD40C9B8314 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GourmetApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA3C5EB722413C2B00625893 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -287,9 +482,12 @@
 				DA3C5EF42241406100625893 /* CookingMethod.swift in Sources */,
 				DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */,
 				DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */,
+				DA3C5EFB2243B1EF00625893 /* RecipeRepository.swift in Sources */,
+				DA3C5F042243C55E00625893 /* WebAPI.swift in Sources */,
 				DA3C5EF62241411D00625893 /* Recipe.swift in Sources */,
 				DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */,
 				DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */,
+				DA3C5EFE2243B7B700625893 /* RecipeUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3C5ED722413C2E00625893 /* GourmetAppTests.swift in Sources */,
+				DA3C5F062243C6CC00625893 /* WebAPITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +661,7 @@
 		};
 		DA3C5EE722413C2E00625893 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D166013F9CFA9AD2723F274 /* Pods-GourmetApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -479,6 +679,7 @@
 		};
 		DA3C5EE822413C2E00625893 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4DAC3D0BAF27BB7F30D1CE2 /* Pods-GourmetApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -496,6 +697,7 @@
 		};
 		DA3C5EEA22413C2E00625893 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFC4F384EEE45B5AC12C65C9 /* Pods-GourmetAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +718,7 @@
 		};
 		DA3C5EEB22413C2E00625893 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E5EAEB612395286AD924B87 /* Pods-GourmetAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +739,7 @@
 		};
 		DA3C5EED22413C2E00625893 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +759,7 @@
 		};
 		DA3C5EEE22413C2E00625893 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC00F4CE58DFAEDB773E6D59 /* Pods-GourmetAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

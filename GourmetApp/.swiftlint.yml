@@ -1,0 +1,24 @@
+# 無効にするルール
+disabled_rules:
+  - trailing_whitespace
+  - vertical_whitespace
+
+# デフォルト無効で有効にするルール
+opt_in_rules:
+  - conditional_returns_on_newline
+  - empty_count
+  - missing_docs
+  - operator_usage_whitespace
+
+# 対象外のファイル・フォルダ
+excluded:
+  - Pods/
+  - Carthage/
+
+# 1行あたりの文字数制限を300に変更
+# プロジェクト作成時にデフォルトで追加されるコメントをひっかけないため
+line_length: 300
+
+# 変数名が１文字以上なら許可に変更
+identifier_name:
+  min_length: 1
