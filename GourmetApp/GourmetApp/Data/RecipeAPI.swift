@@ -22,4 +22,35 @@ class RecipeAPI{
             )
         }
     }
+    
+    func fetch(_ block: @escaping (Either<Either<ConnectionError, TransformError>, Recipe>) -> Void) {
+        // 不正なURL
+        let urlString = "https://api.github.com/hoge"
+        guard let url = URL(string: urlString) else {
+            block(.left(.left(.malformedURL(debugInfo: urlString))))
+            return
+        }
+        
+        let input: Input = (
+            url: url,
+            queries: [],
+            headers: [:],
+            methodAndPayload: .get
+        )
+        
+        WebAPI.call(with: input) { output in
+            switch output {
+            case let .noResponse(connectionError):
+                block(.left(.left(connectionError)))
+            case let .hasResponse(response):
+                let errorOrSuccess = RecipeAPI.init().from(response: response)
+                switch errorOrSuccess {
+                case let .left(error):
+                    block(.left(.right(error)))
+                case let .right(recipe):
+                    block(.right(recipe))
+                }
+            }
+        }
+    }
 }

@@ -24,16 +24,12 @@ enum WebAPI {
         }
     }
     static func call(with input: Input, _ block: @escaping (Output) -> Void) {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-            let response: Response = (
-                statusCode: .ok,
-                headers: [:],
-                payload: "this is a response text".data(using: .utf8)!
-            )
-            
-            // 仮のレスポンスでコールバックを呼び出す。
-            block(.hasResponse(response))
+        let urlRequest = self.createURLRequest(by: input)
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, urlResponse, error) in
+            let output = self.createOutput(data: data, urlResponse: urlResponse as? HTTPURLResponse, error: error)
+            block(output)
         }
+        task.resume()
     }
     
     static private func createURLRequest(by input: Input) -> URLRequest {
@@ -42,6 +38,23 @@ enum WebAPI {
         request.httpBody = input.methodAndPayload.body
         request.allHTTPHeaderFields = input.headers
         return request
+    }
+    
+    static private func createOutput(data: Data?, urlResponse: HTTPURLResponse?, error: Error?) -> Output{
+        guard let data = data, let response = urlResponse else {
+            return .noResponse(.noDataOrNoResponse(debugInfo: error.debugDescription))
+        }
+        
+        var headers: [String: String] = [:]
+        for (key, value) in response.allHeaderFields.enumerated() {
+            headers[key.description] = String(describing: value)
+        }
+        
+        return .hasResponse((
+            statusCode: .from(code: response.statusCode),
+            headers: headers,
+            payload: data
+        ))
     }
 }
 
@@ -70,6 +83,7 @@ enum Output {
 
 enum ConnectionError {
     case noDataOrNoResponse(debugInfo: String)
+    case malformedURL(debugInfo: String)
 }
 
 typealias Response = (

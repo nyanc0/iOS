@@ -12,7 +12,7 @@ import XCTest
 class WebAPITest: XCTestCase {
     func testRequest() {
         let input: Request = (
-            url: URL(string: "http://10.0.2.2:3000/recipe")!,
+            url: URL(string: "http://localhost:3000/recipe")!,
             queries: [],
             headers: [:],
             methodAndPayload: .get
@@ -42,7 +42,7 @@ class WebAPITest: XCTestCase {
         let expectation = self.expectation(description: "Waiting API")
         
         let input: Input = (
-            url: URL(string: "http://10.0.2.2:3000/recipe")!,
+            url: URL(string: "http://localhost:3000/recipe")!,
             queries: [],
             headers: [:],
             methodAndPayload: .get
