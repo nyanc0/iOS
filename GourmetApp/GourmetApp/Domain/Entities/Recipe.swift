@@ -9,12 +9,12 @@
 import Foundation
 struct Recipe {
     let genreCd: String
-    let genreName: String
-    let recipeId: String
-    let recipeName: String
-    let introduction: String
-    let mainUrl: String
-    let recommendedFlg: Int
-    let cookingIngredients: CookingIngredients
-    let cookingMethod: CookingMethod
+//    let genreName: String
+//    let recipeId: String
+//    let recipeName: String
+//    let introduction: String
+//    let mainUrl: String
+//    let recommendedFlg: Int
+//    let cookingIngredients: CookingIngredients
+//    let cookingMethod: CookingMethod
 }
