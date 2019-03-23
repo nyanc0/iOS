@@ -7,10 +7,10 @@
 //
 
 import Foundation
-struct CookingMethod : Codable {
+struct CookingMethod: Codable {
     let procedureNo: String
     let procedure: String
-    
+
     enum CodingKeys: String, CodingKey {
         case procedureNo = "procedure_no"
         case procedure = "procedure"

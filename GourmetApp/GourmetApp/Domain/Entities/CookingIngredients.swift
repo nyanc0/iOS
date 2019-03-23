@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CookingIngredients : Codable {
+struct CookingIngredients: Codable {
     let material: String
     let quantity: String
 }

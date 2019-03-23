@@ -6,7 +6,7 @@
 //  Copyright © 2019年 yurina fukuoka. All rights reserved.
 
 import Foundation
-struct Recipe : Codable {
+struct Recipe: Codable {
     let genreCd: String
     let genreName: String
     let recipeId: String
@@ -16,7 +16,7 @@ struct Recipe : Codable {
     let recommendedFlg: Int
     let cookingIngredients: [CookingIngredients]
     let cookingMethod: [CookingMethod]
-    
+
     private enum CodingKeys: String, CodingKey {
         case genreCd = "genre_cd"
         case genreName = "genre_name"
