@@ -35,7 +35,7 @@ struct WebAPIManager {
     /// URLSessionを呼び出して通信を実施する.
     /// - parameter request: extends BaseRequestProtocol
     /// - parameter block: Callback APIResult
-    private static func callForData<T, V>(_ request: T, _ block: @escaping (APIResult) -> Void) where T: BaseRequestProtocol , V: Codable, T.ResponseType == V {
+    public static func callForData<T, V>(_ request: T, _ block: @escaping (APIResult) -> Void) where T: BaseRequestProtocol , V: Codable, T.ResponseType == V {
         let urlRequest = self.createURLRequest(request)
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, urlResponse, error) in
             let outputs = self.createOutputs(data: data, urlResponse: urlResponse as? HTTPURLResponse, error: error)
