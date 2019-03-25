@@ -16,7 +16,7 @@ class RecipeListUseCase {
         self.recipeListRepository = recipeListRepository
     }
 
-    func loadRecipeList() -> Single<RecipeResponse> {
+    func loadRecipeList() -> Single<[Recipe]> {
         return recipeListRepository.getRecipeList()
     }
 }

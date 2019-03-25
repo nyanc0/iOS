@@ -9,10 +9,8 @@
 import Foundation
 import RxSwift
 class RecipeListRepositoryImpl: RecipeListRepository {
-    
-    enum RecipeListRequest: BaseRequestProtocol {
-        typealias ResponseType = RecipeResponse
-        case get
+     struct RecipeListRequest: BaseRequestProtocol {
+        typealias ResponseType = [Recipe]
         var methodAndPayload: HTTPMethodAndPayload {
             return HTTPMethodAndPayload.get
         }
@@ -23,7 +21,7 @@ class RecipeListRepositoryImpl: RecipeListRepository {
             return []
         }
     }
-    func getRecipeList() -> Single<RecipeResponse> {
-        return WebAPIManager.observe(RecipeListRequest.get)
+    func getRecipeList() -> Single<[Recipe]> {
+        return WebAPIManager.observe(RecipeListRequest())
     }
 }

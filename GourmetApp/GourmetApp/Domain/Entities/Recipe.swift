@@ -13,7 +13,7 @@ struct Recipe: Codable {
     let recipeName: String
     let introduction: String
     let mainUrl: String
-    let recommendedFlg: Int
+    let recommendedFlg: String
     let cookingIngredients: [CookingIngredients]
     let cookingMethod: [CookingMethod]
 

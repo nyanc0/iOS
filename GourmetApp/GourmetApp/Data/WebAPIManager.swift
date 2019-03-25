@@ -59,7 +59,7 @@ struct WebAPIManager {
     /// - parameter input: extends BaseRequestProtocol
     /// - returns: URLRequest
     private static func createURLRequest<T>(_ input: T) -> URLRequest where T: BaseRequestProtocol {
-        var request = URLRequest(url: input.baseURL)
+        var request = URLRequest(url: input.baseURL.appendingPathComponent(input.path))
         request.httpMethod = input.methodAndPayload.method
         request.httpBody = input.methodAndPayload.body
         return request
