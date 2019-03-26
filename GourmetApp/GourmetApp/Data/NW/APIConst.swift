@@ -28,14 +28,14 @@ protocol BaseRequestProtocol: BaseAPIProtocol {
 
 enum HTTPMethodAndPayload {
     case get
-    
+
     var method: String {
         switch self {
         case .get:
             return "GET"
         }
     }
-    
+
     var body: Data? {
         switch self {
         case .get:

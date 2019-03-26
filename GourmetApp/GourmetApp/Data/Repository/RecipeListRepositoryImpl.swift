@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 class RecipeListRepositoryImpl: RecipeListRepository {
-     struct RecipeListRequest: BaseRequestProtocol {
+    struct RecipeListRequest: BaseRequestProtocol {
         typealias ResponseType = [Recipe]
         var methodAndPayload: HTTPMethodAndPayload {
             return HTTPMethodAndPayload.get

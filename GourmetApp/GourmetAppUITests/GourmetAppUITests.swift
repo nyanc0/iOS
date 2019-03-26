@@ -8,6 +8,6 @@
 
 import Foundation
 import XCTest
-class GourmetAppUITests:XCTestCase  {
-    
+class GourmetAppUITests: XCTestCase {
+
 }
