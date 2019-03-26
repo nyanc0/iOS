@@ -9,7 +9,5 @@
 import Foundation
 import RxSwift
 protocol RecipeDetailRepository {
-    func getRecipeDetail(_ recipeId: String) -> Single<Recipe>
-    func saveRecipe(recipe: Recipe) -> Single<Void>
-    func deleteRecipe(recipeId: String) -> Single<Void>
+    func getRecipeDetail(_ recipeId: String) -> Single<Recipe?>
 }

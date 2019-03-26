@@ -16,10 +16,12 @@ import RxBlocking
 class RecipeAPITest: XCTestCase {
     
     var recipeListRepository: RecipeListRepository!
+    var recipeDetailRepository: RecipeDetailRepository!
     
     override func setUp() {
         super.setUp()
         recipeListRepository = RecipeListRepositoryImpl()
+        recipeDetailRepository = RecipeDetailRepositoryImpl()
     }
     
     func testGetRecipeList() {
@@ -39,6 +41,24 @@ class RecipeAPITest: XCTestCase {
             XCTAssertEqual(result[1].recipeName, "基本の豚の角煮")
             XCTAssertEqual(result[1].cookingIngredients[0].material, "●豚バラ肉")
             XCTAssertEqual(result[1].cookingMethod[0].procedure, "鍋に●の材料すべてと、水をいれます。水の量は、材料がすべてかくれるくらい。豚は、かたまりのままです。")
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+    
+    func testGetRecipeWithId() {
+        let json = "[{\"cooking_ingredients\": [{\"material\": \"合いびき肉\",\"quantity\": \"200ｇ\"},{\"material\": \"玉ねぎ\",\"quantity\": \"1個\"},{\"material\": \"卵\",\"quantity\": \"1個\"},{\"material\": \"パン粉\",\"quantity\": \"大2\"},{\"material\": \"牛乳\",\"quantity\": \"大1\"},{\"material\": \"塩コショウ\",\"quantity\": \"少々\"},{\"material\": \"●酒\",\"quantity\": \"大2\"},{\"material\": \"玉ねぎ\",\"quantity\": \"1個\"},{\"material\": \"●ケチャップ\",\"quantity\": \"大2\"},{\"material\": \"●中濃ソース\",\"quantity\": \"大1\"},{\"material\": \"●砂糖\",\"quantity\": \"大1\"},{\"material\": \"●醤油\",\"quantity\": \"大1\"}],\"cooking_method\": [{\"procedure_no\": \"1\",\"procedure\": \"玉ねぎはみじん切りにし、●以外の材料すべてをボウルに入れて手でよくこねる。\"},{\"procedure_no\": \"2\",\"procedure\": \"成形し、フライパンに油（分量外）をひき、中火で焼き目がつくように焼き、ふたをして中に火が通るように蒸す。\"},{\"procedure_no\": \"3\",\"procedure\": \"ハンバーグを皿に取り、そのフライパンに●をすべて入れて、弱火で煮立つまで温め、ハンバーグにかけたら完成です。\"}],\"genre_cd\": \"G01\",\"genre_name\": \"お肉のおかず\",\"recipe_id\": \"001\",\"recipe_name\": \"洋食屋さんのハンバーグ\",\"introduction\": \"味も見た目もよし！のハンバーグです。\",\"main_gazo\": \"http://localhost:3000/assets/images/recipe_001.png\",\"recommended_flg\": \"1\"}]"
+        
+        self.stub(uri("http://localhost:3000/recipe?recipe_id=001"), jsonData(json.data(using: .utf8)!))
+        do {
+            let result: Recipe? = try recipeDetailRepository.getRecipeDetail("001").toBlocking().single()
+            if result == nil {
+                XCTFail("Result is Nil")
+            }
+            XCTAssertEqual(result!.recipeId, "001")
+            XCTAssertEqual(result!.recipeName, "洋食屋さんのハンバーグ")
+            XCTAssertEqual(result!.cookingIngredients[0].material, "合いびき肉")
+            XCTAssertEqual(result!.cookingMethod[0].procedure, "玉ねぎはみじん切りにし、●以外の材料すべてをボウルに入れて手でよくこねる。")
         } catch {
             XCTFail(error.localizedDescription)
         }

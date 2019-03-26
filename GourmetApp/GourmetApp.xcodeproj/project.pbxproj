@@ -13,14 +13,13 @@
 		38DF905F2244CAF30008F432 /* RecipeAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF905E2244CAF30008F432 /* RecipeAPITests.swift */; };
 		587B639C3B30C489A761439C /* Pods_GourmetApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */; };
 		B479C86F6FBEAECF250E4362 /* Pods_GourmetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693E73CC845B153384924A2C /* Pods_GourmetAppTests.framework */; };
-		DA37AC7622465D55007F0721 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37AC7522465D55007F0721 /* API.swift */; };
+		DA37AC7622465D55007F0721 /* APIConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37AC7522465D55007F0721 /* APIConst.swift */; };
 		DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EBE22413C2B00625893 /* AppDelegate.swift */; };
 		DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EC022413C2B00625893 /* ViewController.swift */; };
 		DA3C5EC422413C2B00625893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3C5EC222413C2B00625893 /* Main.storyboard */; };
 		DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EC522413C2B00625893 /* GourmetApp.xcdatamodeld */; };
 		DA3C5EC922413C2E00625893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3C5EC822413C2E00625893 /* Assets.xcassets */; };
 		DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3C5ECA22413C2E00625893 /* LaunchScreen.storyboard */; };
-		DA3C5EE222413C2E00625893 /* GourmetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EE122413C2E00625893 /* GourmetAppUITests.swift */; };
 		DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF122413FCD00625893 /* CookingIngredients.swift */; };
 		DA3C5EF42241406100625893 /* CookingMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF32241406100625893 /* CookingMethod.swift */; };
 		DA3C5EF62241411D00625893 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EF52241411D00625893 /* Recipe.swift */; };
@@ -65,7 +64,7 @@
 		BFC4F384EEE45B5AC12C65C9 /* Pods-GourmetAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C4DAC3D0BAF27BB7F30D1CE2 /* Pods-GourmetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.release.xcconfig"; path = "Target Support Files/Pods-GourmetApp/Pods-GourmetApp.release.xcconfig"; sourceTree = "<group>"; };
 		D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DA37AC7522465D55007F0721 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		DA37AC7522465D55007F0721 /* APIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConst.swift; sourceTree = "<group>"; };
 		DA3C5EBB22413C2B00625893 /* GourmetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3C5EBE22413C2B00625893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA3C5EC022413C2B00625893 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,7 +76,6 @@
 		DA3C5ED222413C2E00625893 /* GourmetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3C5ED822413C2E00625893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA3C5EDD22413C2E00625893 /* GourmetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA3C5EE122413C2E00625893 /* GourmetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAppUITests.swift; sourceTree = "<group>"; };
 		DA3C5EE322413C2E00625893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA3C5EF122413FCD00625893 /* CookingIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingIngredients.swift; sourceTree = "<group>"; };
 		DA3C5EF32241406100625893 /* CookingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingMethod.swift; sourceTree = "<group>"; };
@@ -127,6 +125,15 @@
 				98623BB4F4FA3220586FF008 /* Pods_GourmetAppUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		387176E12249C0A300163B48 /* NW */ = {
+			isa = PBXGroup;
+			children = (
+				DA37AC7522465D55007F0721 /* APIConst.swift */,
+				DAC876B02247CB4000A296E1 /* WebAPIManager.swift */,
+			);
+			path = NW;
 			sourceTree = "<group>";
 		};
 		38C6333E2248BB3D004EBDC7 /* Repository */ = {
@@ -208,7 +215,6 @@
 		DA3C5EE022413C2E00625893 /* GourmetAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DA3C5EE122413C2E00625893 /* GourmetAppUITests.swift */,
 				DA3C5EE322413C2E00625893 /* Info.plist */,
 			);
 			path = GourmetAppUITests;
@@ -254,9 +260,8 @@
 		DA3C5EFF2243C15B00625893 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				387176E12249C0A300163B48 /* NW */,
 				38C6333E2248BB3D004EBDC7 /* Repository */,
-				DA37AC7522465D55007F0721 /* API.swift */,
-				DAC876B02247CB4000A296E1 /* WebAPIManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -555,7 +560,7 @@
 				DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */,
 				DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */,
 				DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */,
-				DA37AC7622465D55007F0721 /* API.swift in Sources */,
+				DA37AC7622465D55007F0721 /* APIConst.swift in Sources */,
 				DA3C5EFE2243B7B700625893 /* RecipeListUseCase.swift in Sources */,
 				DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */,
 			);
@@ -573,7 +578,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA3C5EE222413C2E00625893 /* GourmetAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
