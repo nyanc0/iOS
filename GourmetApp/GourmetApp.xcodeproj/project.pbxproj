@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		17EF2247009A89DADE0C2C2E /* Pods_GourmetAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98623BB4F4FA3220586FF008 /* Pods_GourmetAppUITests.framework */; };
+		387176E32249E2BB00163B48 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E22249E2BB00163B48 /* Favorite.swift */; };
+		387176E52249E3B800163B48 /* GourmetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E42249E3B800163B48 /* GourmetAppUITests.swift */; };
+		387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E62249E5DF00163B48 /* FavoriteRepository.swift */; };
+		387176EA2249E8F600163B48 /* FavoriteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E92249E8F600163B48 /* FavoriteDataStore.swift */; };
 		38C633402248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C6333F2248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift */; };
 		38DF905D2244CA0E0008F432 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38DF905C2244CA0E0008F432 /* Default-568h@2x.png */; };
 		38DF905F2244CAF30008F432 /* RecipeAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DF905E2244CAF30008F432 /* RecipeAPITests.swift */; };
@@ -53,6 +57,10 @@
 		17C0E2202248EDB837D1CBF2 /* Pods-GourmetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B2141FF67658469CA91401C /* Pods-GourmetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		387176E22249E2BB00163B48 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		387176E42249E3B800163B48 /* GourmetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAppUITests.swift; sourceTree = "<group>"; };
+		387176E62249E5DF00163B48 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
+		387176E92249E8F600163B48 /* FavoriteDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataStore.swift; sourceTree = "<group>"; };
 		38C6333F2248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRepositoryImpl.swift; sourceTree = "<group>"; };
 		38DF905C2244CA0E0008F432 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		38DF905E2244CAF30008F432 /* RecipeAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPITests.swift; sourceTree = "<group>"; };
@@ -136,6 +144,14 @@
 			path = NW;
 			sourceTree = "<group>";
 		};
+		387176E82249E6F400163B48 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				387176E92249E8F600163B48 /* FavoriteDataStore.swift */,
+			);
+			path = DB;
+			sourceTree = "<group>";
+		};
 		38C6333E2248BB3D004EBDC7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3C5EE322413C2E00625893 /* Info.plist */,
+				387176E42249E3B800163B48 /* GourmetAppUITests.swift */,
 			);
 			path = GourmetAppUITests;
 			sourceTree = "<group>";
@@ -236,6 +253,7 @@
 				DA3C5EF122413FCD00625893 /* CookingIngredients.swift */,
 				DA3C5EF32241406100625893 /* CookingMethod.swift */,
 				DA3C5EF52241411D00625893 /* Recipe.swift */,
+				387176E22249E2BB00163B48 /* Favorite.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -245,6 +263,7 @@
 			children = (
 				DA3C5EFA2243B1EF00625893 /* RecipeDetailRepository.swift */,
 				DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */,
+				387176E62249E5DF00163B48 /* FavoriteRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -260,6 +279,7 @@
 		DA3C5EFF2243C15B00625893 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				387176E82249E6F400163B48 /* DB */,
 				387176E12249C0A300163B48 /* NW */,
 				38C6333E2248BB3D004EBDC7 /* Repository */,
 			);
@@ -347,6 +367,7 @@
 					};
 					DA3C5EDC22413C2E00625893 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = DA3C5EBA22413C2B00625893;
 					};
 				};
@@ -410,6 +431,8 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GourmetApp/Pods-GourmetApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -419,6 +442,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -551,12 +576,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3C5EF42241406100625893 /* CookingMethod.swift in Sources */,
+				387176E32249E2BB00163B48 /* Favorite.swift in Sources */,
+				387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */,
 				DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */,
 				DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */,
 				38C633402248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift in Sources */,
 				DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */,
 				DA3C5EFB2243B1EF00625893 /* RecipeDetailRepository.swift in Sources */,
 				DA3C5EF62241411D00625893 /* Recipe.swift in Sources */,
+				387176EA2249E8F600163B48 /* FavoriteDataStore.swift in Sources */,
 				DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */,
 				DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */,
 				DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */,
@@ -578,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387176E52249E3B800163B48 /* GourmetAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,6 +844,7 @@
 			baseConfigurationReference = D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GourmetAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -824,6 +854,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = nyanc0.ios.GourmetAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = GourmetApp;
@@ -835,6 +866,7 @@
 			baseConfigurationReference = DC00F4CE58DFAEDB773E6D59 /* Pods-GourmetAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GourmetAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
