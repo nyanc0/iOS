@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17EF2247009A89DADE0C2C2E /* Pods_GourmetAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98623BB4F4FA3220586FF008 /* Pods_GourmetAppUITests.framework */; };
-		387176E52249E3B800163B48 /* GourmetAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E42249E3B800163B48 /* GourmetAppUITests.swift */; };
 		387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E62249E5DF00163B48 /* FavoriteRepository.swift */; };
 		38C633402248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C6333F2248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift */; };
 		38DF905D2244CA0E0008F432 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38DF905C2244CA0E0008F432 /* Default-568h@2x.png */; };
@@ -31,6 +29,7 @@
 		DA5AE47B224A752D001E0350 /* FavoriteRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47A224A752D001E0350 /* FavoriteRealmModel.swift */; };
 		DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47C224A75D7001E0350 /* BaseDao.swift */; };
 		DA5AE47F224A7B7D001E0350 /* FavoriteDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47E224A7B7D001E0350 /* FavoriteDao.swift */; };
+		DA5AE481224BB794001E0350 /* FavoriteDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */; };
 		DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */; };
 		DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */; };
 		DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876B02247CB4000A296E1 /* WebAPIManager.swift */; };
@@ -38,13 +37,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		DA3C5ED322413C2E00625893 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA3C5EB322413C2B00625893 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA3C5EBA22413C2B00625893;
-			remoteInfo = GourmetApp;
-		};
-		DA3C5EDE22413C2E00625893 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DA3C5EB322413C2B00625893 /* Project object */;
 			proxyType = 1;
@@ -59,7 +51,6 @@
 		17C0E2202248EDB837D1CBF2 /* Pods-GourmetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B2141FF67658469CA91401C /* Pods-GourmetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		387176E42249E3B800163B48 /* GourmetAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAppUITests.swift; sourceTree = "<group>"; };
 		387176E62249E5DF00163B48 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		38C6333F2248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRepositoryImpl.swift; sourceTree = "<group>"; };
 		38DF905C2244CA0E0008F432 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -83,8 +74,6 @@
 		DA3C5ECD22413C2E00625893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA3C5ED222413C2E00625893 /* GourmetAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3C5ED822413C2E00625893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA3C5EDD22413C2E00625893 /* GourmetAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA3C5EE322413C2E00625893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA3C5EF122413FCD00625893 /* CookingIngredients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingIngredients.swift; sourceTree = "<group>"; };
 		DA3C5EF32241406100625893 /* CookingMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingMethod.swift; sourceTree = "<group>"; };
 		DA3C5EF52241411D00625893 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
@@ -94,6 +83,7 @@
 		DA5AE47A224A752D001E0350 /* FavoriteRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRealmModel.swift; sourceTree = "<group>"; };
 		DA5AE47C224A75D7001E0350 /* BaseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
 		DA5AE47E224A7B7D001E0350 /* FavoriteDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDao.swift; sourceTree = "<group>"; };
+		DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDaoTest.swift; sourceTree = "<group>"; };
 		DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepository.swift; sourceTree = "<group>"; };
 		DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepositoryImpl.swift; sourceTree = "<group>"; };
 		DAC876B02247CB4000A296E1 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
@@ -115,14 +105,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B479C86F6FBEAECF250E4362 /* Pods_GourmetAppTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA3C5EDA22413C2E00625893 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17EF2247009A89DADE0C2C2E /* Pods_GourmetAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +173,6 @@
 				38DF905C2244CA0E0008F432 /* Default-568h@2x.png */,
 				DA3C5EBD22413C2B00625893 /* GourmetApp */,
 				DA3C5ED522413C2E00625893 /* GourmetAppTests */,
-				DA3C5EE022413C2E00625893 /* GourmetAppUITests */,
 				DA3C5EBC22413C2B00625893 /* Products */,
 				6665EB0B752B54688F83B90F /* Pods */,
 				28E153B689C6B70C3E055EAE /* Frameworks */,
@@ -203,7 +184,6 @@
 			children = (
 				DA3C5EBB22413C2B00625893 /* GourmetApp.app */,
 				DA3C5ED222413C2E00625893 /* GourmetAppTests.xctest */,
-				DA3C5EDD22413C2E00625893 /* GourmetAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -229,17 +209,9 @@
 			children = (
 				DA3C5ED822413C2E00625893 /* Info.plist */,
 				38DF905E2244CAF30008F432 /* RecipeAPITests.swift */,
+				DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */,
 			);
 			path = GourmetAppTests;
-			sourceTree = "<group>";
-		};
-		DA3C5EE022413C2E00625893 /* GourmetAppUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DA3C5EE322413C2E00625893 /* Info.plist */,
-				387176E42249E3B800163B48 /* GourmetAppUITests.swift */,
-			);
-			path = GourmetAppUITests;
 			sourceTree = "<group>";
 		};
 		DA3C5EEF22413EA800625893 /* Domain */ = {
@@ -335,25 +307,6 @@
 			productReference = DA3C5ED222413C2E00625893 /* GourmetAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DA3C5EDC22413C2E00625893 /* GourmetAppUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA3C5EEC22413C2E00625893 /* Build configuration list for PBXNativeTarget "GourmetAppUITests" */;
-			buildPhases = (
-				BA2ABE3E1DE68E17CB2BB4C9 /* [CP] Check Pods Manifest.lock */,
-				DA3C5ED922413C2E00625893 /* Sources */,
-				DA3C5EDA22413C2E00625893 /* Frameworks */,
-				DA3C5EDB22413C2E00625893 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA3C5EDF22413C2E00625893 /* PBXTargetDependency */,
-			);
-			name = GourmetAppUITests;
-			productName = GourmetAppUITests;
-			productReference = DA3C5EDD22413C2E00625893 /* GourmetAppUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -369,11 +322,6 @@
 					};
 					DA3C5ED122413C2E00625893 = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = DA3C5EBA22413C2B00625893;
-					};
-					DA3C5EDC22413C2E00625893 = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
 						TestTargetID = DA3C5EBA22413C2B00625893;
 					};
 				};
@@ -393,7 +341,6 @@
 			targets = (
 				DA3C5EBA22413C2B00625893 /* GourmetApp */,
 				DA3C5ED122413C2E00625893 /* GourmetAppTests */,
-				DA3C5EDC22413C2E00625893 /* GourmetAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -411,13 +358,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DA3C5ED022413C2E00625893 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA3C5EDB22413C2E00625893 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -457,28 +397,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GourmetApp/Pods-GourmetApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA2ABE3E1DE68E17CB2BB4C9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GourmetAppUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D4C87CDD79769C1C6062E992 /* [CP] Check Pods Manifest.lock */ = {
@@ -606,15 +524,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5AE481224BB794001E0350 /* FavoriteDaoTest.swift in Sources */,
 				38DF905F2244CAF30008F432 /* RecipeAPITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA3C5ED922413C2E00625893 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				387176E52249E3B800163B48 /* GourmetAppUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,11 +536,6 @@
 			isa = PBXTargetDependency;
 			target = DA3C5EBA22413C2B00625893 /* GourmetApp */;
 			targetProxy = DA3C5ED322413C2E00625893 /* PBXContainerItemProxy */;
-		};
-		DA3C5EDF22413C2E00625893 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA3C5EBA22413C2B00625893 /* GourmetApp */;
-			targetProxy = DA3C5EDE22413C2E00625893 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -847,49 +753,6 @@
 			};
 			name = Release;
 		};
-		DA3C5EED22413C2E00625893 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GourmetAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = nyanc0.ios.GourmetAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GourmetApp;
-			};
-			name = Debug;
-		};
-		DA3C5EEE22413C2E00625893 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC00F4CE58DFAEDB773E6D59 /* Pods-GourmetAppUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GourmetAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = nyanc0.ios.GourmetAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GourmetApp;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -916,15 +779,6 @@
 			buildConfigurations = (
 				DA3C5EEA22413C2E00625893 /* Debug */,
 				DA3C5EEB22413C2E00625893 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DA3C5EEC22413C2E00625893 /* Build configuration list for PBXNativeTarget "GourmetAppUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA3C5EED22413C2E00625893 /* Debug */,
-				DA3C5EEE22413C2E00625893 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

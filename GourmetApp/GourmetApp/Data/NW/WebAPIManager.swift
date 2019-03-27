@@ -30,6 +30,8 @@ struct WebAPIManager {
                 case .success(let result):
                     if let cast = result as? V {
                         observer(.success(cast))
+                    } else {
+                        observer(.error(NSError(domain: "Cast Exception", code: -1, userInfo: nil)))
                     }
                 case .failure(let error): observer(.error(error))
                 }

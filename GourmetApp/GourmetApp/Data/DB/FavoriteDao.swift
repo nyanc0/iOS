@@ -9,7 +9,7 @@
 import Foundation
 class FavoriteDao: BaseDao<FavoriteRealmModel> {
 
-    static var favoriteDao: FavoriteDao = {
+    public static var favoriteDao: FavoriteDao = {
         return FavoriteDao()
     }()
 

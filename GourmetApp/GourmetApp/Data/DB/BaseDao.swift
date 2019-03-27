@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import RxSwift
 class BaseDao<T: BaseRealmModel> {
     static var realm: Realm {
         do {
@@ -17,19 +18,30 @@ class BaseDao<T: BaseRealmModel> {
         }
         return self.realm
     }
-    
+
     /// 全件取得
-    func findAll() -> Results<T> {
-        return BaseDao<T>.realm.objects(T.self)
+    func findAll() -> Single<Results<T>> {
+        return Single<Results<T>>.create { observer in
+            let results: Results<T> = BaseDao<T>.realm.objects(T.self).sorted(byKeyPath: "updatedDate", ascending: true)
+            observer(.success(results))
+            return Disposables.create()
+        }
     }
-    
+
     /// レコード取得
     /// - parameter key: プライマリキー
     /// - returns: 検索結果
-    func findById(key: AnyObject) -> T? {
-        return BaseDao<T>.realm.object(ofType: T.self, forPrimaryKey: key)
+    func findById(key: String) -> Single<T?> {
+        return Single<T?>.create { observer in
+            if let result = BaseDao<T>.realm.object(ofType: T.self, forPrimaryKey: key) {
+                observer(.success(result))
+            } else {
+                observer(.success(nil))
+            }
+            return Disposables.create()
+        }
     }
-    
+
     /// レコード追加
     /// - parameter data: 保存レコード
     func addOrUpdate(data: T, updateFunc:(_ data: T) -> (T)) -> Bool {
@@ -45,19 +57,35 @@ class BaseDao<T: BaseRealmModel> {
         }
         return false
     }
-    
+
     /// レコード削除
     /// - parameter data: 削除レコード
     func delete(data: T) {
         do {
             try BaseDao<T>.realm.write {
+
                 BaseDao<T>.realm.delete(data)
             }
         } catch let error as NSError {
             print("\(error.localizedDescription) ")
         }
     }
-    
+
+    /// レコード削除
+    /// - parameter key: Primary Key
+    func delete(key: String) {
+        do {
+            try BaseDao<T>.realm.write {
+                let data: T? = BaseDao<T>.realm.object(ofType: T.self, forPrimaryKey: key)
+                if data != nil {
+                    BaseDao<T>.realm.delete(data!)
+                }
+            }
+        } catch let error as NSError {
+            print("\(error.localizedDescription) ")
+        }
+    }
+
     /// レコード全削除
     func deleteAll() {
         let objs = BaseDao<T>.realm.objects(T.self)
@@ -69,7 +97,7 @@ class BaseDao<T: BaseRealmModel> {
             print("\(error.localizedDescription) ")
         }
     }
-    
+
     private func setDefaultColumnValue(data: T) -> (T) {
         if BaseDao<T>.realm.isInWriteTransaction {
             data.createdDate = Date()
