@@ -9,13 +9,13 @@
 import Foundation
 import RxSwift
 class FavoriteRepositoryImpl: FavoriteRepository {
-    
+
     let recipeListRepository: RecipeListRepository
-    
+
     init(recipeListRepository: RecipeListRepository) {
         self.recipeListRepository = recipeListRepository
     }
-    
+
     func getFavoriteList() -> Single<[Recipe]> {
         return FavoriteDao.favoriteDao.findAll()
             .map { results in
@@ -26,7 +26,7 @@ class FavoriteRepositoryImpl: FavoriteRepository {
                 return self.recipeListRepository.getRecipeList(recipeIds: ids)
         }
     }
-    
+
     func insert(recipe: Recipe) -> Single<Bool> {
         return Single<Bool>.create { observer in
             if FavoriteDao.favoriteDao.addOrUpdate(recipeId: recipe.recipeId) {
@@ -37,7 +37,7 @@ class FavoriteRepositoryImpl: FavoriteRepository {
             return Disposables.create()
         }
     }
-    
+
     func delete(recipeId: String) -> Single<Bool> {
         return Single<Bool>.create { observer in
             let delModel = FavoriteRealmModel()

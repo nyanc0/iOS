@@ -18,7 +18,7 @@ class BaseDao<T: BaseRealmModel> {
         }
         return self.realm
     }
-    
+
     /// 全件取得
     func findAll() -> Single<Results<T>> {
         return Single<Results<T>>.create { observer in
@@ -27,7 +27,7 @@ class BaseDao<T: BaseRealmModel> {
             return Disposables.create()
         }
     }
-    
+
     /// レコード取得
     /// - parameter key: プライマリキー
     /// - returns: 検索結果
@@ -41,7 +41,7 @@ class BaseDao<T: BaseRealmModel> {
             return Disposables.create()
         }
     }
-    
+
     /// レコード追加
     /// - parameter data: 保存レコード
     func addOrUpdate(data: T, updateFunc:(_ data: T) -> (T)) -> Bool {
@@ -57,13 +57,13 @@ class BaseDao<T: BaseRealmModel> {
         }
         return false
     }
-    
+
     /// レコード削除
     /// - parameter data: 削除レコード
-    func delete(data: T)  -> Bool {
+    func delete(data: T) -> Bool {
         do {
             try BaseDao<T>.realm.write {
-                
+
                 BaseDao<T>.realm.delete(data)
             }
             return true
@@ -72,10 +72,10 @@ class BaseDao<T: BaseRealmModel> {
         }
         return false
     }
-    
+
     /// レコード削除
     /// - parameter key: Primary Key
-    func delete(key: String)  -> Bool {
+    func delete(key: String) -> Bool {
         do {
             try BaseDao<T>.realm.write {
                 let data: T? = BaseDao<T>.realm.object(ofType: T.self, forPrimaryKey: key)
@@ -89,9 +89,9 @@ class BaseDao<T: BaseRealmModel> {
         }
         return false
     }
-    
+
     /// レコード全削除
-    func deleteAll()  -> Bool {
+    func deleteAll() -> Bool {
         let objs = BaseDao<T>.realm.objects(T.self)
         do {
             try BaseDao<T>.realm.write {
@@ -103,7 +103,7 @@ class BaseDao<T: BaseRealmModel> {
         }
         return false
     }
-    
+
     private func setDefaultColumnValue(data: T) -> (T) {
         if BaseDao<T>.realm.isInWriteTransaction {
             data.createdDate = Date()

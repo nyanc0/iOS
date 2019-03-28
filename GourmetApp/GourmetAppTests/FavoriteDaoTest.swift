@@ -15,16 +15,16 @@ import RxBlocking
 @testable import GourmetApp
 class FavoriteDaoTest: XCTestCase {
     var favoriteDao: FavoriteDao!
-    
+
     override func setUp() {
         favoriteDao = FavoriteDao.favoriteDao
     }
-    
+
     func testAdd() {
         let result = favoriteDao.addOrUpdate(recipeId: "001")
         XCTAssert(result)
     }
-    
+
     func testFindById() {
         _ = favoriteDao.addOrUpdate(recipeId: "001")
         _ = favoriteDao.addOrUpdate(recipeId: "002")
@@ -35,7 +35,7 @@ class FavoriteDaoTest: XCTestCase {
             XCTFail(error.localizedDescription)
         }
     }
-    
+
     func testFindAll() {
         _ = favoriteDao.addOrUpdate(recipeId: "001")
         _ = favoriteDao.addOrUpdate(recipeId: "002")
@@ -47,13 +47,13 @@ class FavoriteDaoTest: XCTestCase {
             XCTFail(error.localizedDescription)
         }
     }
-    
+
     func testDeleteById() {
         _ = favoriteDao.addOrUpdate(recipeId: "001")
         _ = favoriteDao.addOrUpdate(recipeId: "002")
         XCTAssert(favoriteDao.delete(key: "001"))
     }
-    
+
     func testDeleteAll() {
         _ = favoriteDao.addOrUpdate(recipeId: "001")
         _ = favoriteDao.addOrUpdate(recipeId: "002")

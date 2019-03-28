@@ -31,6 +31,7 @@
 		DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47C224A75D7001E0350 /* BaseDao.swift */; };
 		DA5AE47F224A7B7D001E0350 /* FavoriteDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47E224A7B7D001E0350 /* FavoriteDao.swift */; };
 		DA5AE481224BB794001E0350 /* FavoriteDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */; };
+		DA5AE483224D0E2F001E0350 /* FavoriteRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE482224D0E2F001E0350 /* FavoriteRepositoryTest.swift */; };
 		DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */; };
 		DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */; };
 		DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876B02247CB4000A296E1 /* WebAPIManager.swift */; };
@@ -86,6 +87,7 @@
 		DA5AE47C224A75D7001E0350 /* BaseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
 		DA5AE47E224A7B7D001E0350 /* FavoriteDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDao.swift; sourceTree = "<group>"; };
 		DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDaoTest.swift; sourceTree = "<group>"; };
+		DA5AE482224D0E2F001E0350 /* FavoriteRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryTest.swift; sourceTree = "<group>"; };
 		DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepository.swift; sourceTree = "<group>"; };
 		DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepositoryImpl.swift; sourceTree = "<group>"; };
 		DAC876B02247CB4000A296E1 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				DA3C5ED822413C2E00625893 /* Info.plist */,
 				38DF905E2244CAF30008F432 /* RecipeAPITests.swift */,
 				DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */,
+				DA5AE482224D0E2F001E0350 /* FavoriteRepositoryTest.swift */,
 			);
 			path = GourmetAppTests;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5AE483224D0E2F001E0350 /* FavoriteRepositoryTest.swift in Sources */,
 				DA5AE481224BB794001E0350 /* FavoriteDaoTest.swift in Sources */,
 				38DF905F2244CAF30008F432 /* RecipeAPITests.swift in Sources */,
 			);
