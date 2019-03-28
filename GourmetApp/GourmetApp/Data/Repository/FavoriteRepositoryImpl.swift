@@ -8,13 +8,46 @@
 
 import Foundation
 import RxSwift
-//class FavoriteRepositoryImpl: FavoriteRepository {
-//    func getFavoriteList() -> Single<[Recipe]> {
-//        return FavoriteDao.favoriteDao
-//            .findAll().map { results in
-//                
-//        }
-//    }
-//    func insert(recipe: Recipe) -> Single<Void> {}
-//    func delete(recipeId: String) -> Single<Void> {}
-//}
+class FavoriteRepositoryImpl: FavoriteRepository {
+    
+    let recipeListRepository: RecipeListRepository
+    
+    init(recipeListRepository: RecipeListRepository) {
+        self.recipeListRepository = recipeListRepository
+    }
+    
+    func getFavoriteList() -> Single<[Recipe]> {
+        return FavoriteDao.favoriteDao.findAll()
+            .map { results in
+                results.map { favoriteModel in
+                    favoriteModel.recipeId
+                }
+            }.flatMap { ids in
+                return self.recipeListRepository.getRecipeList(recipeIds: ids)
+        }
+    }
+    
+    func insert(recipe: Recipe) -> Single<Bool> {
+        return Single<Bool>.create { observer in
+            if FavoriteDao.favoriteDao.addOrUpdate(recipeId: recipe.recipeId) {
+                observer(.success(true))
+            } else {
+                observer(.error(NSError(domain: "Could not insert record!!", code: -1, userInfo: nil)))
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func delete(recipeId: String) -> Single<Bool> {
+        return Single<Bool>.create { observer in
+            let delModel = FavoriteRealmModel()
+            delModel.recipeId = recipeId
+            if FavoriteDao.favoriteDao.delete(key: recipeId) {
+                observer(.success(true))
+            } else {
+                observer(.error(NSError(domain: "Could not delete record!!", code: -1, userInfo: nil)))
+            }
+            return Disposables.create()
+        }
+    }
+}
