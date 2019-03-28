@@ -10,18 +10,30 @@ import Foundation
 import RxSwift
 class RecipeListRepositoryImpl: RecipeListRepository {
     struct RecipeListRequest: BaseRequestProtocol {
+        
         typealias ResponseType = [Recipe]
+        
+        var queries: [URLQueryItem]
+        
+        init(queries: [URLQueryItem]) {
+            self.queries = queries
+        }
         var methodAndPayload: HTTPMethodAndPayload {
             return HTTPMethodAndPayload.get
         }
         var path: String {
             return "recipe"
         }
-        var queries: [URLQueryItem] {
-            return []
-        }
     }
+    
     func getRecipeList() -> Single<[Recipe]> {
-        return WebAPIManager.observe(RecipeListRequest())
+        return WebAPIManager.observe(RecipeListRequest.init(queries: []))
+    }
+    
+    func getRecipeList(recipeIds: [String]) -> Single<[Recipe]> {
+        let queries = recipeIds.map { id in
+            URLQueryItem(name: "recipe_id", value: id)
+        }
+        return WebAPIManager.observe(RecipeListRequest.init(queries: queries))
     }
 }

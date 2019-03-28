@@ -8,20 +8,18 @@
 
 import Foundation
 class FavoriteDao: BaseDao<FavoriteRealmModel> {
-
+    
     public static var favoriteDao: FavoriteDao = {
         return FavoriteDao()
     }()
-
-    func addOrUpdate(recipeId: String?) -> Bool {
+    
+    func addOrUpdate(recipeId: String) -> Bool {
         let favoriteModel: FavoriteRealmModel = FavoriteRealmModel()
         let updateFunc = { (favoriteModel: FavoriteRealmModel) -> FavoriteRealmModel in
-            if let hoge = recipeId {
-                favoriteModel.recipeId = hoge
-            }
+            favoriteModel.recipeId = recipeId
             return favoriteModel
         }
         return self.addOrUpdate(data: favoriteModel, updateFunc: updateFunc)
     }
-
+    
 }
