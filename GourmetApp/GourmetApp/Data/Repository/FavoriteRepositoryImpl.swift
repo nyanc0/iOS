@@ -38,11 +38,9 @@ class FavoriteRepositoryImpl: FavoriteRepository {
         }
     }
 
-    func delete(recipeId: String) -> Single<Bool> {
+    func delete(recipe: Recipe) -> Single<Bool> {
         return Single<Bool>.create { observer in
-            let delModel = FavoriteRealmModel()
-            delModel.recipeId = recipeId
-            if FavoriteDao.favoriteDao.delete(key: recipeId) {
+            if FavoriteDao.favoriteDao.delete(key: recipe.recipeId) {
                 observer(.success(true))
             } else {
                 observer(.error(NSError(domain: "Could not delete record!!", code: -1, userInfo: nil)))

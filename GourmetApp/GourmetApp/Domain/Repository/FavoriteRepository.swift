@@ -11,5 +11,5 @@ import RxSwift
 protocol FavoriteRepository {
     func getFavoriteList() -> Single<[Recipe]>
     func insert(recipe: Recipe) -> Single<Bool>
-    func delete(recipeId: String) -> Single<Bool>
+    func delete(recipe: Recipe) -> Single<Bool>
 }
