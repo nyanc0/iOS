@@ -147,6 +147,29 @@
 			path = DB;
 			sourceTree = "<group>";
 		};
+		3874EC24224DDC30009FB846 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				3874EC26224DDD80009FB846 /* View */,
+				3874EC25224DDD68009FB846 /* ViewModel */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3874EC25224DDD68009FB846 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3874EC26224DDD80009FB846 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		38C6333E2248BB3D004EBDC7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,10 +223,11 @@
 		DA3C5EBD22413C2B00625893 /* GourmetApp */ = {
 			isa = PBXGroup;
 			children = (
+				DA3C5EC022413C2B00625893 /* ViewController.swift */,
+				3874EC24224DDC30009FB846 /* Presentation */,
 				DA3C5EFF2243C15B00625893 /* Data */,
 				DA3C5EEF22413EA800625893 /* Domain */,
 				DA3C5EBE22413C2B00625893 /* AppDelegate.swift */,
-				DA3C5EC022413C2B00625893 /* ViewController.swift */,
 				DA3C5EC222413C2B00625893 /* Main.storyboard */,
 				DA3C5EC822413C2E00625893 /* Assets.xcassets */,
 				DA3C5ECA22413C2E00625893 /* LaunchScreen.storyboard */,
