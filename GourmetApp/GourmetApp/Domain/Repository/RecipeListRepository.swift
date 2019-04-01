@@ -11,4 +11,5 @@ import RxSwift
 protocol RecipeListRepository {
     func getRecipeList() -> Single<[Recipe]>
     func getRecipeList(recipeIds: [String]) -> Single<[Recipe]>
+    func getRecipeList(reccomendFlg: String) -> Single<[Recipe]>
 }

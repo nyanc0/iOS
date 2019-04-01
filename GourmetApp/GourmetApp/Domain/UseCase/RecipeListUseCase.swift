@@ -19,4 +19,8 @@ class RecipeListUseCase {
     func loadRecipeList() -> Single<[Recipe]> {
         return recipeListRepository.getRecipeList()
     }
+    
+    func loadReccomendRecipe() -> Single<[Recipe]> {
+        return recipeListRepository.getRecipeList(reccomendFlg: "1")
+    }
 }

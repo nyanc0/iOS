@@ -10,11 +10,11 @@ import Foundation
 import RxSwift
 class RecipeListRepositoryImpl: RecipeListRepository {
     struct RecipeListRequest: BaseRequestProtocol {
-
+        
         typealias ResponseType = [Recipe]
-
+        
         var queries: [URLQueryItem]
-
+        
         init(queries: [URLQueryItem]) {
             self.queries = queries
         }
@@ -25,11 +25,16 @@ class RecipeListRepositoryImpl: RecipeListRepository {
             return "recipe"
         }
     }
-
+    
+    /// 全件取得
+    /// - returns: Single<[Recipe]>
     func getRecipeList() -> Single<[Recipe]> {
         return WebAPIManager.observe(RecipeListRequest.init(queries: []))
     }
-
+    
+    /// ID指定
+    /// - parameter recipeIds: 検索するレシピIDの配列
+    /// - returns: Single<[Recipe]>
     func getRecipeList(recipeIds: [String]) -> Single<[Recipe]> {
         // idが指定されていないときは空を返す.
         if recipeIds.isEmpty {
@@ -42,5 +47,19 @@ class RecipeListRepositoryImpl: RecipeListRepository {
             URLQueryItem(name: "recipe_id", value: id)
         }
         return WebAPIManager.observe(RecipeListRequest.init(queries: queries))
+    }
+    
+    /// オススメレシピ取得
+    /// - parameter reccomendFlg: オススメフラグ(0 or 1)
+    /// - returns: Single<[Recipe]>
+    func getRecipeList(reccomendFlg: String) -> Single<[Recipe]> {
+        let queries: URLQueryItem
+        if reccomendFlg.isEmpty {
+            // 指定がない場合はオススメレシピを取得する
+            queries = URLQueryItem(name: "recommended_flg", value: "1")
+        } else {
+            queries = URLQueryItem(name: "recommended_flg", value: reccomendFlg)
+        }
+        return WebAPIManager.observe(RecipeListRequest.init(queries: [queries]))
     }
 }
