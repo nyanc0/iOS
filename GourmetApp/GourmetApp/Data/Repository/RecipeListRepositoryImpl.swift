@@ -10,11 +10,11 @@ import Foundation
 import RxSwift
 class RecipeListRepositoryImpl: RecipeListRepository {
     struct RecipeListRequest: BaseRequestProtocol {
-        
+
         typealias ResponseType = [Recipe]
-        
+
         var queries: [URLQueryItem]
-        
+
         init(queries: [URLQueryItem]) {
             self.queries = queries
         }
@@ -25,13 +25,13 @@ class RecipeListRepositoryImpl: RecipeListRepository {
             return "recipe"
         }
     }
-    
+
     /// 全件取得
     /// - returns: Single<[Recipe]>
     func getRecipeList() -> Single<[Recipe]> {
         return WebAPIManager.observe(RecipeListRequest.init(queries: []))
     }
-    
+
     /// ID指定
     /// - parameter recipeIds: 検索するレシピIDの配列
     /// - returns: Single<[Recipe]>
@@ -48,7 +48,7 @@ class RecipeListRepositoryImpl: RecipeListRepository {
         }
         return WebAPIManager.observe(RecipeListRequest.init(queries: queries))
     }
-    
+
     /// オススメレシピ取得
     /// - parameter reccomendFlg: オススメフラグ(0 or 1)
     /// - returns: Single<[Recipe]>

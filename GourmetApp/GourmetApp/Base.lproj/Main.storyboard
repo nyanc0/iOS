@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,59 +26,59 @@
             </objects>
             <point key="canvasLocation" x="2538.4000000000001" y="101.19940029985008"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite-->
         <scene sceneID="U3p-Eb-GU1">
             <objects>
                 <viewController id="r8O-u2-em1" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DmT-AL-wsV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycv-mc-2r4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Favorite" id="VfO-1D-sgC"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ycv-mc-2r4" firstAttribute="leading" secondItem="DmT-AL-wsV" secondAttribute="leading" id="Fe1-E7-sDS"/>
-                            <constraint firstItem="ycv-mc-2r4" firstAttribute="trailing" secondItem="DmT-AL-wsV" secondAttribute="trailing" id="JfB-Mx-DGQ"/>
-                            <constraint firstItem="ycv-mc-2r4" firstAttribute="top" secondItem="ymX-yO-EvT" secondAttribute="top" id="n1q-vz-lcC"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ymX-yO-EvT"/>
                     </view>
-                    <navigationItem key="navigationItem" id="SnQ-hB-PfT"/>
+                    <navigationItem key="navigationItem" title="Favorite" id="SnQ-hB-PfT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20Y-ln-kA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="815.20000000000005" y="536.58170914542734"/>
         </scene>
-        <!--View Controller-->
+        <!--Reccomend-->
         <scene sceneID="VkB-EU-wax">
             <objects>
-                <viewController id="PgH-LM-Chp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReccomendRecipeListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PgH-LM-Chp" customClass="ReccomendRecipeListViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pN8-pc-X9u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eph-Va-yRs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Reccomend" id="371-Rc-dck"/>
-                                </items>
-                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-08-IWg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="QGu-00-HAr">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QGu-00-HAr" id="4Yp-U7-Jc2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="PgH-LM-Chp" id="FvM-rI-XER"/>
+                                    <outlet property="delegate" destination="PgH-LM-Chp" id="O90-3W-jRH"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Eph-Va-yRs" firstAttribute="top" secondItem="FOa-KT-ElB" secondAttribute="top" id="GHz-XM-Ul6"/>
-                            <constraint firstItem="Eph-Va-yRs" firstAttribute="trailing" secondItem="pN8-pc-X9u" secondAttribute="trailing" id="GNx-Cd-acO"/>
-                            <constraint firstItem="Eph-Va-yRs" firstAttribute="leading" secondItem="pN8-pc-X9u" secondAttribute="leading" id="xif-VH-stq"/>
+                            <constraint firstItem="Vku-08-IWg" firstAttribute="leading" secondItem="pN8-pc-X9u" secondAttribute="leading" id="BD7-IL-Rxb"/>
+                            <constraint firstItem="Vku-08-IWg" firstAttribute="top" secondItem="FOa-KT-ElB" secondAttribute="top" id="Oye-32-Vw5"/>
+                            <constraint firstItem="Vku-08-IWg" firstAttribute="trailing" secondItem="pN8-pc-X9u" secondAttribute="trailing" id="Po7-lZ-fsj"/>
+                            <constraint firstItem="Vku-08-IWg" firstAttribute="bottom" secondItem="pN8-pc-X9u" secondAttribute="bottom" id="Zdl-PQ-NHk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FOa-KT-ElB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Nzg-BN-tzs"/>
+                    <navigationItem key="navigationItem" title="Reccomend" id="Nzg-BN-tzs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPa-jR-Qw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,6 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="ColorPrimary"/>
                     </tabBar>
                     <connections>
                         <segue destination="gd2-sz-AbU" kind="relationship" relationship="viewControllers" id="UAT-F0-PQq"/>
@@ -104,12 +106,16 @@
         <!--ホーム-->
         <scene sceneID="SO9-3z-d01">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gd2-sz-AbU" customClass="RecipeNavigationControllerViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gd2-sz-AbU" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="ホーム" image="ic_home" selectedImage="ic_home" id="XKc-3X-xRP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x8b-3X-fK7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="ColorPrimary"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -123,12 +129,16 @@
         <!--お気に入り-->
         <scene sceneID="gZQ-12-poz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mAu-Yh-rPR" customClass="RecipeNavigationControllerViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mAu-Yh-rPR" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="お気に入り" image="ic_star_border_orange" selectedImage="ic_star_border_orange" id="V9V-gS-3iv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dc5-Ng-iAE">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="ColorPrimary"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -141,8 +151,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_home" width="72" height="72"/>
-        <image name="ic_star_border_orange" width="72" height="72"/>
+        <image name="ic_home" width="36" height="36"/>
+        <image name="ic_star_border_orange" width="36" height="36"/>
+        <namedColor name="ColorPrimary">
+            <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorPrimary">
+            <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <color key="tintColor" name="ColorPrimary"/>
 </document>

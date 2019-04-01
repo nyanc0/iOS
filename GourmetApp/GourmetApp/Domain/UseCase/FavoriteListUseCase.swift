@@ -9,13 +9,13 @@
 import Foundation
 import RxSwift
 class FavoriteListUseCase {
-    
+
     private let favoriteRepository: FavoriteRepository
-    
+
     init(favoriteRepository: FavoriteRepository) {
         self.favoriteRepository = favoriteRepository
     }
-    
+
     func loadFavoriteList() -> Single<[Recipe]> {
         return favoriteRepository.getFavoriteList()
     }
