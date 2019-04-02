@@ -53,16 +53,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-08-IWg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" id="QGu-00-HAr">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QGu-00-HAr" id="4Yp-U7-Jc2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="PgH-LM-Chp" id="FvM-rI-XER"/>
                                     <outlet property="delegate" destination="PgH-LM-Chp" id="O90-3W-jRH"/>
@@ -79,6 +69,9 @@
                         <viewLayoutGuide key="safeArea" id="FOa-KT-ElB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reccomend" id="Nzg-BN-tzs"/>
+                    <connections>
+                        <outlet property="reccomendListView" destination="Vku-08-IWg" id="mca-9A-pR3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPa-jR-Qw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -151,8 +144,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_home" width="36" height="36"/>
-        <image name="ic_star_border_orange" width="36" height="36"/>
+        <image name="ic_home" width="72" height="72"/>
+        <image name="ic_star_border_orange" width="72" height="72"/>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

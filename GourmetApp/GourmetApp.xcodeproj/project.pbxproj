@@ -37,8 +37,8 @@
 		DA5AE481224BB794001E0350 /* FavoriteDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */; };
 		DA5AE483224D0E2F001E0350 /* FavoriteRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE482224D0E2F001E0350 /* FavoriteRepositoryTest.swift */; };
 		DA74AA372252588F005874E1 /* ReccomendRecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA362252588F005874E1 /* ReccomendRecipeListViewController.swift */; };
-		DA74AA3A22525C57005874E1 /* RecipeCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3822525C57005874E1 /* RecipeCellTableViewCell.swift */; };
-		DA74AA3B22525C57005874E1 /* RecipeCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA3922525C57005874E1 /* RecipeCellTableViewCell.xib */; };
+		DA74AA3A22525C57005874E1 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */; };
+		DA74AA3B22525C57005874E1 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */; };
 		DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */; };
 		DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */; };
 		DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876B02247CB4000A296E1 /* WebAPIManager.swift */; };
@@ -57,7 +57,6 @@
 /* Begin PBXFileReference section */
 		0D166013F9CFA9AD2723F274 /* Pods-GourmetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.debug.xcconfig"; path = "Target Support Files/Pods-GourmetApp/Pods-GourmetApp.debug.xcconfig"; sourceTree = "<group>"; };
 		1484D6300484E01FDDDD8F9B /* Pods-GourmetApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetApp/Pods-GourmetApp.debug.xcconfig"; sourceTree = "<group>"; };
-		17C0E2202248EDB837D1CBF2 /* Pods-GourmetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2B2141FF67658469CA91401C /* Pods-GourmetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3811BA8222519B8200379E5E /* RecipeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabBarController.swift; sourceTree = "<group>"; };
@@ -72,11 +71,9 @@
 		693E73CC845B153384924A2C /* Pods_GourmetAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7511F1A55823ABD9B45AB6D3 /* Pods-GourmetAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		98623BB4F4FA3220586FF008 /* Pods_GourmetAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C2D980469AEC94A852E95CE /* Pods-GourmetAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9E5EAEB612395286AD924B87 /* Pods-GourmetAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.release.xcconfig"; path = "Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		BFC4F384EEE45B5AC12C65C9 /* Pods-GourmetAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C4DAC3D0BAF27BB7F30D1CE2 /* Pods-GourmetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.release.xcconfig"; path = "Target Support Files/Pods-GourmetApp/Pods-GourmetApp.release.xcconfig"; sourceTree = "<group>"; };
-		D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA37AC7522465D55007F0721 /* APIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConst.swift; sourceTree = "<group>"; };
 		DA3C5EBB22413C2B00625893 /* GourmetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3C5EBE22413C2B00625893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,12 +97,11 @@
 		DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDaoTest.swift; sourceTree = "<group>"; };
 		DA5AE482224D0E2F001E0350 /* FavoriteRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryTest.swift; sourceTree = "<group>"; };
 		DA74AA362252588F005874E1 /* ReccomendRecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendRecipeListViewController.swift; sourceTree = "<group>"; };
-		DA74AA3822525C57005874E1 /* RecipeCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellTableViewCell.swift; sourceTree = "<group>"; };
-		DA74AA3922525C57005874E1 /* RecipeCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCellTableViewCell.xib; sourceTree = "<group>"; };
+		DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepository.swift; sourceTree = "<group>"; };
 		DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepositoryImpl.swift; sourceTree = "<group>"; };
 		DAC876B02247CB4000A296E1 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
-		DC00F4CE58DFAEDB773E6D59 /* Pods-GourmetAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GourmetAppUITests/Pods-GourmetAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DD63C1B672C8BADF733ADAEC /* Pods-GourmetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-GourmetApp/Pods-GourmetApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,8 +184,8 @@
 				3811BA8222519B8200379E5E /* RecipeTabBarController.swift */,
 				38294FEE2251D11900B811EE /* RecipeNavigationController.swift */,
 				DA74AA362252588F005874E1 /* ReccomendRecipeListViewController.swift */,
-				DA74AA3822525C57005874E1 /* RecipeCellTableViewCell.swift */,
-				DA74AA3922525C57005874E1 /* RecipeCellTableViewCell.xib */,
+				DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */,
+				DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -211,14 +207,10 @@
 				C4DAC3D0BAF27BB7F30D1CE2 /* Pods-GourmetApp.release.xcconfig */,
 				BFC4F384EEE45B5AC12C65C9 /* Pods-GourmetAppTests.debug.xcconfig */,
 				9E5EAEB612395286AD924B87 /* Pods-GourmetAppTests.release.xcconfig */,
-				D56257E4A15D1FC762F22E8D /* Pods-GourmetAppUITests.debug.xcconfig */,
-				DC00F4CE58DFAEDB773E6D59 /* Pods-GourmetAppUITests.release.xcconfig */,
 				1484D6300484E01FDDDD8F9B /* Pods-GourmetApp.debug.xcconfig */,
 				DD63C1B672C8BADF733ADAEC /* Pods-GourmetApp.release.xcconfig */,
 				7511F1A55823ABD9B45AB6D3 /* Pods-GourmetAppTests.debug.xcconfig */,
 				2B2141FF67658469CA91401C /* Pods-GourmetAppTests.release.xcconfig */,
-				9C2D980469AEC94A852E95CE /* Pods-GourmetAppUITests.debug.xcconfig */,
-				17C0E2202248EDB837D1CBF2 /* Pods-GourmetAppUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -410,7 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */,
-				DA74AA3B22525C57005874E1 /* RecipeCellTableViewCell.xib in Resources */,
+				DA74AA3B22525C57005874E1 /* RecipeTableViewCell.xib in Resources */,
 				38DF905D2244CA0E0008F432 /* Default-568h@2x.png in Resources */,
 				DA3C5EC922413C2E00625893 /* Assets.xcassets in Resources */,
 				DA3C5EC422413C2B00625893 /* Main.storyboard in Resources */,
@@ -439,9 +431,9 @@
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -450,9 +442,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -529,7 +521,6 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GourmetAppTests/Pods-GourmetAppTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
@@ -540,7 +531,6 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
@@ -575,7 +565,7 @@
 				3874EC23224DDAF1009FB846 /* DetailUseCase.swift in Sources */,
 				DA5AE47B224A752D001E0350 /* FavoriteRealmModel.swift in Sources */,
 				DA74AA372252588F005874E1 /* ReccomendRecipeListViewController.swift in Sources */,
-				DA74AA3A22525C57005874E1 /* RecipeCellTableViewCell.swift in Sources */,
+				DA74AA3A22525C57005874E1 /* RecipeTableViewCell.swift in Sources */,
 				DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */,
 				3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */,
 				DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */,
