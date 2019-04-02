@@ -13,31 +13,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="271" id="KGk-i7-Jjw" customClass="RecipeTableViewCell" customModule="GourmetApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="271"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="319" id="KGk-i7-Jjw" customClass="RecipeTableViewCell" customModule="GourmetApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="319"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="270.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="318.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mH4-le-Qnz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="270.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="318.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JUk-OD-RWn" userLabel="CellMainImage">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="za4-yZ-Tg9"/>
+                                    <constraint firstAttribute="height" constant="250" id="za4-yZ-Tg9"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="おすすめ" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y79-0s-qNU" userLabel="ReccomendLabel">
-                                <rect key="frame" x="161" y="210" width="53.5" height="30"/>
+                                <rect key="frame" x="161" y="260" width="53.5" height="28"/>
                                 <color key="backgroundColor" name="ColorAccent"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbL-DR-GnZ" userLabel="IntroductionLabel">
-                                <rect key="frame" x="0.0" y="250" width="375" height="20.5"/>
+                                <rect key="frame" x="0.0" y="298" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                 <outlet property="mainImageView" destination="JUk-OD-RWn" id="8x8-Zr-hqf"/>
                 <outlet property="reccomendLabel" destination="Y79-0s-qNU" id="1Nz-fY-2Vs"/>
             </connections>
-            <point key="canvasLocation" x="-3439.1999999999998" y="-125.4872563718141"/>
+            <point key="canvasLocation" x="-3439.1999999999998" y="-103.89805097451276"/>
         </tableViewCell>
     </objects>
     <resources>

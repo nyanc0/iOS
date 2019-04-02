@@ -39,6 +39,8 @@
 		DA74AA372252588F005874E1 /* ReccomendRecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA362252588F005874E1 /* ReccomendRecipeListViewController.swift */; };
 		DA74AA3A22525C57005874E1 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */; };
 		DA74AA3B22525C57005874E1 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */; };
+		DA74AA3D22539F29005874E1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3C22539F29005874E1 /* BaseViewModel.swift */; };
+		DA74AA3F2253A1D8005874E1 /* ReccomentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3E2253A1D8005874E1 /* ReccomentListViewModel.swift */; };
 		DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */; };
 		DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */; };
 		DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876B02247CB4000A296E1 /* WebAPIManager.swift */; };
@@ -99,6 +101,8 @@
 		DA74AA362252588F005874E1 /* ReccomendRecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendRecipeListViewController.swift; sourceTree = "<group>"; };
 		DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
+		DA74AA3C22539F29005874E1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		DA74AA3E2253A1D8005874E1 /* ReccomentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomentListViewModel.swift; sourceTree = "<group>"; };
 		DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepository.swift; sourceTree = "<group>"; };
 		DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepositoryImpl.swift; sourceTree = "<group>"; };
 		DAC876B02247CB4000A296E1 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 		3874EC25224DDD68009FB846 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DA74AA3C22539F29005874E1 /* BaseViewModel.swift */,
+				DA74AA3E2253A1D8005874E1 /* ReccomentListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -556,6 +562,7 @@
 				DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */,
 				38C633402248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift in Sources */,
 				DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */,
+				DA74AA3D22539F29005874E1 /* BaseViewModel.swift in Sources */,
 				DA3C5EFB2243B1EF00625893 /* RecipeDetailRepository.swift in Sources */,
 				DA3C5EF62241411D00625893 /* Recipe.swift in Sources */,
 				DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */,
@@ -568,6 +575,7 @@
 				DA74AA3A22525C57005874E1 /* RecipeTableViewCell.swift in Sources */,
 				DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */,
 				3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */,
+				DA74AA3F2253A1D8005874E1 /* ReccomentListViewModel.swift in Sources */,
 				DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */,
 				3874EC1F224C4DEC009FB846 /* FavoriteRepositoryImpl.swift in Sources */,
 				DA5AE47F224A7B7D001E0350 /* FavoriteDao.swift in Sources */,

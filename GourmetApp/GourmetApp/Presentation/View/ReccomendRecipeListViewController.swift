@@ -10,9 +10,6 @@ import UIKit
 
 class ReccomendRecipeListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var reccomendListView: UITableView!
-    
-    let TODO = ["牛乳を買う", "掃除をする", "アプリ開発の勉強をする"]
-
     /// Itemの数を返す
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
@@ -23,7 +20,6 @@ class ReccomendRecipeListViewController: UIViewController, UITableViewDelegate, 
         // セルを取得する
         if let cell: RecipeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as? RecipeTableViewCell {
             // セルに表示する値を設定する
-            cell.setData(row: indexPath)
             return cell
         }
         return UITableViewCell()
