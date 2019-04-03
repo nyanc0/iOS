@@ -15,56 +15,54 @@ class ReccomendListViewModel: BaseViewModel {
         // タップイベント
         let tapCell: Signal<Recipe>
     }
-    
-    struct Output {
-        // 一覧に表示するレシピ
-        let recipeList: Driver<[Recipe]>
-        // 選択されたレシピ
-        let recipeSelected: Signal<Recipe>
-    }
-    
-    struct State {
-        
-    }
-    
+    // github.com/fumiyasac/RxSwiftUIExample/blob/master/RxSwiftUIExample/ViewController/Search/SearchViewController.swift
     private let recipeListUseCase: RecipeListUseCase
     private let disposeBag: DisposeBag = DisposeBag()
-    private var recipeSelectedRelay: PublishRelay<Recipe>
-    private var recipeSelected: Signal<Recipe>
+    
+    private let recipeSelectedRelay: PublishRelay<Recipe>
+    private let recipeSelected: Signal<Recipe>
+    
+    private let recipeListRelay: BehaviorRelay<[Recipe]>
+    private let recipeList: Driver<[Recipe]>
+    
+    private let isLoadingRelay: BehaviorRelay<Bool>
+    private let isLoading:Driver<Bool>
     
     init(with recipeListUseCase: RecipeListUseCase) {
         self.recipeListUseCase = recipeListUseCase
+        
+        // タップイベント
+        self.recipeSelectedRelay = PublishRelay<Recipe>()
+        self.recipeSelected = recipeSelectedRelay.asSignal()
+        
+        // レシピ一覧
+        self.recipeListRelay = BehaviorRelay<[Recipe]>(value: [])
+        self.recipeList = recipeListRelay.asDriver(onErrorJustReturn: [])
+        
+        // ローディング状態
+        self.isLoadingRelay = BehaviorRelay<Bool>(value: true)
+        self.isLoading = isLoadingRelay.asDriver()
     }
     
-    func transform(input: ReccomendListViewModel.Input) -> ReccomendListViewModel.Output {
-        
-        // タップイベントの通知
-        let recipeSelectedRelay = PublishRelay<Recipe>()
-        let recipeSelected = recipeSelectedRelay.asSignal()
-        self.recipeSelectedRelay = recipeSelectedRelay
-        self.recipeSelected = recipeSelected
-        
-        // 取得したレシピ一覧
-        let recipeListRelay = BehaviorRelay<[Recipe]>(value: [])
-        let recipeList = recipeListRelay.asDriver(onErrorJustReturn: [])
-        
+    func loadRecipe(input: ReccomendListViewModel.Input){
         // サーバーからの取得
         recipeListUseCase.loadReccomendRecipe()
-        .observeOn(MainScheduler.instance)
-        .subscribe { result in
-            switch result {
-            case let .success(recipes):
-                recipeListRelay.accept(recipes)
-                break
-            case .error(error: _): break
-                break
+            .observeOn(MainScheduler.instance)
+            .subscribe { result in
+                switch result {
+                case let .success(recipes):
+                    self.isLoadingRelay.accept(false)
+                    self.recipeListRelay.accept(recipes)
+                    break
+                case .error(error: _):
+                    self.isLoadingRelay.accept(false)
+                    self.recipeListRelay.accept([])
+                    break
+                }
             }
-        }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
         // TODO: セルタップでの遷移
-//        input.tapCell
-        
-        return Output(recipeList: recipeList, recipeSelected: recipeSelected)
+        //        input.tapCell
     }
 }
