@@ -17,8 +17,8 @@ class ReccomendRecipeTableViewController: UIViewController, UITableViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpTableView()
-        bindViewModel()
+//        setUpTableView()
+//        bindViewModel()
         
         //        reccomendListView.register(UINib(nibName: "RecipeTableViewCell", bundle: nil), forCellReuseIdentifier: "RecipeTableViewCell")
     }
@@ -42,25 +42,25 @@ class ReccomendRecipeTableViewController: UIViewController, UITableViewDelegate 
         super.didReceiveMemoryWarning()
     }
     
-    private func setUpTableView() {
-        reccomendTableView.rowHeight = 200.0
-        reccomendTableView.register(RecipeTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(RecipeTableViewCell.self))
-        // Barタップによるスクロールを防止
-        reccomendTableView.scrollsToTop = false
-    }
-    
-    private func bindViewModel() {
-        let viewModel = ReccomendListViewModel(recipeListUseCase: RecipeListUseCase(recipeListRepository: RecipeListRepositoryImpl()))
-        
-        reccomendTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        
-        // 一覧をTableViewにセット
-        viewModel.recipeList.asObservable().bind(to: reccomendTableView.rx.items){ (tableView, row, model) in
-            let cell: RecipeTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RecipeTableViewCell.self)) as! RecipeTableViewCell
-            cell.setData(recipe: model)
-            return cell
-        }.disposed(by: disposeBag)
-        
-        viewModel.loadRecipe()
-    }
+//    private func setUpTableView() {
+//        reccomendTableView.rowHeight = 200.0
+//        reccomendTableView.register(RecipeTableViewCell.self, forCellReuseIdentifier: NSStringFromClass(RecipeTableViewCell.self))
+//        // Barタップによるスクロールを防止
+//        reccomendTableView.scrollsToTop = false
+//    }
+//
+//    private func bindViewModel() {
+//        let viewModel = ReccomendListViewModel(recipeListUseCase: RecipeListUseCase(recipeListRepository: RecipeListRepositoryImpl()))
+//
+//        reccomendTableView.rx.setDelegate(self).disposed(by: disposeBag)
+//
+//        // 一覧をTableViewにセット
+//        viewModel.recipeList.asObservable().bind(to: reccomendTableView.rx.items){ (tableView, row, model) in
+//            let cell: RecipeTableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RecipeTableViewCell.self)) as! RecipeTableViewCell
+//            cell.setData(recipe: model)
+//            return cell
+//        }.disposed(by: disposeBag)
+//
+//        viewModel.loadRecipe()
+//    }
 }
