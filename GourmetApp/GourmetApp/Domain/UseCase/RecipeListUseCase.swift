@@ -12,7 +12,7 @@ class RecipeListUseCase {
 
     private let recipeListRepository: RecipeListRepository
 
-    init(with recipeListRepository: RecipeListRepository) {
+    init(recipeListRepository: RecipeListRepository) {
         self.recipeListRepository = recipeListRepository
     }
 

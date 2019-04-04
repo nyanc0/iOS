@@ -20,15 +20,15 @@ class ReccomendListViewModel: BaseViewModel {
     private let disposeBag: DisposeBag = DisposeBag()
     
     private let recipeSelectedRelay: PublishRelay<Recipe>
-    private let recipeSelected: Signal<Recipe>
+    let recipeSelected: Signal<Recipe>
     
     private let recipeListRelay: BehaviorRelay<[Recipe]>
-    private let recipeList: Driver<[Recipe]>
+    let recipeList: Driver<[Recipe]>
     
     private let isLoadingRelay: BehaviorRelay<Bool>
-    private let isLoading:Driver<Bool>
+    let isLoading:Driver<Bool>
     
-    init(with recipeListUseCase: RecipeListUseCase) {
+    init(recipeListUseCase: RecipeListUseCase) {
         self.recipeListUseCase = recipeListUseCase
         
         // タップイベント
@@ -44,7 +44,7 @@ class ReccomendListViewModel: BaseViewModel {
         self.isLoading = isLoadingRelay.asDriver()
     }
     
-    func loadRecipe(input: ReccomendListViewModel.Input){
+    func loadRecipe(){
         // サーバーからの取得
         recipeListUseCase.loadReccomendRecipe()
             .observeOn(MainScheduler.instance)

@@ -45,7 +45,7 @@
         <!--Reccomend-->
         <scene sceneID="VkB-EU-wax">
             <objects>
-                <viewController storyboardIdentifier="ReccomendRecipeListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PgH-LM-Chp" customClass="ReccomendRecipeListViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReccomendRecipeTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PgH-LM-Chp" customClass="ReccomendRecipeTableViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pN8-pc-X9u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reccomend" id="Nzg-BN-tzs"/>
                     <connections>
-                        <outlet property="reccomendListView" destination="Vku-08-IWg" id="mca-9A-pR3"/>
+                        <outlet property="reccomendTableView" destination="Vku-08-IWg" id="wHM-XM-9Dp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPa-jR-Qw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
