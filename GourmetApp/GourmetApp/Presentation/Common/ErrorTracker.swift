@@ -20,7 +20,7 @@ final class ErrorTracker: SharedSequenceConvertibleType {
     }
     
     func asSharedSequence() -> SharedSequence<SharingStrategy, Error> {
-        return _subject.asObservable().asDriver(onErrorJustReturn: NSError(domain: "Error has occured", code: -1, userInfo: [:]))
+        return _subject.asObservable().asDriverOnErrorJustComplete()
     }
     
     func asObservable() -> Observable<Error> {
@@ -33,5 +33,11 @@ final class ErrorTracker: SharedSequenceConvertibleType {
     
     deinit {
         _subject.onCompleted()
+    }
+}
+
+extension ObservableConvertibleType {
+    func trackError(_ errorTracker: ErrorTracker) -> Observable<E> {
+        return errorTracker.trackError(from: self)
     }
 }

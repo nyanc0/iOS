@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 /// 実行中のものを管理
-class ActivityIndicator: SharedSequenceConvertibleType {
+public class ActivityIndicator: SharedSequenceConvertibleType {
     
     public typealias E = Bool
     public typealias SharingStrategy = DriverSharingStrategy
@@ -21,7 +21,7 @@ class ActivityIndicator: SharedSequenceConvertibleType {
     private let _loading: SharedSequence<SharingStrategy, Bool>
     
     init() {
-        // 前回の状態と比較して変わっていればtrueを返してLoading状態と判断する
+        // 処理中のものがあれば、Loadingが行われているとする.
         _loading = _variable.asDriver()
             .map{ $0 > 0}
             .distinctUntilChanged()
@@ -36,24 +36,21 @@ class ActivityIndicator: SharedSequenceConvertibleType {
         }
     }
     
-    func asSharedSequence() -> SharedSequence<DriverSharingStrategy, Bool> {
+    public func asSharedSequence() -> SharedSequence<DriverSharingStrategy, Bool> {
         return _loading
     }
     
     private func increment() {
         _lock.lock()
-        _ = _variable.value.advanced(by: 1)
+        _variable.accept(_variable.value + 1)
         _lock.unlock()
     }
     
     private func decrement() {
         _lock.lock()
-        let copy = _variable.value
-        _variable.accept(copy - 1)
+        _variable.accept(_variable.value - 1)
         _lock.unlock()
     }
-    
-    
 }
 
 private struct ActivityToken<E>: ObservableConvertibleType, Disposable {
@@ -72,5 +69,11 @@ private struct ActivityToken<E>: ObservableConvertibleType, Disposable {
     
     func dispose() {
         _dispose.dispose()
+    }
+}
+
+extension ObservableConvertibleType {
+    public func trackActivity(_ activityIndicator: ActivityIndicator) -> Observable<E> {
+        return activityIndicator.trackActivityOfObservable(self)
     }
 }

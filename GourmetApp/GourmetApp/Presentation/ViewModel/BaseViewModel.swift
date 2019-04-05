@@ -9,4 +9,8 @@
 import Foundation
 protocol  BaseViewModel {
     associatedtype Input
+    associatedtype Output
+    associatedtype State
+    
+    func transform(input: Input) -> Output
 }
