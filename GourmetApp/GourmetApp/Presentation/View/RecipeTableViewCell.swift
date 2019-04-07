@@ -10,9 +10,10 @@ import UIKit
 import SDWebImage
 class RecipeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var mainImageView: UIImageView!
-    @IBOutlet weak var reccomendLabel: UILabel!
+
+    @IBOutlet weak var cellMainImage: UIImageView!
     @IBOutlet weak var introductionLabel: UILabel!
+
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,6 @@ class RecipeTableViewCell: UITableViewCell {
 
     func setData(recipe: Recipe) {
         introductionLabel.text = recipe.introduction
-        mainImageView.sd_setImage(with: URL(string: recipe.mainUrl), placeholderImage: UIImage(named: "ic_no_image.png"))
+        cellMainImage.sd_setImage(with: URL(string: recipe.mainUrl), placeholderImage: UIImage(named: "ic_no_image.png"))
     }
 }

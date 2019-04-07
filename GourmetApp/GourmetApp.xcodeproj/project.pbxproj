@@ -45,6 +45,8 @@
 		DA74AA43225649BD005874E1 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA42225649BD005874E1 /* ActivityIndicator.swift */; };
 		DA74AA45225653A7005874E1 /* ArrayTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA44225653A7005874E1 /* ArrayTracker.swift */; };
 		DA74AA47225657CA005874E1 /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA46225657CA005874E1 /* ErrorTracker.swift */; };
+		DA74AA4A225A441F005874E1 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA48225A441F005874E1 /* RecipeCell.swift */; };
+		DA74AA4B225A441F005874E1 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA49225A441F005874E1 /* RecipeCell.xib */; };
 		DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */; };
 		DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */; };
 		DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876B02247CB4000A296E1 /* WebAPIManager.swift */; };
@@ -111,6 +113,8 @@
 		DA74AA42225649BD005874E1 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		DA74AA44225653A7005874E1 /* ArrayTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayTracker.swift; sourceTree = "<group>"; };
 		DA74AA46225657CA005874E1 /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		DA74AA48225A441F005874E1 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		DA74AA49225A441F005874E1 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepository.swift; sourceTree = "<group>"; };
 		DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepositoryImpl.swift; sourceTree = "<group>"; };
 		DAC876B02247CB4000A296E1 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				DA74AA362252588F005874E1 /* ReccomendRecipeTableViewController.swift */,
 				DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */,
 				DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */,
+				DA74AA48225A441F005874E1 /* RecipeCell.swift */,
+				DA74AA49225A441F005874E1 /* RecipeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -420,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */,
+				DA74AA4B225A441F005874E1 /* RecipeCell.xib in Resources */,
 				DA74AA3B22525C57005874E1 /* RecipeTableViewCell.xib in Resources */,
 				38DF905D2244CA0E0008F432 /* Default-568h@2x.png in Resources */,
 				DA3C5EC922413C2E00625893 /* Assets.xcassets in Resources */,
@@ -446,10 +453,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GourmetApp/Pods-GourmetApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
@@ -457,10 +466,12 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
@@ -570,6 +581,7 @@
 				DA3C5EF42241406100625893 /* CookingMethod.swift in Sources */,
 				387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */,
 				DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */,
+				DA74AA4A225A441F005874E1 /* RecipeCell.swift in Sources */,
 				38294FEF2251D11900B811EE /* RecipeNavigationController.swift in Sources */,
 				DA74AA43225649BD005874E1 /* ActivityIndicator.swift in Sources */,
 				DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */,

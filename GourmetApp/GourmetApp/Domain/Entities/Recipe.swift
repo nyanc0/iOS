@@ -6,6 +6,8 @@
 //  Copyright © 2019年 yurina fukuoka. All rights reserved.
 
 import Foundation
+import RxDataSources
+
 struct Recipe: Codable {
     let genreCd: String
     let genreName: String
@@ -28,4 +30,9 @@ struct Recipe: Codable {
         case cookingIngredients = "cooking_ingredients"
         case cookingMethod = "cooking_method"
     }
+}
+
+extension Recipe: IdentifiableType {
+    typealias Identity = String
+    var identity: Identity {return recipeId}
 }

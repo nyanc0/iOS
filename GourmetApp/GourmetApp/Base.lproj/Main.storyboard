@@ -53,10 +53,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-08-IWg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="PgH-LM-Chp" id="FvM-rI-XER"/>
-                                    <outlet property="delegate" destination="PgH-LM-Chp" id="O90-3W-jRH"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,6 +67,7 @@
                     <navigationItem key="navigationItem" title="Reccomend" id="Nzg-BN-tzs"/>
                     <connections>
                         <outlet property="reccomendTableView" destination="Vku-08-IWg" id="wHM-XM-9Dp"/>
+                        <outlet property="tableView" destination="Vku-08-IWg" id="U2A-93-7Ok"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MPa-jR-Qw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -144,8 +141,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_home" width="72" height="72"/>
-        <image name="ic_star_border_orange" width="72" height="72"/>
+        <image name="ic_home" width="36" height="36"/>
+        <image name="ic_star_border_orange" width="36" height="36"/>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

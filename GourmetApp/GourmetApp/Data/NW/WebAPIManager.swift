@@ -10,16 +10,6 @@ import Foundation
 import RxSwift
 
 struct WebAPIManager {
-
-    public static func call<T, V>(_ request: T, _ disposeBag: DisposeBag, onSuccess: @escaping (V) -> Void, onError: @escaping (Error) -> Void)
-        where T: BaseRequestProtocol, V: Codable, T.ResponseType == V {
-            _ = observe(request)
-                .observeOn(MainScheduler.instance)
-                .subscribe(onSuccess: { onSuccess($0) },
-                           onError: { onError($0) })
-                .disposed(by: disposeBag)
-    }
-
     /// API通信を実行する
     /// - parameter request: extends BaseRequestProtocol
     /// - returns: Single<V>

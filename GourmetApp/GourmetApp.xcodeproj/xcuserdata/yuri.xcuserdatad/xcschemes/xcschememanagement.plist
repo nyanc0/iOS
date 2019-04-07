@@ -7,7 +7,20 @@
 		<key>GourmetApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>16</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DA3C5EBA22413C2B00625893</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DA3C5ED122413C2E00625893</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
