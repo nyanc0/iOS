@@ -33,7 +33,19 @@
                     <view key="view" contentMode="scaleToFill" id="DmT-AL-wsV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="piN-B9-Aoz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="piN-B9-Aoz" firstAttribute="leading" secondItem="DmT-AL-wsV" secondAttribute="leading" id="5qY-ON-SIu"/>
+                            <constraint firstItem="piN-B9-Aoz" firstAttribute="top" secondItem="ymX-yO-EvT" secondAttribute="top" id="Ink-Hv-Saz"/>
+                            <constraint firstItem="piN-B9-Aoz" firstAttribute="trailing" secondItem="DmT-AL-wsV" secondAttribute="trailing" id="cSh-Ax-9x9"/>
+                            <constraint firstItem="piN-B9-Aoz" firstAttribute="bottom" secondItem="ymX-yO-EvT" secondAttribute="bottom" id="m1I-Z7-yDo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ymX-yO-EvT"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorite" id="SnQ-hB-PfT"/>
