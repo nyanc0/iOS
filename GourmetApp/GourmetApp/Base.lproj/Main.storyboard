@@ -67,7 +67,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Reccomend" id="Nzg-BN-tzs"/>
                     <connections>
-                        <outlet property="reccomendTableView" destination="Vku-08-IWg" id="wHM-XM-9Dp"/>
                         <outlet property="tableView" destination="Vku-08-IWg" id="U2A-93-7Ok"/>
                     </connections>
                 </viewController>
@@ -142,8 +141,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_home" width="72" height="72"/>
-        <image name="ic_star_border_orange" width="72" height="72"/>
+        <image name="ic_home" width="36" height="36"/>
+        <image name="ic_star_border_orange" width="36" height="36"/>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

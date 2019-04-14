@@ -30,6 +30,10 @@ struct Recipe: Codable {
         case cookingIngredients = "cooking_ingredients"
         case cookingMethod = "cooking_method"
     }
+
+    func isReccomend() -> Bool {
+        return recommendedFlg == "1"
+    }
 }
 
 extension Recipe: IdentifiableType {

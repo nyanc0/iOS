@@ -9,40 +9,45 @@
 import UIKit
 import SDWebImage
 class RecipeCell: UITableViewCell {
-    
+
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var introduction: UILabel!
-    
-    
+    @IBOutlet weak var innerView: UIView!
+    @IBOutlet weak var reccomendLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = UITableViewCell.SelectionStyle.none
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+        if selected {
+            innerView.backgroundColor = UIColor.lightGray
+        } else {
+            innerView.backgroundColor = UIColor.white
+        }
     }
-    
+
     func setData(recipe: Recipe) {
         recipeImage.sd_setImage(with: URL(string: recipe.mainUrl), placeholderImage: UIImage(named: "ic_no_image.png"))
         introduction.text = recipe.introduction
+        if recipe.isReccomend() {
+            self.reccomendLabel.isHidden = false
+            self.layoutIfNeeded()
+        } else {
+            self.reccomendLabel.isHidden = true
+            self.layoutIfNeeded()
+        }
     }
-    
-}
 
-extension UITableViewCell {
-    func shadowAndBorderForCell() {
-        self.contentView.layer.cornerRadius = 5
-        self.contentView.layer.borderWidth = 0.5
-        self.contentView.layer.borderColor = UIColor.lightGray.cgColor
-        self.contentView.layer.masksToBounds = true
-        self.layer.shadowColor = UIColor.gray.cgColor
-        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        self.layer.shadowRadius = 2.0
-        self.layer.shadowOpacity = 1.0
-        self.layer.masksToBounds = false
-        self.layer.shadowPath = UIBezierPath(roundedRect:self.bounds, cornerRadius:self.contentView.layer.cornerRadius).cgPath
+    override func draw(_ rect: CGRect) {
+        innerView.layer.borderWidth = 0.5
+        innerView.layer.borderColor = UIColor.lightGray.cgColor
+        innerView.layer.shadowColor = UIColor.gray.cgColor
+        innerView.layer.shadowRadius = 2.0
+        innerView.layer.shadowOpacity = 1.0
+        innerView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        innerView.layer.shadowPath = UIBezierPath(rect: innerView.bounds).cgPath
     }
 }

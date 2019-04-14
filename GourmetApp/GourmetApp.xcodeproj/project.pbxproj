@@ -38,8 +38,6 @@
 		DA5AE481224BB794001E0350 /* FavoriteDaoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */; };
 		DA5AE483224D0E2F001E0350 /* FavoriteRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE482224D0E2F001E0350 /* FavoriteRepositoryTest.swift */; };
 		DA74AA372252588F005874E1 /* ReccomendRecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA362252588F005874E1 /* ReccomendRecipeTableViewController.swift */; };
-		DA74AA3A22525C57005874E1 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */; };
-		DA74AA3B22525C57005874E1 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */; };
 		DA74AA3D22539F29005874E1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3C22539F29005874E1 /* BaseViewModel.swift */; };
 		DA74AA3F2253A1D8005874E1 /* ReccomendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA3E2253A1D8005874E1 /* ReccomendListViewModel.swift */; };
 		DA74AA43225649BD005874E1 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA74AA42225649BD005874E1 /* ActivityIndicator.swift */; };
@@ -106,8 +104,6 @@
 		DA5AE480224BB794001E0350 /* FavoriteDaoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDaoTest.swift; sourceTree = "<group>"; };
 		DA5AE482224D0E2F001E0350 /* FavoriteRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryTest.swift; sourceTree = "<group>"; };
 		DA74AA362252588F005874E1 /* ReccomendRecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendRecipeTableViewController.swift; sourceTree = "<group>"; };
-		DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
-		DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		DA74AA3C22539F29005874E1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		DA74AA3E2253A1D8005874E1 /* ReccomendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendListViewModel.swift; sourceTree = "<group>"; };
 		DA74AA42225649BD005874E1 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -206,8 +202,6 @@
 				3811BA8222519B8200379E5E /* RecipeTabBarController.swift */,
 				38294FEE2251D11900B811EE /* RecipeNavigationController.swift */,
 				DA74AA362252588F005874E1 /* ReccomendRecipeTableViewController.swift */,
-				DA74AA3822525C57005874E1 /* RecipeTableViewCell.swift */,
-				DA74AA3922525C57005874E1 /* RecipeTableViewCell.xib */,
 				DA74AA48225A441F005874E1 /* RecipeCell.swift */,
 				DA74AA49225A441F005874E1 /* RecipeCell.xib */,
 			);
@@ -427,7 +421,6 @@
 			files = (
 				DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */,
 				DA74AA4B225A441F005874E1 /* RecipeCell.xib in Resources */,
-				DA74AA3B22525C57005874E1 /* RecipeTableViewCell.xib in Resources */,
 				38DF905D2244CA0E0008F432 /* Default-568h@2x.png in Resources */,
 				DA3C5EC922413C2E00625893 /* Assets.xcassets in Resources */,
 				DA3C5EC422413C2B00625893 /* Main.storyboard in Resources */,
@@ -598,7 +591,6 @@
 				3874EC23224DDAF1009FB846 /* DetailUseCase.swift in Sources */,
 				DA5AE47B224A752D001E0350 /* FavoriteRealmModel.swift in Sources */,
 				DA74AA372252588F005874E1 /* ReccomendRecipeTableViewController.swift in Sources */,
-				DA74AA3A22525C57005874E1 /* RecipeTableViewCell.swift in Sources */,
 				DA74AA47225657CA005874E1 /* ErrorTracker.swift in Sources */,
 				DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */,
 				3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */,
