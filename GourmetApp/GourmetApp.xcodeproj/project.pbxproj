@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3811BA8322519B8200379E5E /* RecipeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811BA8222519B8200379E5E /* RecipeTabBarController.swift */; };
 		38294FEF2251D11900B811EE /* RecipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294FEE2251D11900B811EE /* RecipeNavigationController.swift */; };
+		384FCBFC226443A80015E70F /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FCBFB226443A80015E70F /* FavoriteTableViewController.swift */; };
 		387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E62249E5DF00163B48 /* FavoriteRepository.swift */; };
 		3874EC1F224C4DEC009FB846 /* FavoriteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874EC1E224C4DEC009FB846 /* FavoriteRepositoryImpl.swift */; };
 		3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874EC20224DD906009FB846 /* FavoriteListUseCase.swift */; };
@@ -67,6 +68,7 @@
 		2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3811BA8222519B8200379E5E /* RecipeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabBarController.swift; sourceTree = "<group>"; };
 		38294FEE2251D11900B811EE /* RecipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNavigationController.swift; sourceTree = "<group>"; };
+		384FCBFB226443A80015E70F /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		387176E62249E5DF00163B48 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		3874EC1E224C4DEC009FB846 /* FavoriteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryImpl.swift; sourceTree = "<group>"; };
 		3874EC20224DD906009FB846 /* FavoriteListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListUseCase.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				DA74AA362252588F005874E1 /* ReccomendRecipeTableViewController.swift */,
 				DA74AA48225A441F005874E1 /* RecipeCell.swift */,
 				DA74AA49225A441F005874E1 /* RecipeCell.xib */,
+				384FCBFB226443A80015E70F /* FavoriteTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */,
 				38C633402248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift in Sources */,
 				DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */,
+				384FCBFC226443A80015E70F /* FavoriteTableViewController.swift in Sources */,
 				DA74AA3D22539F29005874E1 /* BaseViewModel.swift in Sources */,
 				DA3C5EFB2243B1EF00625893 /* RecipeDetailRepository.swift in Sources */,
 				DA3C5EF62241411D00625893 /* Recipe.swift in Sources */,
