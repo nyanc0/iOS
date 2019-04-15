@@ -13,10 +13,12 @@ import Mockingjay
 import RxTest
 import RxBlocking
 @testable import GourmetApp
+
 class FavoriteDaoTest: XCTestCase {
     var favoriteDao: FavoriteDao!
 
     override func setUp() {
+        super.setUp()
         favoriteDao = FavoriteDao.favoriteDao
     }
 
@@ -31,7 +33,7 @@ class FavoriteDaoTest: XCTestCase {
         do {
             let result = try favoriteDao.findById(key: "001").toBlocking().single()
             XCTAssertEqual(result?.recipeId, "001")
-        } catch let error {
+        } catch {
             XCTFail(error.localizedDescription)
         }
     }
@@ -43,7 +45,7 @@ class FavoriteDaoTest: XCTestCase {
             let results = try favoriteDao.findAll().toBlocking().single()
             XCTAssertEqual(results[0].recipeId, "001")
             XCTAssertEqual(results[1].recipeId, "002")
-        } catch let error {
+        } catch {
             XCTFail(error.localizedDescription)
         }
     }

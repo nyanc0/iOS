@@ -23,7 +23,7 @@ class FavoriteRepositoryImpl: FavoriteRepository {
                     favoriteModel.recipeId
                 }
             }.flatMap { ids in
-                return self.recipeListRepository.getRecipeList(recipeIds: ids)
+                self.recipeListRepository.getRecipeList(recipeIds: ids)
         }
     }
 

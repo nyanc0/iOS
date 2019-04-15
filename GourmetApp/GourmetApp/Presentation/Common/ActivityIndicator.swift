@@ -23,7 +23,7 @@ public class ActivityIndicator: SharedSequenceConvertibleType {
     init() {
         // 処理中のものがあれば、Loadingが行われているとする.
         _loading = _variable.asDriver()
-            .map { $0 > 0}
+            .map { $0 > 0 }
             .distinctUntilChanged()
     }
 
@@ -32,7 +32,7 @@ public class ActivityIndicator: SharedSequenceConvertibleType {
             self.increment()
             return ActivityToken(source: source.asObservable(), disposeAction: self.decrement)
         }) { t in
-            return t.asObservable()
+            t.asObservable()
         }
     }
 

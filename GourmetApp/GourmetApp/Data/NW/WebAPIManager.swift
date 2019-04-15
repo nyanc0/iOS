@@ -35,7 +35,7 @@ struct WebAPIManager {
     /// - parameter block: Callback APIResult
     public static func callForData<T, V>(_ request: T, _ block: @escaping (APIResult) -> Void) where T: BaseRequestProtocol, V: Codable, T.ResponseType == V {
         let urlRequest = self.createURLRequest(request)
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, urlResponse, error) in
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, urlResponse, error in
             let outputs = self.createOutputs(data: data, urlResponse: urlResponse as? HTTPURLResponse, error: error)
             switch outputs {
             case let .noResponse(errorResponse):
@@ -68,7 +68,7 @@ struct WebAPIManager {
     }
 
     /// URLSessionの結果をOutputsに変換する.
-    static private func createOutputs(data: Data?, urlResponse: HTTPURLResponse?, error: Error?) -> Outputs {
+    private static func createOutputs(data: Data?, urlResponse: HTTPURLResponse?, error: Error?) -> Outputs {
         guard let data = data, let response = urlResponse else {
             return .noResponse(ErrorResponse(dataContents: error.debugDescription))
         }

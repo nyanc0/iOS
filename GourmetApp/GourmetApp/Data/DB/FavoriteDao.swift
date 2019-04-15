@@ -10,11 +10,11 @@ import Foundation
 class FavoriteDao: BaseDao<FavoriteRealmModel> {
 
     public static var favoriteDao: FavoriteDao = {
-        return FavoriteDao()
+        FavoriteDao()
     }()
 
     func addOrUpdate(recipeId: String) -> Bool {
-        let favoriteModel: FavoriteRealmModel = FavoriteRealmModel()
+        let favoriteModel = FavoriteRealmModel()
         let updateFunc = { (favoriteModel: FavoriteRealmModel) -> FavoriteRealmModel in
             favoriteModel.recipeId = recipeId
             return favoriteModel

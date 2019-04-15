@@ -39,13 +39,12 @@ class ReccomendListViewModel: BaseViewModel {
         self.recipeListUseCase = recipeListUseCase
     }
 
-
     func transform(input: ReccomendListViewModel.Input) -> Output {
         let state = State()
 
         // 初回ロード
         let load = input.trigger.flatMap { [unowned self] _ in
-            return self.recipeListUseCase
+            self.recipeListUseCase
                 .loadReccomendRecipe()
                 .trackArray(state.content)
                 .trackError(state.error)

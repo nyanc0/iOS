@@ -38,5 +38,5 @@ struct Recipe: Codable {
 
 extension Recipe: IdentifiableType {
     typealias Identity = String
-    var identity: Identity {return recipeId}
+    var identity: Identity { return recipeId }
 }

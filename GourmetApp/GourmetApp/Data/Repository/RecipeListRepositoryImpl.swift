@@ -8,28 +8,13 @@
 
 import Foundation
 import RxSwift
+
 class RecipeListRepositoryImpl: RecipeListRepository {
-    struct RecipeListRequest: BaseRequestProtocol {
-
-        typealias ResponseType = [Recipe]
-
-        var queries: [URLQueryItem]
-
-        init(queries: [URLQueryItem]) {
-            self.queries = queries
-        }
-        var methodAndPayload: HTTPMethodAndPayload {
-            return HTTPMethodAndPayload.get
-        }
-        var path: String {
-            return "recipe"
-        }
-    }
 
     /// 全件取得
     /// - returns: Single<[Recipe]>
     func getRecipeList() -> Single<[Recipe]> {
-        return WebAPIManager.observe(RecipeListRequest.init(queries: []))
+        return WebAPIManager.observe(RecipeListRequest(queries: []))
     }
 
     /// ID指定
@@ -46,7 +31,7 @@ class RecipeListRepositoryImpl: RecipeListRepository {
         let queries = recipeIds.map { id in
             URLQueryItem(name: "recipe_id", value: id)
         }
-        return WebAPIManager.observe(RecipeListRequest.init(queries: queries))
+        return WebAPIManager.observe(RecipeListRequest(queries: queries))
     }
 
     /// オススメレシピ取得
@@ -60,6 +45,23 @@ class RecipeListRepositoryImpl: RecipeListRepository {
         } else {
             queries = URLQueryItem(name: "recommended_flg", value: reccomendFlg)
         }
-        return WebAPIManager.observe(RecipeListRequest.init(queries: [queries]))
+        return WebAPIManager.observe(RecipeListRequest(queries: [queries]))
+    }
+}
+
+struct RecipeListRequest: BaseRequestProtocol {
+
+    typealias ResponseType = [Recipe]
+
+    var queries: [URLQueryItem]
+
+    init(queries: [URLQueryItem]) {
+        self.queries = queries
+    }
+    var methodAndPayload: HTTPMethodAndPayload {
+        return HTTPMethodAndPayload.get
+    }
+    var path: String {
+        return "recipe"
     }
 }
