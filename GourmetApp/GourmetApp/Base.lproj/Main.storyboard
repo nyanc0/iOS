@@ -39,41 +39,10 @@
             </objects>
             <point key="canvasLocation" x="815.20000000000005" y="536.58170914542734"/>
         </scene>
-        <!--Reccomend-->
-        <scene sceneID="VkB-EU-wax">
-            <objects>
-                <viewController storyboardIdentifier="ReccomendRecipeTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PgH-LM-Chp" customClass="ReccomendRecipeTableViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pN8-pc-X9u">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vku-08-IWg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Vku-08-IWg" firstAttribute="leading" secondItem="pN8-pc-X9u" secondAttribute="leading" id="BD7-IL-Rxb"/>
-                            <constraint firstItem="Vku-08-IWg" firstAttribute="top" secondItem="FOa-KT-ElB" secondAttribute="top" id="Oye-32-Vw5"/>
-                            <constraint firstItem="Vku-08-IWg" firstAttribute="trailing" secondItem="pN8-pc-X9u" secondAttribute="trailing" id="Po7-lZ-fsj"/>
-                            <constraint firstItem="Vku-08-IWg" firstAttribute="bottom" secondItem="pN8-pc-X9u" secondAttribute="bottom" id="Zdl-PQ-NHk"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="FOa-KT-ElB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Reccomend" id="Nzg-BN-tzs"/>
-                    <connections>
-                        <outlet property="tableView" destination="Vku-08-IWg" id="U2A-93-7Ok"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MPa-jR-Qw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="815.20000000000005" y="-127.28635682158921"/>
-        </scene>
         <!--Recipe Tab Bar Controller-->
         <scene sceneID="68V-jL-fG8">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ym-et-jdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="RecipeTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x5K-1F-U2z" customClass="RecipeTabBarController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yTh-59-NgK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -82,36 +51,22 @@
                         <color key="selectedImageTintColor" name="ColorPrimary"/>
                     </tabBar>
                     <connections>
-                        <segue destination="gd2-sz-AbU" kind="relationship" relationship="viewControllers" id="UAT-F0-PQq"/>
                         <segue destination="mAu-Yh-rPR" kind="relationship" relationship="viewControllers" id="wdv-oF-amk"/>
+                        <segue destination="pmw-Z5-94e" kind="relationship" relationship="viewControllers" id="2eT-eJ-Y8D"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ym-et-jdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1077" y="206"/>
         </scene>
-        <!--ホーム-->
-        <scene sceneID="SO9-3z-d01">
+        <!--ReccomendRecipeList-->
+        <scene sceneID="uZ5-Ld-LfG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gd2-sz-AbU" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ホーム" image="ic_home" selectedImage="ic_home" id="XKc-3X-xRP"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x8b-3X-fK7">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="ColorPrimary"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PgH-LM-Chp" kind="relationship" relationship="rootViewController" id="GRu-Ar-PaT"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P94-PA-88n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ReccomendRecipeList" id="pmw-Z5-94e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="eQl-qi-TLs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="33Y-th-OQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-124" y="-127.28635682158921"/>
+            <point key="canvasLocation" x="-141" y="-94"/>
         </scene>
         <!--お気に入り-->
         <scene sceneID="gZQ-12-poz">
@@ -138,7 +93,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_home" width="36" height="36"/>
         <image name="ic_star_border_orange" width="36" height="36"/>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

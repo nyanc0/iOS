@@ -50,6 +50,7 @@
 		DA74AA542264C57E005874E1 /* SingleResult.json in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA522264C57E005874E1 /* SingleResult.json */; };
 		DA74AA562264C66C005874E1 /* AllResult.json in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA552264C66C005874E1 /* AllResult.json */; };
 		DA74AA582264C6B9005874E1 /* ReccomendResult.json in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA572264C6B9005874E1 /* ReccomendResult.json */; };
+		DA74AA5B2264C929005874E1 /* ReccomendRecipeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA74AA5A2264C929005874E1 /* ReccomendRecipeList.storyboard */; };
 		DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */; };
 		DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */; };
 		DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC876B02247CB4000A296E1 /* WebAPIManager.swift */; };
@@ -121,6 +122,7 @@
 		DA74AA522264C57E005874E1 /* SingleResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SingleResult.json; sourceTree = "<group>"; };
 		DA74AA552264C66C005874E1 /* AllResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AllResult.json; sourceTree = "<group>"; };
 		DA74AA572264C6B9005874E1 /* ReccomendResult.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ReccomendResult.json; sourceTree = "<group>"; };
+		DA74AA5A2264C929005874E1 /* ReccomendRecipeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReccomendRecipeList.storyboard; sourceTree = "<group>"; };
 		DAC876AC2247CAA700A296E1 /* RecipeListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepository.swift; sourceTree = "<group>"; };
 		DAC876AE2247CAED00A296E1 /* RecipeListRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRepositoryImpl.swift; sourceTree = "<group>"; };
 		DAC876B02247CB4000A296E1 /* WebAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIManager.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				DA74AA362252588F005874E1 /* ReccomendRecipeTableViewController.swift */,
+				DA74AA5A2264C929005874E1 /* ReccomendRecipeList.storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */,
+				DA74AA5B2264C929005874E1 /* ReccomendRecipeList.storyboard in Resources */,
 				DA74AA4B225A441F005874E1 /* RecipeCell.xib in Resources */,
 				38DF905D2244CA0E0008F432 /* Default-568h@2x.png in Resources */,
 				DA3C5EC922413C2E00625893 /* Assets.xcassets in Resources */,
