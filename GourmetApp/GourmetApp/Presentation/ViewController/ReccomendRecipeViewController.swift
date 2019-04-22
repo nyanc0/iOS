@@ -15,6 +15,7 @@ class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate,
 
     private let disposeBag = DisposeBag()
     private var viewModel: ReccomendListViewModel!
+    private var cellSizeCache: CGSize?
 
     @IBOutlet private weak var recipeCollectionView: UICollectionView!
 
@@ -27,26 +28,45 @@ class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate,
     }
 
     // UICollectionViewの外周余白
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
-
-    // Cellのサイズ
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    //        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    //    }
+    //
+    //    // Cellのサイズ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 300)
+
+        let heightL = (UIScreen.main.bounds.width * 3) / CGFloat(5) + 50
+
+        return CGSize(width: UIScreen.main.bounds.width, height: heightL)
     }
-    // 行の最小余白
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
-    // 列の最小余白
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
+    //    // 行の最小余白
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    //        return 1
+    //    }
+    //    //    // 列の最小余白
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    //        return 1
+    //    }
+    //
+    //    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+    //        // ???: リロードのたびにインスタンス化してしまうのでキャッシュしてる
+    //        guard let cache = cellSizeCache else {
+    //            guard let cell = UINib(nibName: "RecipeItemCell", bundle: nil).instantiate(withOwner: self, options: nil).first as? RecipeItemCell else {
+    //                return CGSize.zero
+    //            }
+    //            cellSizeCache = cell.calcCellSize(width: UIScreen.main.bounds.width)
+    //            return cellSizeCache!
+    //        }
+    //
+    //        return cache
+    //    }
 
     private func initCollectionView() {
         recipeCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         recipeCollectionView.register(UINib(nibName: "RecipeItemCell", bundle: nil), forCellWithReuseIdentifier: "RecipeItemCell")
+        if let flowLayout = recipeCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        }
     }
 
     private func initViewModel() {

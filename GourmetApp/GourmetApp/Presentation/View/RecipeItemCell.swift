@@ -11,14 +11,18 @@ import SDWebImage
 
 class RecipeItemCell: UICollectionViewCell {
 
+    @IBOutlet private weak var contentViewCell: UIView!
     @IBOutlet private weak var recipeItemImage: UIImageView!
     @IBOutlet private weak var reccomendLabel: UILabel!
     @IBOutlet private weak var introductionLabel: UILabel!
-    @IBOutlet private weak var innerStackView: UIStackView!
+    @IBOutlet private weak var widthConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setBackground()
+        self.contentView.translatesAutoresizingMaskIntoConstraints = false
+        let screenWidth = UIScreen.main.bounds.size.width
+        widthConstraint.constant = screenWidth
+        //        setBackground()
     }
 
     /// 表示内容のセット
@@ -34,14 +38,14 @@ class RecipeItemCell: UICollectionViewCell {
     }
 
     /// 背景設定
-    private func setBackground() {
-        innerStackView.layer.borderWidth = 0.5
-        innerStackView.layer.borderColor = UIColor.lightGray.cgColor
-        innerStackView.layer.shadowColor = UIColor.gray.cgColor
-        innerStackView.layer.shadowRadius = 2.0
-        innerStackView.layer.shadowOpacity = 1.0
-        innerStackView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        innerStackView.layer.shadowPath = UIBezierPath(rect: innerStackView.bounds).cgPath
-    }
+    //    private func setBackground() {
+    //        innerStackView.layer.borderWidth = 0.5
+    //        innerStackView.layer.borderColor = UIColor.lightGray.cgColor
+    //        innerStackView.layer.shadowColor = UIColor.gray.cgColor
+    //        innerStackView.layer.shadowRadius = 2.0
+    //        innerStackView.layer.shadowOpacity = 1.0
+    //        innerStackView.layer.shadowOffset = CGSize(width: 0, height: 2)
+    //        innerStackView.layer.shadowPath = UIBezierPath(rect: innerStackView.bounds).cgPath
+    //    }
 
 }
