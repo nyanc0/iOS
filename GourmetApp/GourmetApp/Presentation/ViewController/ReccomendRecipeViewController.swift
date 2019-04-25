@@ -35,9 +35,16 @@ class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate,
     //    // Cellのサイズ
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let heightL = (UIScreen.main.bounds.width * 3) / CGFloat(5) + 50
-
-        return CGSize(width: UIScreen.main.bounds.width, height: heightL)
+        // ???: リロードのたびにインスタンス化してしまうのでキャッシュしてる
+        guard let cache = cellSizeCache else {
+            guard let cell = UINib(nibName: "RecipeItemCell", bundle: nil).instantiate(withOwner: self, options: nil).first as? RecipeItemCell else {
+                return CGSize.zero
+            }
+            let cellHeight: CGFloat = ((UIScreen.main.bounds.width * 3) / CGFloat(5)) + cell.getLabelContainerHeight()
+            cellSizeCache = CGSize(width: UIScreen.main.bounds.width, height: cellHeight)
+            return cellSizeCache!
+        }
+        return cache
     }
     //    // 行の最小余白
     //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -48,18 +55,6 @@ class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate,
     //        return 1
     //    }
     //
-    //    private func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-    //        // ???: リロードのたびにインスタンス化してしまうのでキャッシュしてる
-    //        guard let cache = cellSizeCache else {
-    //            guard let cell = UINib(nibName: "RecipeItemCell", bundle: nil).instantiate(withOwner: self, options: nil).first as? RecipeItemCell else {
-    //                return CGSize.zero
-    //            }
-    //            cellSizeCache = cell.calcCellSize(width: UIScreen.main.bounds.width)
-    //            return cellSizeCache!
-    //        }
-    //
-    //        return cache
-    //    }
 
     private func initCollectionView() {
         recipeCollectionView.rx.setDelegate(self).disposed(by: disposeBag)

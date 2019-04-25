@@ -30,38 +30,44 @@
                                     <constraint firstAttribute="width" secondItem="VJg-jr-S5h" secondAttribute="height" multiplier="5:3" id="nh9-rq-Qni"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おすすめ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-Fh-g23" userLabel="ReccomendLabel">
-                                <rect key="frame" x="163" y="233" width="49.5" height="16"/>
-                                <color key="backgroundColor" name="ColorAccent"/>
-                                <accessibility key="accessibilityConfiguration" label="ReccomendLabel"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s3b-6S-6DT" userLabel="LabelContainer">
+                                <rect key="frame" x="8" y="233" width="359" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おすすめ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OT-Fh-g23" userLabel="ReccomendLabel">
+                                        <rect key="frame" x="155" y="0.0" width="49.5" height="16"/>
+                                        <color key="backgroundColor" name="ColorAccent"/>
+                                        <accessibility key="accessibilityConfiguration" label="ReccomendLabel"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="fhh-en-H9m"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlY-Ex-gNn" userLabel="IntroductionLabel">
+                                        <rect key="frame" x="8" y="24" width="343" height="27"/>
+                                        <accessibility key="accessibilityConfiguration" label="IntroductionLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="16" id="fhh-en-H9m"/>
+                                    <constraint firstAttribute="trailing" secondItem="rlY-Ex-gNn" secondAttribute="trailing" constant="8" id="B9h-FF-rDy"/>
+                                    <constraint firstItem="rlY-Ex-gNn" firstAttribute="leading" secondItem="s3b-6S-6DT" secondAttribute="leading" constant="8" id="cnV-qO-dsg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlY-Ex-gNn" userLabel="IntroductionLabel">
-                                <rect key="frame" x="8" y="257" width="359" height="35"/>
-                                <accessibility key="accessibilityConfiguration" label="IntroductionLabel"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="ColorPrimary"/>
                         <constraints>
                             <constraint firstItem="VJg-jr-S5h" firstAttribute="leading" secondItem="LXs-QW-YDr" secondAttribute="leading" id="2z1-X0-WNv"/>
-                            <constraint firstItem="4OT-Fh-g23" firstAttribute="centerX" secondItem="LXs-QW-YDr" secondAttribute="centerX" id="9Kh-wh-eV4"/>
+                            <constraint firstItem="s3b-6S-6DT" firstAttribute="leading" secondItem="LXs-QW-YDr" secondAttribute="leadingMargin" id="3fc-KQ-cuV"/>
                             <constraint firstItem="VJg-jr-S5h" firstAttribute="top" secondItem="LXs-QW-YDr" secondAttribute="top" id="B71-Xu-ORb"/>
                             <constraint firstAttribute="width" constant="375" id="CVf-Yl-WqG"/>
-                            <constraint firstItem="rlY-Ex-gNn" firstAttribute="top" secondItem="4OT-Fh-g23" secondAttribute="bottom" constant="8" id="Nd1-0N-Wx5"/>
-                            <constraint firstAttribute="bottom" secondItem="rlY-Ex-gNn" secondAttribute="bottom" constant="8" id="SNq-pB-WjB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="s3b-6S-6DT" secondAttribute="bottom" constant="8" id="GM2-RV-0P7"/>
                             <constraint firstAttribute="trailing" secondItem="VJg-jr-S5h" secondAttribute="trailing" id="YbZ-Ke-5hf"/>
-                            <constraint firstItem="rlY-Ex-gNn" firstAttribute="centerX" secondItem="LXs-QW-YDr" secondAttribute="centerX" id="d3f-nq-OCQ"/>
-                            <constraint firstItem="4OT-Fh-g23" firstAttribute="top" secondItem="VJg-jr-S5h" secondAttribute="bottom" constant="8" id="mt0-St-Lbn"/>
-                            <constraint firstItem="rlY-Ex-gNn" firstAttribute="leading" secondItem="LXs-QW-YDr" secondAttribute="leading" constant="8" id="uIH-qQ-rLD"/>
-                            <constraint firstAttribute="trailing" secondItem="rlY-Ex-gNn" secondAttribute="trailing" constant="8" id="yKh-mx-CFW"/>
+                            <constraint firstItem="s3b-6S-6DT" firstAttribute="top" secondItem="VJg-jr-S5h" secondAttribute="bottom" constant="8" id="Zy4-wk-eYT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s3b-6S-6DT" secondAttribute="trailing" id="tdr-BW-dXu"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -78,6 +84,7 @@
                 <outlet property="contentView" destination="LXs-QW-YDr" id="lay-xZ-4aZ"/>
                 <outlet property="contentViewCell" destination="LXs-QW-YDr" id="6aX-t8-hl4"/>
                 <outlet property="introductionLabel" destination="rlY-Ex-gNn" id="dqG-pl-3Vz"/>
+                <outlet property="labelContainer" destination="s3b-6S-6DT" id="oVn-7e-1Fw"/>
                 <outlet property="reccomendLabel" destination="4OT-Fh-g23" id="38R-ch-jYr"/>
                 <outlet property="recipeItemImage" destination="VJg-jr-S5h" id="cYx-Or-B0g"/>
                 <outlet property="widthConstraint" destination="CVf-Yl-WqG" id="sgo-Sf-bzI"/>

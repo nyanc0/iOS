@@ -15,6 +15,7 @@ class RecipeItemCell: UICollectionViewCell {
     @IBOutlet private weak var recipeItemImage: UIImageView!
     @IBOutlet private weak var reccomendLabel: UILabel!
     @IBOutlet private weak var introductionLabel: UILabel!
+    @IBOutlet private weak var labelContainer: UIStackView!
     @IBOutlet private weak var widthConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
@@ -28,13 +29,14 @@ class RecipeItemCell: UICollectionViewCell {
     /// 表示内容のセット
     /// - parameters: Recipe
     func setData(recipe: Recipe) {
-
         recipeItemImage.sd_setImage(with: URL(string: recipe.mainUrl), placeholderImage: UIImage(named: "ic_no_image.png"))
-
         introductionLabel.text = recipe.introduction
-
         reccomendLabel.isHidden = !recipe.isReccomend()
         self.layoutIfNeeded()
+    }
+    
+    func getLabelContainerHeight() -> CGFloat {
+        return labelContainer.frame.height
     }
 
     /// 背景設定
