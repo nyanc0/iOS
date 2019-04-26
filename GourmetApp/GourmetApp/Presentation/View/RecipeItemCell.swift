@@ -11,24 +11,24 @@ import SDWebImage
 import MaterialComponents.MaterialCards
 
 class RecipeItemCell: MDCCardCollectionCell {
-
+    
     @IBOutlet private weak var contentViewCell: UIView!
     @IBOutlet private weak var recipeItemImage: UIImageView!
     @IBOutlet private weak var reccomendLabel: UILabel!
     @IBOutlet private weak var introductionLabel: UILabel!
     @IBOutlet private weak var labelContainer: UIStackView!
     @IBOutlet private weak var widthConstraint: NSLayoutConstraint!
-
+    
+    private let margin: CGFloat = 8
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        let screenWidth = UIScreen.main.bounds.size.width - 20
-        widthConstraint.constant = screenWidth
-        cornerRadius = 8
-        setShadowElevation(ShadowElevation.init(8), for: .selected)
+        widthConstraint.constant = getCellWidth()
+        setShadowElevation(ShadowElevation.init(margin), for: .selected)
         setShadowColor(UIColor.black, for: .highlighted)
     }
-
+    
     /// 表示内容のセット
     /// - parameters: Recipe
     func setData(recipe: Recipe) {
@@ -38,7 +38,15 @@ class RecipeItemCell: MDCCardCollectionCell {
         self.layoutIfNeeded()
     }
     
-    func getLabelContainerHeight() -> CGFloat {
+    func getCellWidth() -> CGFloat {
+        return UIScreen.main.bounds.size.width - (margin * 2)
+    }
+    
+    func getCellHeight() -> CGFloat {
+        return ((UIScreen.main.bounds.width * 3) / CGFloat(5)) + getLabelContainerHeight()
+    }
+    
+    private func getLabelContainerHeight() -> CGFloat {
         return labelContainer.frame.height
     }
 }

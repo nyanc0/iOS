@@ -34,8 +34,7 @@ class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate,
                 guard let cell = UINib(nibName: "RecipeItemCell", bundle: nil).instantiate(withOwner: self, options: nil).first as? RecipeItemCell else {
                     return CGSize.zero
                 }
-                let cellHeight: CGFloat = ((UIScreen.main.bounds.width * 3) / CGFloat(5)) + cell.getLabelContainerHeight()
-                cellSizeCache = CGSize(width: UIScreen.main.bounds.width - 20, height: cellHeight)
+                cellSizeCache = CGSize(width: cell.getCellWidth(), height: cell.getCellHeight())
                 return cellSizeCache!
         }
         return cache
