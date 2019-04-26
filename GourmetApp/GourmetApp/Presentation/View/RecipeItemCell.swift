@@ -8,8 +8,9 @@
 
 import UIKit
 import SDWebImage
+import MaterialComponents.MaterialCards
 
-class RecipeItemCell: UICollectionViewCell {
+class RecipeItemCell: MDCCardCollectionCell {
 
     @IBOutlet private weak var contentViewCell: UIView!
     @IBOutlet private weak var recipeItemImage: UIImageView!
@@ -21,9 +22,11 @@ class RecipeItemCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        let screenWidth = UIScreen.main.bounds.size.width
+        let screenWidth = UIScreen.main.bounds.size.width - 20
         widthConstraint.constant = screenWidth
-        //        setBackground()
+        cornerRadius = 8
+        setShadowElevation(ShadowElevation.init(8), for: .selected)
+        setShadowColor(UIColor.black, for: .highlighted)
     }
 
     /// 表示内容のセット
@@ -38,16 +41,4 @@ class RecipeItemCell: UICollectionViewCell {
     func getLabelContainerHeight() -> CGFloat {
         return labelContainer.frame.height
     }
-
-    /// 背景設定
-    //    private func setBackground() {
-    //        innerStackView.layer.borderWidth = 0.5
-    //        innerStackView.layer.borderColor = UIColor.lightGray.cgColor
-    //        innerStackView.layer.shadowColor = UIColor.gray.cgColor
-    //        innerStackView.layer.shadowRadius = 2.0
-    //        innerStackView.layer.shadowOpacity = 1.0
-    //        innerStackView.layer.shadowOffset = CGSize(width: 0, height: 2)
-    //        innerStackView.layer.shadowPath = UIBezierPath(rect: innerStackView.bounds).cgPath
-    //    }
-
 }

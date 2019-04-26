@@ -58,7 +58,6 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="ColorPrimary"/>
                         <constraints>
                             <constraint firstItem="VJg-jr-S5h" firstAttribute="leading" secondItem="LXs-QW-YDr" secondAttribute="leading" id="2z1-X0-WNv"/>
                             <constraint firstItem="s3b-6S-6DT" firstAttribute="leading" secondItem="LXs-QW-YDr" secondAttribute="leadingMargin" id="3fc-KQ-cuV"/>
@@ -95,9 +94,6 @@
     <resources>
         <namedColor name="ColorAccent">
             <color red="1" green="0.792156862745098" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="ColorPrimary">
-            <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -13,6 +13,7 @@ target 'GourmetApp' do
   pod 'RealmSwift'
   pod 'SDWebImage', '~> 4.0'
   pod 'RxDataSources', '~> 3.0'
+  pod 'MaterialComponents'
 
   target 'GourmetAppTests' do
     inherit! :search_paths
