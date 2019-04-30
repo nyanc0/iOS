@@ -1,8 +1,8 @@
 //
-//  ReccomentListViewModel.swift
+//  FavoriteListViewModel.swift
 //  GourmetApp
 //
-//  Created by yurina fukuoka on 2019/04/02.
+//  Created by yurina fukuoka on 2019/04/30.
 //  Copyright © 2019年 yurina fukuoka. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class ReccomendListViewModel: BaseViewModel {
+class FavoriteListViewModel: BaseViewModel {
 
     struct Input {
         /// 表示時のローディングトリガー
@@ -34,19 +34,20 @@ class ReccomendListViewModel: BaseViewModel {
         let error = ErrorTracker()
     }
 
-    private let recipeListUseCase: RecipeListUseCase
+    private let favoriteUseCase: FavoriteListUseCase
 
-    init(recipeListUseCase: RecipeListUseCase) {
-        self.recipeListUseCase = recipeListUseCase
+    init(favoriteUseCase: FavoriteListUseCase) {
+        self.favoriteUseCase = favoriteUseCase
     }
 
-    func transform(input: ReccomendListViewModel.Input) -> Output {
+    func transform(input: FavoriteListViewModel.Input) -> FavoriteListViewModel.Output {
+
         let state = State()
 
         // 初回ロード
-        let load = input.trigger.flatMap { [unowned self] _ in
-            self.recipeListUseCase
-                .loadReccomendRecipe()
+        let load = input.trigger.flatMap { _ in
+            self.favoriteUseCase
+                .loadFavoriteList()
                 .trackArray(state.content)
                 .trackError(state.error)
                 .trackActivity(state.isLoading)
@@ -54,11 +55,10 @@ class ReccomendListViewModel: BaseViewModel {
                 .mapToVoid()
         }
 
-        return Output(
-            load: load,
-            recipeList: state.content.asDriver(),
-            isLoading: state.isLoading.asDriver(),
-            error: state.error.asDriver()
+        return Output(load: load,
+                      recipeList: state.content.asDriver(),
+                      isLoading: state.isLoading.asDriver(),
+                      error: state.error.asDriver()
         )
     }
 }

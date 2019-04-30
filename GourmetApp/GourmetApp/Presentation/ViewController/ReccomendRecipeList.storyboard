@@ -14,19 +14,22 @@
         <!--Reccomend-->
         <scene sceneID="g6b-vd-pOl">
             <objects>
-                <viewController storyboardIdentifier="ReccomendRecipeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8G-xs-eDl" customClass="ReccomendRecipeViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReccomendRecipeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q8G-xs-eDl" customClass="ReccomendRecipeListViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G9w-uu-CxC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DuM-AP-blY" userLabel="LoadingIndicator">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fJc-f5-aP4" userLabel="ReccomendRecipeCollectionView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="bec-7D-10X">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="bec-7D-10X">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -35,13 +38,18 @@
                         <constraints>
                             <constraint firstItem="fJc-f5-aP4" firstAttribute="top" secondItem="Ztu-rs-b7h" secondAttribute="top" id="73p-Sb-NNe"/>
                             <constraint firstItem="fJc-f5-aP4" firstAttribute="bottom" secondItem="Ztu-rs-b7h" secondAttribute="bottom" id="QMn-z3-HoL"/>
+                            <constraint firstItem="Ztu-rs-b7h" firstAttribute="bottom" secondItem="DuM-AP-blY" secondAttribute="bottom" id="T2V-Co-OAy"/>
+                            <constraint firstItem="DuM-AP-blY" firstAttribute="top" secondItem="G9w-uu-CxC" secondAttribute="top" id="epG-k7-Xce"/>
                             <constraint firstItem="fJc-f5-aP4" firstAttribute="leading" secondItem="Ztu-rs-b7h" secondAttribute="leading" id="h95-fu-m10"/>
                             <constraint firstItem="fJc-f5-aP4" firstAttribute="trailing" secondItem="Ztu-rs-b7h" secondAttribute="trailing" id="hp3-Bf-xtA"/>
+                            <constraint firstItem="DuM-AP-blY" firstAttribute="trailing" secondItem="Ztu-rs-b7h" secondAttribute="trailing" id="lhB-zo-6Tb"/>
+                            <constraint firstItem="DuM-AP-blY" firstAttribute="leading" secondItem="Ztu-rs-b7h" secondAttribute="leading" id="wBl-Mh-XzD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ztu-rs-b7h"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reccomend" id="rkR-ng-yaT"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="DuM-AP-blY" id="RAT-L1-LV9"/>
                         <outlet property="recipeCollectionView" destination="fJc-f5-aP4" id="elO-z0-02b"/>
                     </connections>
                 </viewController>
@@ -75,7 +83,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_home" width="72" height="72"/>
+        <image name="ic_home" width="36" height="36"/>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

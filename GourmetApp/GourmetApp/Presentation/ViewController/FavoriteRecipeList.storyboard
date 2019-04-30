@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mCN-KK-coT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--お気に入り-->
+        <scene sceneID="Axa-Xk-obF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ib7-36-ASa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mCN-KK-coT" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="お気に入り" image="ic_star_orange" selectedImage="ic_star_orange" id="GEM-Z1-wUE"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypU-fh-Sma">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="ColorPrimary"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="ColorPrimary"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wWH-hR-AwO" kind="relationship" relationship="rootViewController" id="4eZ-uZ-NE8"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1457" y="-1060"/>
+        </scene>
+        <!--Favorite-->
+        <scene sceneID="BLt-7Q-xGh">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgU-Ng-Z5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="wWH-hR-AwO" customClass="FavoriteRecipeListViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9n7-kk-hPs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ebh-Ap-vhR" userLabel="ErrorView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="エラーが発生しました" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="92A-dy-STy">
+                                        <rect key="frame" x="101" y="291.5" width="173.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="92A-dy-STy" firstAttribute="centerY" secondItem="Ebh-Ap-vhR" secondAttribute="centerY" id="9Vh-gx-6dr"/>
+                                    <constraint firstItem="92A-dy-STy" firstAttribute="centerX" secondItem="Ebh-Ap-vhR" secondAttribute="centerX" id="ale-nH-8cQ"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfm-EF-BPM" userLabel="EmptyView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お気に入りがありません" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgb-JZ-xt3" userLabel="EmptyLabel">
+                                        <rect key="frame" x="92" y="291" width="191" height="21"/>
+                                        <accessibility key="accessibilityConfiguration" label="It's Empty"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rgb-JZ-xt3" firstAttribute="centerY" secondItem="rfm-EF-BPM" secondAttribute="centerY" id="X8m-ga-jPG"/>
+                                    <constraint firstItem="rgb-JZ-xt3" firstAttribute="centerX" secondItem="rfm-EF-BPM" secondAttribute="centerX" id="gsr-eB-cuo"/>
+                                </constraints>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="24z-Hp-ZFo" userLabel="LoadingIndicator">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </activityIndicatorView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xaD-qd-Vg4" userLabel="FavoriteRecipeCollectionView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="l3S-VS-JxN">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="8" maxX="0.0" maxY="8"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xaD-qd-Vg4" firstAttribute="top" secondItem="5aU-hR-yK5" secondAttribute="top" id="1AJ-R1-qs8"/>
+                            <constraint firstItem="5aU-hR-yK5" firstAttribute="bottom" secondItem="24z-Hp-ZFo" secondAttribute="bottom" id="R5b-hQ-sJl"/>
+                            <constraint firstItem="5aU-hR-yK5" firstAttribute="bottom" secondItem="rfm-EF-BPM" secondAttribute="bottom" id="Sdb-gt-m8n"/>
+                            <constraint firstItem="24z-Hp-ZFo" firstAttribute="trailing" secondItem="5aU-hR-yK5" secondAttribute="trailing" id="VR4-WU-mu0"/>
+                            <constraint firstItem="rfm-EF-BPM" firstAttribute="top" secondItem="9n7-kk-hPs" secondAttribute="topMargin" id="XSO-dO-vn9"/>
+                            <constraint firstItem="rfm-EF-BPM" firstAttribute="trailing" secondItem="5aU-hR-yK5" secondAttribute="trailing" id="Ykg-pn-w4f"/>
+                            <constraint firstItem="xaD-qd-Vg4" firstAttribute="leading" secondItem="5aU-hR-yK5" secondAttribute="leading" id="ZgW-wN-6we"/>
+                            <constraint firstItem="24z-Hp-ZFo" firstAttribute="top" secondItem="9n7-kk-hPs" secondAttribute="top" id="cPy-9S-uIY"/>
+                            <constraint firstItem="Ebh-Ap-vhR" firstAttribute="leading" secondItem="5aU-hR-yK5" secondAttribute="leading" id="gFU-vU-sFN"/>
+                            <constraint firstItem="Ebh-Ap-vhR" firstAttribute="trailing" secondItem="5aU-hR-yK5" secondAttribute="trailing" id="gm6-IM-TpA"/>
+                            <constraint firstItem="5aU-hR-yK5" firstAttribute="trailing" secondItem="xaD-qd-Vg4" secondAttribute="trailing" id="jzG-LQ-Foc"/>
+                            <constraint firstItem="Ebh-Ap-vhR" firstAttribute="top" secondItem="9n7-kk-hPs" secondAttribute="topMargin" id="kid-5D-YMK"/>
+                            <constraint firstItem="24z-Hp-ZFo" firstAttribute="leading" secondItem="5aU-hR-yK5" secondAttribute="leading" id="qcR-AJ-fMG"/>
+                            <constraint firstItem="rfm-EF-BPM" firstAttribute="leading" secondItem="5aU-hR-yK5" secondAttribute="leading" id="rLu-JM-2xe"/>
+                            <constraint firstItem="5aU-hR-yK5" firstAttribute="bottom" secondItem="xaD-qd-Vg4" secondAttribute="bottom" id="tWw-dv-vyg"/>
+                            <constraint firstItem="5aU-hR-yK5" firstAttribute="bottom" secondItem="Ebh-Ap-vhR" secondAttribute="bottom" id="wYu-Mg-RjB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5aU-hR-yK5"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Favorite" id="tEp-jH-hwO"/>
+                    <connections>
+                        <outlet property="emptyView" destination="rfm-EF-BPM" id="32Y-OM-pAi"/>
+                        <outlet property="errorView" destination="Ebh-Ap-vhR" id="d8D-cE-pc1"/>
+                        <outlet property="favoriteCollectionView" destination="xaD-qd-Vg4" id="gQo-gm-QVp"/>
+                        <outlet property="loadingIndicator" destination="24z-Hp-ZFo" id="WJ3-1v-pvA"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-532" y="-1060.1199400299852"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_star_orange" width="36" height="36"/>
+        <namedColor name="ColorPrimary">
+            <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ColorPrimary">
+            <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

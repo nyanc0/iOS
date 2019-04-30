@@ -11,13 +11,14 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ReccomendRecipeListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     private let disposeBag = DisposeBag()
     private var viewModel: ReccomendListViewModel!
-    private var cellSizeCache: CGSize?
+    private var cellSizeCache: CGSize!
 
     @IBOutlet private weak var recipeCollectionView: UICollectionView!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,16 +39,6 @@ class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate,
                 return cellSizeCache!
         }
         return cache
-    }
-    
-    // UICollectionViewの外周余白
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-    }
-    
-    //行の最小余白
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
     }
 
     private func initCollectionView() {
@@ -84,7 +75,8 @@ class ReccomendRecipeViewController: UIViewController, UICollectionViewDelegate,
         output.isLoading
             .asObservable()
             .bind { loading in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = loading
+                self.recipeCollectionView.isHidden = loading
+                self.loadingIndicator.isHidden = !loading
             }
             .disposed(by: disposeBag)
     }

@@ -7,42 +7,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Favorite-->
-        <scene sceneID="U3p-Eb-GU1">
-            <objects>
-                <viewController id="r8O-u2-em1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DmT-AL-wsV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="piN-B9-Aoz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="piN-B9-Aoz" firstAttribute="leading" secondItem="DmT-AL-wsV" secondAttribute="leading" id="5qY-ON-SIu"/>
-                            <constraint firstItem="piN-B9-Aoz" firstAttribute="top" secondItem="ymX-yO-EvT" secondAttribute="top" id="Ink-Hv-Saz"/>
-                            <constraint firstItem="piN-B9-Aoz" firstAttribute="trailing" secondItem="DmT-AL-wsV" secondAttribute="trailing" id="cSh-Ax-9x9"/>
-                            <constraint firstItem="piN-B9-Aoz" firstAttribute="bottom" secondItem="ymX-yO-EvT" secondAttribute="bottom" id="m1I-Z7-yDo"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="ymX-yO-EvT"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Favorite" id="SnQ-hB-PfT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="20Y-ln-kA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="815.20000000000005" y="536.58170914542734"/>
-        </scene>
         <!--Recipe Tab Bar Controller-->
         <scene sceneID="68V-jL-fG8">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ym-et-jdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController storyboardIdentifier="RecipeTabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="x5K-1F-U2z" customClass="RecipeTabBarController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yTh-59-NgK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -51,12 +21,23 @@
                         <color key="selectedImageTintColor" name="ColorPrimary"/>
                     </tabBar>
                     <connections>
-                        <segue destination="mAu-Yh-rPR" kind="relationship" relationship="viewControllers" id="wdv-oF-amk"/>
                         <segue destination="pmw-Z5-94e" kind="relationship" relationship="viewControllers" id="2eT-eJ-Y8D"/>
+                        <segue destination="zWO-Ds-fJz" kind="relationship" relationship="viewControllers" id="vnm-dH-OfM"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ym-et-jdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1077" y="206"/>
+        </scene>
+        <!--FavoriteRecipeList-->
+        <scene sceneID="CSD-Ak-03M">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FavoriteRecipeList" id="zWO-Ds-fJz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wvV-9A-GaA"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yTF-rL-te3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="399"/>
         </scene>
         <!--ReccomendRecipeList-->
         <scene sceneID="uZ5-Ld-LfG">
@@ -68,35 +49,8 @@
             </objects>
             <point key="canvasLocation" x="-141" y="-94"/>
         </scene>
-        <!--お気に入り-->
-        <scene sceneID="gZQ-12-poz">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mAu-Yh-rPR" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="お気に入り" image="ic_star_border_orange" selectedImage="ic_star_border_orange" id="V9V-gS-3iv"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dc5-Ng-iAE">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="ColorPrimary"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="r8O-u2-em1" kind="relationship" relationship="rootViewController" id="Cek-kT-iFx"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BfN-6m-6Lo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-124" y="536.58170914542734"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="ic_star_border_orange" width="36" height="36"/>
-        <namedColor name="ColorPrimary">
-            <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

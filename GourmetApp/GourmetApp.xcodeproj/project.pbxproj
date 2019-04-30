@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3811BA8322519B8200379E5E /* RecipeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811BA8222519B8200379E5E /* RecipeTabBarController.swift */; };
 		38294FEF2251D11900B811EE /* RecipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294FEE2251D11900B811EE /* RecipeNavigationController.swift */; };
-		384FCBFC226443A80015E70F /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384FCBFB226443A80015E70F /* FavoriteTableViewController.swift */; };
 		387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E62249E5DF00163B48 /* FavoriteRepository.swift */; };
 		3874EC1F224C4DEC009FB846 /* FavoriteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874EC1E224C4DEC009FB846 /* FavoriteRepositoryImpl.swift */; };
 		3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874EC20224DD906009FB846 /* FavoriteListUseCase.swift */; };
@@ -22,10 +21,14 @@
 		B479C86F6FBEAECF250E4362 /* Pods_GourmetAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 693E73CC845B153384924A2C /* Pods_GourmetAppTests.framework */; };
 		DA2FEFD8226C7A6700F179AA /* RecipeItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FEFD6226C7A6700F179AA /* RecipeItemCell.swift */; };
 		DA2FEFD9226C7A6700F179AA /* RecipeItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA2FEFD7226C7A6700F179AA /* RecipeItemCell.xib */; };
-		DA2FEFDB226C871E00F179AA /* ReccomendRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FEFDA226C871E00F179AA /* ReccomendRecipeViewController.swift */; };
+		DA2FEFDB226C871E00F179AA /* ReccomendRecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FEFDA226C871E00F179AA /* ReccomendRecipeListViewController.swift */; };
+		DA2FEFE22276E41200F179AA /* FavoriteRecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FEFE02276E41200F179AA /* FavoriteRecipeListViewController.swift */; };
+		DA2FEFE52276E50100F179AA /* FavoriteRecipeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2FEFE42276E50100F179AA /* FavoriteRecipeList.storyboard */; };
+		DA2FEFE72277D49400F179AA /* FavoriteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FEFE62277D49400F179AA /* FavoriteListViewModel.swift */; };
+		DA2FEFE92278814600F179AA /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2FEFE82278814600F179AA /* RecipeDetailViewController.swift */; };
+		DA2FEFEB2278816100F179AA /* RecipeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA2FEFEA2278816100F179AA /* RecipeDetail.storyboard */; };
 		DA37AC7622465D55007F0721 /* APIConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA37AC7522465D55007F0721 /* APIConst.swift */; };
 		DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EBE22413C2B00625893 /* AppDelegate.swift */; };
-		DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EC022413C2B00625893 /* ViewController.swift */; };
 		DA3C5EC422413C2B00625893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3C5EC222413C2B00625893 /* Main.storyboard */; };
 		DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EC522413C2B00625893 /* GourmetApp.xcdatamodeld */; };
 		DA3C5EC922413C2E00625893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3C5EC822413C2E00625893 /* Assets.xcassets */; };
@@ -73,7 +76,6 @@
 		2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3811BA8222519B8200379E5E /* RecipeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabBarController.swift; sourceTree = "<group>"; };
 		38294FEE2251D11900B811EE /* RecipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNavigationController.swift; sourceTree = "<group>"; };
-		384FCBFB226443A80015E70F /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		387176E62249E5DF00163B48 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		3874EC1E224C4DEC009FB846 /* FavoriteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryImpl.swift; sourceTree = "<group>"; };
 		3874EC20224DD906009FB846 /* FavoriteListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListUseCase.swift; sourceTree = "<group>"; };
@@ -90,11 +92,15 @@
 		C4DAC3D0BAF27BB7F30D1CE2 /* Pods-GourmetApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetApp.release.xcconfig"; path = "Target Support Files/Pods-GourmetApp/Pods-GourmetApp.release.xcconfig"; sourceTree = "<group>"; };
 		DA2FEFD6226C7A6700F179AA /* RecipeItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItemCell.swift; sourceTree = "<group>"; };
 		DA2FEFD7226C7A6700F179AA /* RecipeItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeItemCell.xib; sourceTree = "<group>"; };
-		DA2FEFDA226C871E00F179AA /* ReccomendRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendRecipeViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
+		DA2FEFDA226C871E00F179AA /* ReccomendRecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReccomendRecipeListViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
+		DA2FEFE02276E41200F179AA /* FavoriteRecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeListViewController.swift; sourceTree = "<group>"; };
+		DA2FEFE42276E50100F179AA /* FavoriteRecipeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteRecipeList.storyboard; sourceTree = "<group>"; };
+		DA2FEFE62277D49400F179AA /* FavoriteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewModel.swift; sourceTree = "<group>"; };
+		DA2FEFE82278814600F179AA /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		DA2FEFEA2278816100F179AA /* RecipeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipeDetail.storyboard; sourceTree = "<group>"; };
 		DA37AC7522465D55007F0721 /* APIConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConst.swift; sourceTree = "<group>"; };
 		DA3C5EBB22413C2B00625893 /* GourmetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3C5EBE22413C2B00625893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA3C5EC022413C2B00625893 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DA3C5EC322413C2B00625893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA3C5EC622413C2B00625893 /* GourmetApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GourmetApp.xcdatamodel; sourceTree = "<group>"; };
 		DA3C5EC822413C2E00625893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 			children = (
 				DA74AA3C22539F29005874E1 /* BaseViewModel.swift */,
 				DA74AA3E2253A1D8005874E1 /* ReccomendListViewModel.swift */,
+				DA2FEFE62277D49400F179AA /* FavoriteListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,10 +218,8 @@
 		3874EC26224DDD80009FB846 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DA3C5EC022413C2B00625893 /* ViewController.swift */,
 				3811BA8222519B8200379E5E /* RecipeTabBarController.swift */,
 				38294FEE2251D11900B811EE /* RecipeNavigationController.swift */,
-				384FCBFB226443A80015E70F /* FavoriteTableViewController.swift */,
 				DA2FEFD6226C7A6700F179AA /* RecipeItemCell.swift */,
 				DA2FEFD7226C7A6700F179AA /* RecipeItemCell.xib */,
 			);
@@ -354,7 +359,11 @@
 			isa = PBXGroup;
 			children = (
 				DA74AA5A2264C929005874E1 /* ReccomendRecipeList.storyboard */,
-				DA2FEFDA226C871E00F179AA /* ReccomendRecipeViewController.swift */,
+				DA2FEFDA226C871E00F179AA /* ReccomendRecipeListViewController.swift */,
+				DA2FEFE02276E41200F179AA /* FavoriteRecipeListViewController.swift */,
+				DA2FEFE42276E50100F179AA /* FavoriteRecipeList.storyboard */,
+				DA2FEFE82278814600F179AA /* RecipeDetailViewController.swift */,
+				DA2FEFEA2278816100F179AA /* RecipeDetail.storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -446,6 +455,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2FEFD9226C7A6700F179AA /* RecipeItemCell.xib in Resources */,
+				DA2FEFEB2278816100F179AA /* RecipeDetail.storyboard in Resources */,
+				DA2FEFE52276E50100F179AA /* FavoriteRecipeList.storyboard in Resources */,
 				DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */,
 				DA74AA5B2264C929005874E1 /* ReccomendRecipeList.storyboard in Resources */,
 				38DF905D2244CA0E0008F432 /* Default-568h@2x.png in Resources */,
@@ -618,27 +629,28 @@
 				387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */,
 				DAC876B12247CB4000A296E1 /* WebAPIManager.swift in Sources */,
 				38294FEF2251D11900B811EE /* RecipeNavigationController.swift in Sources */,
+				DA2FEFE72277D49400F179AA /* FavoriteListViewModel.swift in Sources */,
 				DA74AA43225649BD005874E1 /* ActivityIndicator.swift in Sources */,
 				DA3C5EC722413C2B00625893 /* GourmetApp.xcdatamodeld in Sources */,
+				DA2FEFE92278814600F179AA /* RecipeDetailViewController.swift in Sources */,
 				38C633402248BD1E004EBDC7 /* RecipeDetailRepositoryImpl.swift in Sources */,
 				DA3C5EF222413FCD00625893 /* CookingIngredients.swift in Sources */,
-				384FCBFC226443A80015E70F /* FavoriteTableViewController.swift in Sources */,
 				DA74AA3D22539F29005874E1 /* BaseViewModel.swift in Sources */,
 				DA3C5EFB2243B1EF00625893 /* RecipeDetailRepository.swift in Sources */,
 				DA3C5EF62241411D00625893 /* Recipe.swift in Sources */,
 				DAC876AF2247CAED00A296E1 /* RecipeListRepositoryImpl.swift in Sources */,
 				3811BA8322519B8200379E5E /* RecipeTabBarController.swift in Sources */,
 				38EB88802256D81B0091058C /* Observable+Ext.swift in Sources */,
-				DA3C5EC122413C2B00625893 /* ViewController.swift in Sources */,
 				DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */,
 				3874EC23224DDAF1009FB846 /* DetailUseCase.swift in Sources */,
-				DA2FEFDB226C871E00F179AA /* ReccomendRecipeViewController.swift in Sources */,
+				DA2FEFDB226C871E00F179AA /* ReccomendRecipeListViewController.swift in Sources */,
 				DA5AE47B224A752D001E0350 /* FavoriteRealmModel.swift in Sources */,
 				DA74AA47225657CA005874E1 /* ErrorTracker.swift in Sources */,
 				DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */,
 				3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */,
 				DA74AA3F2253A1D8005874E1 /* ReccomendListViewModel.swift in Sources */,
 				DA74AA45225653A7005874E1 /* ArrayTracker.swift in Sources */,
+				DA2FEFE22276E41200F179AA /* FavoriteRecipeListViewController.swift in Sources */,
 				DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */,
 				3874EC1F224C4DEC009FB846 /* FavoriteRepositoryImpl.swift in Sources */,
 				DA2FEFD8226C7A6700F179AA /* RecipeItemCell.swift in Sources */,
