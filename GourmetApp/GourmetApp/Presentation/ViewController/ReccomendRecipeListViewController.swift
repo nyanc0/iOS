@@ -50,13 +50,13 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
     }
 
     private func initViewModel() {
-        viewModel = ReccomendListViewModel(recipeListUseCase: RecipeListUseCase(recipeListRepository: RecipeListRepositoryImpl()))
+        viewModel = ReccomendListViewModel(recipeListUseCase: RecipeListUseCase(recipeListRepository: RecipeListRepositoryImpl()), navigator: DetailNavigator(viewController: self))
     }
 
     private func bindViewModel() {
         let input = ReccomendListViewModel.Input(
             trigger: Driver.just(()),
-            tapCell: recipeCollectionView.rx.itemSelected.asSignal().map { $0.row }
+            tapCell: recipeCollectionView.rx.itemSelected.asDriver().map { $0.row }
         )
 
         let output = viewModel.transform(input: input)
@@ -79,5 +79,8 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
                 self.loadingIndicator.isHidden = !loading
             }
             .disposed(by: disposeBag)
+
+        output.select.drive().disposed(by: disposeBag)
+
     }
 }

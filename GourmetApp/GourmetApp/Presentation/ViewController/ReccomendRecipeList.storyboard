@@ -51,11 +51,22 @@
                     <connections>
                         <outlet property="loadingIndicator" destination="DuM-AP-blY" id="RAT-L1-LV9"/>
                         <outlet property="recipeCollectionView" destination="fJc-f5-aP4" id="elO-z0-02b"/>
+                        <segue destination="Umv-D1-w71" kind="show" identifier="toRecipeDetailController" id="vJa-gm-ubD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vT-5b-eob" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-138" y="-237"/>
+        </scene>
+        <!--RecipeDetail-->
+        <scene sceneID="SyG-1o-yuM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecipeDetail" id="Umv-D1-w71" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="k8L-qn-ASf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xIM-nA-R0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="559" y="-274"/>
         </scene>
         <!--ホーム-->
         <scene sceneID="1Wt-JE-gFc">

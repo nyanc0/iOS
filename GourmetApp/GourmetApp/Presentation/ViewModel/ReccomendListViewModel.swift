@@ -16,7 +16,7 @@ class ReccomendListViewModel: BaseViewModel {
         /// 表示時のローディングトリガー
         let trigger: Driver<Void>
         /// タップイベント
-        let tapCell: Signal<Int>
+        let tapCell: Driver<Int>
     }
 
     struct Output {
@@ -26,6 +26,7 @@ class ReccomendListViewModel: BaseViewModel {
         let recipeList: Driver<[Recipe]>
         let isLoading: Driver<Bool>
         let error: Driver<Error>
+        let select: Driver<Void>
     }
 
     struct State {
@@ -35,9 +36,11 @@ class ReccomendListViewModel: BaseViewModel {
     }
 
     private let recipeListUseCase: RecipeListUseCase
+    private let navigator: DetailNavigator
 
-    init(recipeListUseCase: RecipeListUseCase) {
+    init(recipeListUseCase: RecipeListUseCase, navigator: DetailNavigator) {
         self.recipeListUseCase = recipeListUseCase
+        self.navigator = navigator
     }
 
     func transform(input: ReccomendListViewModel.Input) -> Output {
@@ -54,11 +57,18 @@ class ReccomendListViewModel: BaseViewModel {
                 .mapToVoid()
         }
 
+        // タップ
+        let tapCell = input.tapCell
+            .withLatestFrom(state.content) { [unowned self] (index: Int, recipes: [Recipe]) in
+                self.navigator.toDetail(recipe: recipes[index])
+        }
+
         return Output(
             load: load,
             recipeList: state.content.asDriver(),
             isLoading: state.isLoading.asDriver(),
-            error: state.error.asDriver()
+            error: state.error.asDriver(),
+            select: tapCell
         )
     }
 }

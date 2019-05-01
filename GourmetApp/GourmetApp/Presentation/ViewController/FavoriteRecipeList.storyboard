@@ -14,7 +14,6 @@
         <!--お気に入り-->
         <scene sceneID="Axa-Xk-obF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ib7-36-ASa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mCN-KK-coT" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="お気に入り" image="ic_star_orange" selectedImage="ic_star_orange" id="GEM-Z1-wUE"/>
                     <toolbarItems/>
@@ -32,13 +31,13 @@
                         <segue destination="wWH-hR-AwO" kind="relationship" relationship="rootViewController" id="4eZ-uZ-NE8"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ib7-36-ASa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1457" y="-1060"/>
         </scene>
         <!--Favorite-->
         <scene sceneID="BLt-7Q-xGh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JgU-Ng-Z5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="wWH-hR-AwO" customClass="FavoriteRecipeListViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9n7-kk-hPs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -121,6 +120,7 @@
                         <outlet property="loadingIndicator" destination="24z-Hp-ZFo" id="WJ3-1v-pvA"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JgU-Ng-Z5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-532" y="-1060.1199400299852"/>
         </scene>
