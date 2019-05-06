@@ -28,28 +28,12 @@ class FavoriteRepositoryImpl: FavoriteRepository {
         }
     }
 
-    func insert(recipe: Recipe) -> Single<Bool> {
-        print("insert is Called")
-        return Single<Bool>.create { observer in
-            if FavoriteDao.favoriteDao.addOrUpdate(recipeId: recipe.recipeId) {
-                observer(.success(true))
-            } else {
-                observer(.error(NSError(domain: "Could not insert record!!", code: -1, userInfo: nil)))
-            }
-            return Disposables.create()
-        }
+    func insert(recipe: Recipe) -> Bool {
+        return FavoriteDao.favoriteDao.addOrUpdate(recipeId: recipe.recipeId)
     }
 
-    func delete(recipe: Recipe) -> Single<Bool> {
-        print("delete is Called")
-        return Single<Bool>.create { observer in
-            if FavoriteDao.favoriteDao.delete(key: recipe.recipeId) {
-                observer(.success(true))
-            } else {
-                observer(.error(NSError(domain: "Could not delete record!!", code: -1, userInfo: nil)))
-            }
-            return Disposables.create()
-        }
+    func delete(recipe: Recipe) -> Bool {
+        return FavoriteDao.favoriteDao.delete(key: recipe.recipeId)
     }
 
     func isRecipeSaved(recipeId: String) -> Single<Bool> {

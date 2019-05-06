@@ -23,11 +23,11 @@ class DetailUseCase {
         return recipeDetailRepository.getRecipeDetail(recipeId)
     }
 
-    func saveRecipe(recipe: Recipe) -> Single<Bool> {
+    func saveRecipe(recipe: Recipe) -> Bool {
         return favoriteRepository.insert(recipe: recipe)
     }
 
-    func deleteRecipe(recipe: Recipe) -> Single<Bool> {
+    func deleteRecipe(recipe: Recipe) -> Bool {
         return favoriteRepository.delete(recipe: recipe)
     }
 
