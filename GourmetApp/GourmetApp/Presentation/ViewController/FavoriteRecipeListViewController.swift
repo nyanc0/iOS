@@ -52,13 +52,13 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
     }
 
     private func initViewModel() {
-        viewModel = FavoriteListViewModel(favoriteUseCase: FavoriteListUseCase(favoriteRepository: FavoriteRepositoryImpl(recipeListRepository: RecipeListRepositoryImpl())))
+        viewModel = FavoriteListViewModel(favoriteUseCase: FavoriteListUseCase(favoriteRepository: FavoriteRepositoryImpl(recipeListRepository: RecipeListRepositoryImpl())), navigator: DetailNavigator(viewController: self))
     }
 
     private func bindViewModel() {
         let input = FavoriteListViewModel.Input(
             trigger: Driver.just(()),
-            tapCell: favoriteCollectionView.rx.itemSelected.asSignal().map { $0.row }
+            tapCell: favoriteCollectionView.rx.itemSelected.asDriver().map { $0.row }
         )
 
         let output = viewModel.transform(input: input)
@@ -93,5 +93,7 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
                 self.loadingIndicator.isHidden = !isLoading
             }
             .disposed(by: disposeBag)
+
+        output.select.drive().disposed(by: disposeBag)
     }
 }

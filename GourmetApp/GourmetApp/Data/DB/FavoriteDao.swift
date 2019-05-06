@@ -7,19 +7,22 @@
 //
 
 import Foundation
+import RealmSwift
+import RxSwift
+
 class FavoriteDao: BaseDao<FavoriteRealmModel> {
 
     public static var favoriteDao: FavoriteDao = {
         FavoriteDao()
     }()
 
+    //    func findByRecipeId(recipeId: String) -> Single<FavoriteRealmModel?> {
+    //        return self.findById(key: recipeId)
+    //    }
+    //
     func addOrUpdate(recipeId: String) -> Bool {
         let favoriteModel = FavoriteRealmModel()
-        let updateFunc = { (favoriteModel: FavoriteRealmModel) -> FavoriteRealmModel in
-            favoriteModel.recipeId = recipeId
-            return favoriteModel
-        }
-        return self.addOrUpdate(data: favoriteModel, updateFunc: updateFunc)
+        favoriteModel.recipeId = recipeId
+        return self.addOrUpdate(data: favoriteModel)
     }
-
 }

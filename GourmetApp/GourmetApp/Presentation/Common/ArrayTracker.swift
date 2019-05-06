@@ -9,7 +9,9 @@
 import Foundation
 import RxSwift
 import RxCocoa
+
 final class ArrayTracker<T>: SharedSequenceConvertibleType {
+
     typealias SharingStrategy = DriverSharingStrategy
 
     private let _array = BehaviorRelay<[T]>(value: [])

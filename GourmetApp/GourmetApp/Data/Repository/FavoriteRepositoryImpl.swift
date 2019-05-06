@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+
 class FavoriteRepositoryImpl: FavoriteRepository {
 
     let recipeListRepository: RecipeListRepository
@@ -28,6 +29,7 @@ class FavoriteRepositoryImpl: FavoriteRepository {
     }
 
     func insert(recipe: Recipe) -> Single<Bool> {
+        print("insert is Called")
         return Single<Bool>.create { observer in
             if FavoriteDao.favoriteDao.addOrUpdate(recipeId: recipe.recipeId) {
                 observer(.success(true))
@@ -39,11 +41,23 @@ class FavoriteRepositoryImpl: FavoriteRepository {
     }
 
     func delete(recipe: Recipe) -> Single<Bool> {
+        print("delete is Called")
         return Single<Bool>.create { observer in
             if FavoriteDao.favoriteDao.delete(key: recipe.recipeId) {
                 observer(.success(true))
             } else {
                 observer(.error(NSError(domain: "Could not delete record!!", code: -1, userInfo: nil)))
+            }
+            return Disposables.create()
+        }
+    }
+
+    func isRecipeSaved(recipeId: String) -> Single<Bool> {
+        return Single<Bool>.create { observer in
+            if FavoriteDao.favoriteDao.isSaved(key: recipeId) {
+                observer(.success(true))
+            } else {
+                observer(.success(false))
             }
             return Disposables.create()
         }

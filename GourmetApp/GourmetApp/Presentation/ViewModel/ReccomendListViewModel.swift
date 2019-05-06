@@ -58,7 +58,8 @@ class ReccomendListViewModel: BaseViewModel {
         }
 
         // タップ
-        let tapCell = input.tapCell
+        let tapCell = input
+            .tapCell
             .withLatestFrom(state.content) { [unowned self] (index: Int, recipes: [Recipe]) in
                 self.navigator.toDetail(recipe: recipes[index])
         }

@@ -9,5 +9,6 @@
 import Foundation
 import RxSwift
 protocol RecipeDetailRepository {
-    func getRecipeDetail(_ recipeId: String) -> Single<Recipe?>
+    //    func getRecipeDetail(_ recipeId: String) -> Single<Recipe?>
+    func getRecipeDetail(_ recipeId: String) -> Single<[Recipe]>
 }

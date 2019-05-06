@@ -1,32 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qBB-ek-6sQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Ti-dl-JuK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--hoge-->
-        <scene sceneID="YNP-UP-k7V">
+        <!--Recipe Detail View Controller-->
+        <scene sceneID="bjg-6K-LYD">
             <objects>
-                <tableViewController title="hoge" id="qBB-ek-6sQ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="J0R-IU-xAY">
+                <viewController hidesBottomBarWhenPushed="YES" id="4Ti-dl-JuK" customClass="RecipeDetailViewController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y1Y-EP-mhf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-wz-y8N" userLabel="DetailTableView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lF9-Rx-7fP" userLabel="FavoriteButton" customClass="MDCFloatingButton">
+                                <rect key="frame" x="323" y="615" width="36" height="36"/>
+                                <color key="backgroundColor" name="ColorAccent"/>
+                                <state key="normal" image="ic_star_border_orange">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="qBB-ek-6sQ" id="ba8-KN-4Nl"/>
-                            <outlet property="delegate" destination="qBB-ek-6sQ" id="mKM-3f-1Qu"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Y7N-b2-sNZ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UzO-8s-HDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <constraints>
+                            <constraint firstItem="zIF-wz-y8N" firstAttribute="top" secondItem="96h-6A-a9n" secondAttribute="top" id="7D6-uv-1ZJ"/>
+                            <constraint firstItem="96h-6A-a9n" firstAttribute="trailing" secondItem="lF9-Rx-7fP" secondAttribute="trailing" constant="16" id="Icn-aa-lOR"/>
+                            <constraint firstItem="96h-6A-a9n" firstAttribute="bottom" secondItem="lF9-Rx-7fP" secondAttribute="bottom" constant="16" id="LUf-Jz-SaM"/>
+                            <constraint firstItem="zIF-wz-y8N" firstAttribute="leading" secondItem="96h-6A-a9n" secondAttribute="leading" id="Ngf-f6-nr4"/>
+                            <constraint firstItem="96h-6A-a9n" firstAttribute="trailing" secondItem="zIF-wz-y8N" secondAttribute="trailing" id="Waa-uB-2YA"/>
+                            <constraint firstItem="96h-6A-a9n" firstAttribute="bottom" secondItem="zIF-wz-y8N" secondAttribute="bottom" id="ell-3R-qQn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="96h-6A-a9n"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailTableView" destination="zIF-wz-y8N" id="6GI-S8-hYy"/>
+                        <outlet property="favoriteButton" destination="lF9-Rx-7fP" id="HHl-DO-e6j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJW-EN-qM4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1586" y="117"/>
+            <point key="canvasLocation" x="-1700" y="-93"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_star_border_orange" width="36" height="36"/>
+        <namedColor name="ColorAccent">
+            <color red="1" green="0.792156862745098" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

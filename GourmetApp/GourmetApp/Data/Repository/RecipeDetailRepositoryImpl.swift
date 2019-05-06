@@ -10,17 +10,9 @@ import Foundation
 import RxSwift
 
 class RecipeDetailRepositoryImpl: RecipeDetailRepository {
-    func getRecipeDetail(_ recipeId: String) -> Single<Recipe?> {
+    func getRecipeDetail(_ recipeId: String) -> Single<[Recipe]> {
         return WebAPIManager
             .observe(RecipeDetailRequest(recipeId: recipeId))
-            .map { self.from(recipeList: $0) }
-    }
-
-    private func from(recipeList: [Recipe]) -> Recipe? {
-        if recipeList.isEmpty {
-            return nil
-        }
-        return recipeList[0]
     }
 }
 

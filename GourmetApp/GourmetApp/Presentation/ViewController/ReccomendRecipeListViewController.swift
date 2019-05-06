@@ -83,4 +83,13 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
         output.select.drive().disposed(by: disposeBag)
 
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRecipeDetailController" {
+            if let vc = segue.destination as? RecipeDetailViewController,
+                let recipe = sender as? Recipe {
+                vc.initViewModel(with: recipe)
+            }
+        }
+    }
 }

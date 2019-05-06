@@ -8,7 +8,9 @@
 
 import Foundation
 import RxSwift
+
 class DetailUseCase {
+
     private let favoriteRepository: FavoriteRepository
     private let recipeDetailRepository: RecipeDetailRepository
 
@@ -17,7 +19,7 @@ class DetailUseCase {
         self.recipeDetailRepository = recipeDetailRepository
     }
 
-    func loadDetail(recipeId: String) -> Single<Recipe?> {
+    func loadDetail(recipeId: String) -> Single<[Recipe]> {
         return recipeDetailRepository.getRecipeDetail(recipeId)
     }
 
@@ -27,5 +29,9 @@ class DetailUseCase {
 
     func deleteRecipe(recipe: Recipe) -> Single<Bool> {
         return favoriteRepository.delete(recipe: recipe)
+    }
+
+    func checkRecipeSaved(recipeId: String) -> Single<Bool> {
+        return favoriteRepository.isRecipeSaved(recipeId: recipeId)
     }
 }

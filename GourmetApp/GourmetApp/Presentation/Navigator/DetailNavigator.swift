@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class DetailNavigator {
-    private weak var viewController: ReccomendRecipeListViewController?
+    private weak var viewController: UIViewController?
 
-    init(viewController: ReccomendRecipeListViewController) {
+    init(viewController: UIViewController) {
         self.viewController = viewController
     }
 
-    func toDetail(recipe: Recipe) {
+    func toDetail(recipe: Recipe? = nil) {
         viewController?.performSegue(withIdentifier: "toRecipeDetailController", sender: recipe)
     }
 }

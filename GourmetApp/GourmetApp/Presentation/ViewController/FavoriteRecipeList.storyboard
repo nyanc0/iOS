@@ -118,11 +118,20 @@
                         <outlet property="errorView" destination="Ebh-Ap-vhR" id="d8D-cE-pc1"/>
                         <outlet property="favoriteCollectionView" destination="xaD-qd-Vg4" id="gQo-gm-QVp"/>
                         <outlet property="loadingIndicator" destination="24z-Hp-ZFo" id="WJ3-1v-pvA"/>
+                        <segue destination="y1I-Ag-ufK" kind="show" identifier="toRecipeDetailController" id="3jH-9t-ihF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgU-Ng-Z5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-532" y="-1060.1199400299852"/>
+        </scene>
+        <!--RecipeDetail-->
+        <scene sceneID="Q3k-th-eB6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecipeDetail" id="y1I-Ag-ufK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcm-bA-cQl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="-1055"/>
         </scene>
     </scenes>
     <resources>
