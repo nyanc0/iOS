@@ -135,7 +135,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_star_orange" width="36" height="36"/>
+        <image name="ic_star_orange" width="72" height="72"/>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3811BA8322519B8200379E5E /* RecipeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3811BA8222519B8200379E5E /* RecipeTabBarController.swift */; };
 		38294FEF2251D11900B811EE /* RecipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38294FEE2251D11900B811EE /* RecipeNavigationController.swift */; };
+		385BA491228140DC00170525 /* Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385BA490228140DC00170525 /* Reactive.swift */; };
 		387176E72249E5DF00163B48 /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387176E62249E5DF00163B48 /* FavoriteRepository.swift */; };
 		3874EC1F224C4DEC009FB846 /* FavoriteRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874EC1E224C4DEC009FB846 /* FavoriteRepositoryImpl.swift */; };
 		3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3874EC20224DD906009FB846 /* FavoriteListUseCase.swift */; };
@@ -80,6 +81,7 @@
 		2D5C0C2082804399C52C360F /* Pods_GourmetApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3811BA8222519B8200379E5E /* RecipeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabBarController.swift; sourceTree = "<group>"; };
 		38294FEE2251D11900B811EE /* RecipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeNavigationController.swift; sourceTree = "<group>"; };
+		385BA490228140DC00170525 /* Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reactive.swift; sourceTree = "<group>"; };
 		387176E62249E5DF00163B48 /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
 		3874EC1E224C4DEC009FB846 /* FavoriteRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryImpl.swift; sourceTree = "<group>"; };
 		3874EC20224DD906009FB846 /* FavoriteListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListUseCase.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				DA74AA46225657CA005874E1 /* ErrorTracker.swift */,
 				38EB887F2256D81B0091058C /* Observable+Ext.swift */,
 				DA3ED2D9227C7D8900D80C78 /* FlgTracker.swift */,
+				385BA490228140DC00170525 /* Reactive.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -668,6 +671,7 @@
 				DA74AA47225657CA005874E1 /* ErrorTracker.swift in Sources */,
 				DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */,
 				3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */,
+				385BA491228140DC00170525 /* Reactive.swift in Sources */,
 				DA3ED2D6227B171400D80C78 /* DetailViewModel.swift in Sources */,
 				DA74AA3F2253A1D8005874E1 /* ReccomendListViewModel.swift in Sources */,
 				DA74AA45225653A7005874E1 /* ArrayTracker.swift in Sources */,

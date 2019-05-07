@@ -57,18 +57,18 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
 
     private func bindViewModel() {
         let input = FavoriteListViewModel.Input(
-            trigger: Driver.just(()),
+            trigger: rx.viewWillAppearInvoked.asDriver(onErrorJustReturn: ()),
             tapCell: favoriteCollectionView.rx.itemSelected.asDriver().map { $0.row }
         )
 
         let output = viewModel.transform(input: input)
-
+        
         output.recipeList
             .asObservable()
             .filter { recipe in
                 self.favoriteCollectionView.isHidden = recipe.isEmpty
                 self.emptyView.isHidden = !recipe.isEmpty
-                return recipe.isEmpty
+                return !recipe.isEmpty
             }
             .bind(to: favoriteCollectionView.rx.items(cellIdentifier: "RecipeItemCell", cellType: RecipeItemCell.self)) {  _, element, cell in
                 cell.setData(recipe: element)
@@ -95,5 +95,14 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
             .disposed(by: disposeBag)
 
         output.select.drive().disposed(by: disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRecipeDetailController" {
+            if let vc = segue.destination as? RecipeDetailViewController,
+                let recipe = sender as? Recipe {
+                vc.initViewModel(with: recipe)
+            }
+        }
     }
 }

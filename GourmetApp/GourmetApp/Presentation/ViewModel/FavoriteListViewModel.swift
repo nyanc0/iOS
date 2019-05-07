@@ -37,36 +37,35 @@ class FavoriteListViewModel: BaseViewModel {
 
     private let favoriteUseCase: FavoriteListUseCase
     private let navigator: DetailNavigator
+    private let state: State
 
     init(favoriteUseCase: FavoriteListUseCase, navigator: DetailNavigator) {
         self.favoriteUseCase = favoriteUseCase
         self.navigator = navigator
+        self.state = State()
     }
 
     func transform(input: FavoriteListViewModel.Input) -> FavoriteListViewModel.Output {
-
-        let state = State()
-
         // 初回ロード
         let load = input.trigger.flatMap { _ in
             self.favoriteUseCase
                 .loadFavoriteList()
-                .trackArray(state.content)
-                .trackError(state.error)
-                .trackActivity(state.isLoading)
+                .trackArray(self.state.content)
+                .trackError(self.state.error)
+                .trackActivity(self.state.isLoading)
                 .asDriverOnErrorJustComplete()
                 .mapToVoid()
         }
 
         // タップ
-        let tapCell = input.tapCell.withLatestFrom(state.content) { [unowned self] (index: Int, recipes: [Recipe]) in
+        let tapCell = input.tapCell.withLatestFrom(self.state.content) { [unowned self] (index: Int, recipes: [Recipe]) in
             self.navigator.toDetail(recipe: recipes[index])
         }
 
         return Output(load: load,
-                      recipeList: state.content.asDriver(),
-                      isLoading: state.isLoading.asDriver(),
-                      error: state.error.asDriver(),
+                      recipeList: self.state.content.asDriver(),
+                      isLoading: self.state.isLoading.asDriver(),
+                      error: self.state.error.asDriver(),
                       select: tapCell
         )
     }
