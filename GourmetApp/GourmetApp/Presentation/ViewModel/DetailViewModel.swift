@@ -11,6 +11,9 @@ import RxSwift
 import RxCocoa
 
 class DetailViewModel: BaseViewModel {
+    
+    // https://www.okadalabo.com/scroll-view-内に-tabel-viewを配置して、table-viewの高さは成り行きで、/
+    
     struct Input {
         /// 表示時のローディングトリガー
         let trigger: Driver<Void>
@@ -27,12 +30,16 @@ class DetailViewModel: BaseViewModel {
         let error: Driver<Error>
         let isAdded: Driver<Bool>
         let tap: Driver<Void>
+        let ingradients: Driver<[CookingIngredients]>
+        let methods: Driver<[CookingMethod]>
     }
 
     struct State {
         let content: ArrayTracker<Recipe> = ArrayTracker<Recipe>()
         let error = ErrorTracker()
         let isSaved = BehaviorRelay(value: false)
+        let ingradients: BehaviorRelay<[CookingIngredients]> = BehaviorRelay(value: [])
+        let methods: BehaviorRelay<[CookingMethod]> = BehaviorRelay(value: [])
     }
 
     private let detailUseCase = DetailUseCase(favoriteRepository: FavoriteRepositoryImpl(recipeListRepository: RecipeListRepositoryImpl()), recipeDetailRepository: RecipeDetailRepositoryImpl())
@@ -54,6 +61,17 @@ class DetailViewModel: BaseViewModel {
                 .asDriverOnErrorJustComplete()
                 .mapToVoid()
         }
+        
+        let recipe = input.trigger.flatMap { [unowned self] _ in
+            self.detailUseCase
+                .loadDetail(recipeId: self.selectedRecipe.recipeId)
+                .asObservable()
+                .map { results in
+                    self.mapTo(recipe: results[0], state: state)
+                }
+                .asDriverOnErrorJustComplete()
+                .mapToVoid()
+        }
 
         let favoriteLoad = input.loadTrigger.flatMap { [unowned self] _ in
             self.detailUseCase
@@ -61,7 +79,8 @@ class DetailViewModel: BaseViewModel {
                 .filter { isSaved in
                     state.isSaved.accept(isSaved)
                     return isSaved
-                }.asDriver(onErrorJustReturn: false)
+                }
+                .asDriver(onErrorJustReturn: false)
                 .mapToVoid()
         }
 
@@ -80,6 +99,14 @@ class DetailViewModel: BaseViewModel {
                       recipe: state.content.asDriver(),
                       error: state.error.asDriver(),
                       isAdded: state.isSaved.asDriver(),
-                      tap: tap)
+                      tap: tap,
+                      ingradients: state.ingradients.asDriver(),
+                      methods: state.methods.asDriver())
+    }
+    
+    func mapTo(recipe: Recipe, state: State) {
+        state.ingradients.accept(recipe.cookingIngredients)
+        state.methods.accept(recipe.cookingMethod)
     }
 }
+

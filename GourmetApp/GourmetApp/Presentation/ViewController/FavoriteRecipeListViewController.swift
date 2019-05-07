@@ -28,7 +28,7 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
         initViewModel()
         bindViewModel()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRecipeDetailController" {
             if let vc = segue.destination as? RecipeDetailViewController,
@@ -74,7 +74,7 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
         )
 
         let output = viewModel.transform(input: input)
-        
+
         output.recipeList
             .asObservable()
             .filter { recipe in

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner">
+            <connections>
+                <outlet property="mainImage" destination="cgX-aZ-Sj8" id="Jp8-0i-GPH"/>
+                <outlet property="widthConstraints" destination="PoF-Y3-AwM" id="x5w-TV-8te"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="tof-Yq-mxx" customClass="MainImageView" customModule="GourmetApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B65-3Z-817">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cgX-aZ-Sj8" userLabel="MainImage">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="cgX-aZ-Sj8" secondAttribute="height" multiplier="75:46" id="ZzV-qY-kkO"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cgX-aZ-Sj8" firstAttribute="leading" secondItem="B65-3Z-817" secondAttribute="leading" id="0x6-Vd-hMp"/>
+                        <constraint firstAttribute="width" constant="375" id="PoF-Y3-AwM" userLabel="WidthConstraints"/>
+                        <constraint firstItem="cgX-aZ-Sj8" firstAttribute="top" secondItem="B65-3Z-817" secondAttribute="top" id="VvS-No-fcf"/>
+                        <constraint firstAttribute="bottom" secondItem="cgX-aZ-Sj8" secondAttribute="bottom" id="fQG-Xe-Ve0"/>
+                        <constraint firstAttribute="trailing" secondItem="cgX-aZ-Sj8" secondAttribute="trailing" id="kpi-Nh-g2f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="rmI-ui-MU4" firstAttribute="trailing" secondItem="B65-3Z-817" secondAttribute="trailing" id="YHi-WH-RPy"/>
+                <constraint firstItem="B65-3Z-817" firstAttribute="top" secondItem="rmI-ui-MU4" secondAttribute="top" id="b7D-pX-qap"/>
+                <constraint firstItem="B65-3Z-817" firstAttribute="leading" secondItem="rmI-ui-MU4" secondAttribute="leading" id="o3L-B9-S4k"/>
+                <constraint firstItem="rmI-ui-MU4" firstAttribute="bottom" secondItem="B65-3Z-817" secondAttribute="bottom" id="t1n-ei-X0K"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="rmI-ui-MU4"/>
+            <point key="canvasLocation" x="257" y="-177"/>
+        </view>
+    </objects>
+</document>
