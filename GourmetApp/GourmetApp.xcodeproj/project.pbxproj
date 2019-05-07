@@ -41,7 +41,6 @@
 		DA3C5EFE2243B7B700625893 /* RecipeListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C5EFD2243B7B700625893 /* RecipeListUseCase.swift */; };
 		DA3ED2D42279D71500D80C78 /* DetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2D32279D71500D80C78 /* DetailNavigator.swift */; };
 		DA3ED2D6227B171400D80C78 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2D5227B171400D80C78 /* DetailViewModel.swift */; };
-		DA3ED2DA227C7D8900D80C78 /* FlgTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2D9227C7D8900D80C78 /* FlgTracker.swift */; };
 		DA3ED2DC227FE8D900D80C78 /* DetailUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2DB227FE8D800D80C78 /* DetailUseCaseTest.swift */; };
 		DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE478224A74EC001E0350 /* BaseRealmModel.swift */; };
 		DA5AE47B224A752D001E0350 /* FavoriteRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47A224A752D001E0350 /* FavoriteRealmModel.swift */; };
@@ -121,7 +120,6 @@
 		DA3C5EFD2243B7B700625893 /* RecipeListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListUseCase.swift; sourceTree = "<group>"; };
 		DA3ED2D32279D71500D80C78 /* DetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigator.swift; sourceTree = "<group>"; };
 		DA3ED2D5227B171400D80C78 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
-		DA3ED2D9227C7D8900D80C78 /* FlgTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlgTracker.swift; sourceTree = "<group>"; };
 		DA3ED2DB227FE8D800D80C78 /* DetailUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCaseTest.swift; sourceTree = "<group>"; };
 		DA5AE478224A74EC001E0350 /* BaseRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmModel.swift; sourceTree = "<group>"; };
 		DA5AE47A224A752D001E0350 /* FavoriteRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRealmModel.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				DA74AA44225653A7005874E1 /* ArrayTracker.swift */,
 				DA74AA46225657CA005874E1 /* ErrorTracker.swift */,
 				38EB887F2256D81B0091058C /* Observable+Ext.swift */,
-				DA3ED2D9227C7D8900D80C78 /* FlgTracker.swift */,
 				385BA490228140DC00170525 /* Reactive.swift */,
 			);
 			path = Common;
@@ -677,7 +674,6 @@
 				DA74AA45225653A7005874E1 /* ArrayTracker.swift in Sources */,
 				DA2FEFE22276E41200F179AA /* FavoriteRecipeListViewController.swift in Sources */,
 				DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */,
-				DA3ED2DA227C7D8900D80C78 /* FlgTracker.swift in Sources */,
 				3874EC1F224C4DEC009FB846 /* FavoriteRepositoryImpl.swift in Sources */,
 				DA2FEFD8226C7A6700F179AA /* RecipeItemCell.swift in Sources */,
 				DA5AE47F224A7B7D001E0350 /* FavoriteDao.swift in Sources */,

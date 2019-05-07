@@ -109,36 +109,4 @@ class BaseDao<T: Object> {
         }
         return false
     }
-
-    //    private func setDefaultColumnValue(data: T) -> (T) {
-    //        if BaseDao<T>.realm.isInWriteTransaction {
-    //            data.createdDate = Date()
-    //        } else {
-    //            do {
-    //                try BaseDao<T>.realm.write {
-    //                    data.updatedDate = Date()
-    //                }
-    //            } catch let error as NSError {
-    //                print("\(error.localizedDescription) ")
-    //            }
-    //        }
-    //        return data
-    //    }
-
-    /**
-     * 新規主キー発行
-     */
-    func newId() -> Int? {
-        guard let key = T.primaryKey() else {
-            //primaryKey未設定
-            return nil
-        }
-
-        if let last = BaseDao<T>.realm.objects(T.self).last,
-            let lastId = last[key] as? Int {
-            return lastId + 1
-        } else {
-            return 1
-        }
-    }
 }

@@ -9,7 +9,9 @@
 import RxCocoa
 import RxSwift
 
+/// UIViewControllerのライフサイクルをRxで監視可能にする.
 extension Reactive where Base: UIViewController {
+
     var viewWillAppear: Observable<Void> {
         return sentMessage(#selector(base.viewWillAppear(_:)))
             .map { _ in () }

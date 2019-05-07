@@ -12,22 +12,30 @@ import RxCocoa
 import RxDataSources
 
 class ReccomendRecipeListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-
+    
     private let disposeBag = DisposeBag()
     private var viewModel: ReccomendListViewModel!
     private var cellSizeCache: CGSize!
-
+    
     @IBOutlet private weak var recipeCollectionView: UICollectionView!
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initCollectionView()
         initViewModel()
         bindViewModel()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRecipeDetailController" {
+            if let vc = segue.destination as? RecipeDetailViewController,
+                let recipe = sender as? Recipe {
+                vc.initViewModel(with: recipe)
+            }
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // Cellのサイズはキャッシュしておく
         guard
@@ -40,7 +48,8 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
         }
         return cache
     }
-
+    
+    /// CollectionViewの初期化
     private func initCollectionView() {
         recipeCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         recipeCollectionView.register(UINib(nibName: "RecipeItemCell", bundle: nil), forCellWithReuseIdentifier: "RecipeItemCell")
@@ -48,30 +57,33 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
             flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
         }
     }
-
+    
+    /// ViewModelの初期化
+    /// UseCaseとかImplをここで渡すのは微妙だけどDIコンテナまで入れるのは大変そうなので...
     private func initViewModel() {
         viewModel = ReccomendListViewModel(recipeListUseCase: RecipeListUseCase(recipeListRepository: RecipeListRepositoryImpl()), navigator: DetailNavigator(viewController: self))
     }
-
+    
+    /// ViewModelのInput/Outputとのbind
     private func bindViewModel() {
         let input = ReccomendListViewModel.Input(
             trigger: Driver.just(()),
             tapCell: recipeCollectionView.rx.itemSelected.asDriver().map { $0.row }
         )
-
+        
         let output = viewModel.transform(input: input)
-
+        
         output.recipeList
             .asObservable()
             .bind(to: recipeCollectionView.rx.items(cellIdentifier: "RecipeItemCell", cellType: RecipeItemCell.self)) {  _, element, cell in
                 cell.setData(recipe: element)
             }
             .disposed(by: disposeBag)
-
+        
         output.load
             .drive()
             .disposed(by: disposeBag)
-
+        
         output.isLoading
             .asObservable()
             .bind { loading in
@@ -79,17 +91,8 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
                 self.loadingIndicator.isHidden = !loading
             }
             .disposed(by: disposeBag)
-
+        
         output.select.drive().disposed(by: disposeBag)
-
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toRecipeDetailController" {
-            if let vc = segue.destination as? RecipeDetailViewController,
-                let recipe = sender as? Recipe {
-                vc.initViewModel(with: recipe)
-            }
-        }
+        
     }
 }

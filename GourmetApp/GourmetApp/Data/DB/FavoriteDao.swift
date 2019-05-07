@@ -16,10 +16,6 @@ class FavoriteDao: BaseDao<FavoriteRealmModel> {
         FavoriteDao()
     }()
 
-    //    func findByRecipeId(recipeId: String) -> Single<FavoriteRealmModel?> {
-    //        return self.findById(key: recipeId)
-    //    }
-    //
     func addOrUpdate(recipeId: String) -> Bool {
         let favoriteModel = FavoriteRealmModel()
         favoriteModel.recipeId = recipeId

@@ -24,10 +24,18 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         initCollectionView()
         initViewModel()
         bindViewModel()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toRecipeDetailController" {
+            if let vc = segue.destination as? RecipeDetailViewController,
+                let recipe = sender as? Recipe {
+                vc.initViewModel(with: recipe)
+            }
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -43,6 +51,7 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
         return cache
     }
 
+    /// CollectionViewの初期化
     private func initCollectionView() {
         favoriteCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         favoriteCollectionView.register(UINib(nibName: "RecipeItemCell", bundle: nil), forCellWithReuseIdentifier: "RecipeItemCell")
@@ -51,10 +60,13 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
         }
     }
 
+    /// ViewModelの初期化
+    /// UseCaseとかImplをここで渡すのは微妙だけどDIコンテナまで入れるのは大変そうなので...
     private func initViewModel() {
         viewModel = FavoriteListViewModel(favoriteUseCase: FavoriteListUseCase(favoriteRepository: FavoriteRepositoryImpl(recipeListRepository: RecipeListRepositoryImpl())), navigator: DetailNavigator(viewController: self))
     }
 
+    /// ViewModelのInput/Outputとのbind
     private func bindViewModel() {
         let input = FavoriteListViewModel.Input(
             trigger: rx.viewWillAppearInvoked.asDriver(onErrorJustReturn: ()),
@@ -95,14 +107,5 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
             .disposed(by: disposeBag)
 
         output.select.drive().disposed(by: disposeBag)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toRecipeDetailController" {
-            if let vc = segue.destination as? RecipeDetailViewController,
-                let recipe = sender as? Recipe {
-                vc.initViewModel(with: recipe)
-            }
-        }
     }
 }
