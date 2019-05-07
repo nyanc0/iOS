@@ -25,7 +25,7 @@ class DetailUseCaseTest: XCTestCase {
     func testSaveRecipe() {
         do {
             _ = FavoriteDao.favoriteDao.deleteAll()
-            let saveResult = try detailUseCase.saveRecipe(recipe: createRecipe()).toBlocking().single()
+            let saveResult = detailUseCase.saveRecipe(recipe: createRecipe())
             let savedData = try FavoriteDao.favoriteDao.findById(key: "002").toBlocking().single()
             XCTAssert(saveResult)
             if savedData != nil {
@@ -41,8 +41,8 @@ class DetailUseCaseTest: XCTestCase {
     func testDeleteRecipe() {
         do {
             _ = FavoriteDao.favoriteDao.deleteAll()
-            _ = try detailUseCase.saveRecipe(recipe: createRecipe()).toBlocking().single()
-            let deleteResult = try detailUseCase.deleteRecipe(recipe: createRecipe()).toBlocking().single()
+            _ = detailUseCase.saveRecipe(recipe: createRecipe())
+            let deleteResult = detailUseCase.deleteRecipe(recipe: createRecipe())
             XCTAssert(deleteResult)
             let savedData = try FavoriteDao.favoriteDao.findById(key: "002").toBlocking().single()
             XCTAssert(savedData == nil)
@@ -54,7 +54,7 @@ class DetailUseCaseTest: XCTestCase {
     func testIsSaved() {
         do {
             _ = FavoriteDao.favoriteDao.deleteAll()
-            _ = try detailUseCase.saveRecipe(recipe: createRecipe()).toBlocking().single()
+            _ = detailUseCase.saveRecipe(recipe: createRecipe())
             let isSaved = try detailUseCase.checkRecipeSaved(recipeId: "002").toBlocking().single()
             XCTAssert(isSaved)
         } catch {
@@ -65,7 +65,7 @@ class DetailUseCaseTest: XCTestCase {
     func testIsNotSaved() {
         do {
             _ = FavoriteDao.favoriteDao.deleteAll()
-            _ = try detailUseCase.saveRecipe(recipe: createRecipe()).toBlocking().single()
+            _ = detailUseCase.saveRecipe(recipe: createRecipe())
             let isSaved = try detailUseCase.checkRecipeSaved(recipeId: "001").toBlocking().single()
             XCTAssert(!isSaved)
         } catch {

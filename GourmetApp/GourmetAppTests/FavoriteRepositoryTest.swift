@@ -49,7 +49,7 @@ class FavoriteRepositoryTest: XCTestCase {
     func testInsertRecipe() {
         do {
             _ = FavoriteDao.favoriteDao.deleteAll()
-            _ = try favoriteRepository.insert(recipe: createRecipe()).toBlocking().single()
+            _ = favoriteRepository.insert(recipe: createRecipe())
             let searchResult = try FavoriteDao.favoriteDao.findById(key: "002").toBlocking().single()
             if searchResult != nil {
                 XCTAssertEqual(searchResult?.recipeId, "002")
@@ -64,7 +64,7 @@ class FavoriteRepositoryTest: XCTestCase {
     func testIsSaved() {
         do {
             _ = FavoriteDao.favoriteDao.deleteAll()
-            _ = try favoriteRepository.insert(recipe: createRecipe()).toBlocking().single()
+            _ = favoriteRepository.insert(recipe: createRecipe())
             let result = try favoriteRepository.isRecipeSaved(recipeId: "002").toBlocking().single()
             XCTAssert(result)
         } catch {
@@ -75,7 +75,7 @@ class FavoriteRepositoryTest: XCTestCase {
     func testIsNotSaved() {
         do {
             _ = FavoriteDao.favoriteDao.deleteAll()
-            _ = try favoriteRepository.insert(recipe: createRecipe()).toBlocking().single()
+            _ = favoriteRepository.insert(recipe: createRecipe())
             let result = try favoriteRepository.isRecipeSaved(recipeId: "001").toBlocking().single()
             XCTAssert(!result)
         } catch {
