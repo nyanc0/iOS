@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 class DetailViewModel: BaseViewModel {
-    
+
     // https://www.okadalabo.com/scroll-view-内に-tabel-viewを配置して、table-viewの高さは成り行きで、/
-    
+
     struct Input {
         /// 表示時のローディングトリガー
         let trigger: Driver<Void>
@@ -57,15 +57,6 @@ class DetailViewModel: BaseViewModel {
             self.detailUseCase
                 .loadDetail(recipeId: self.selectedRecipe.recipeId)
                 .trackArray(state.content)
-                .trackError(state.error)
-                .asDriverOnErrorJustComplete()
-                .mapToVoid()
-        }
-        
-        let recipe = input.trigger.flatMap { [unowned self] _ in
-            self.detailUseCase
-                .loadDetail(recipeId: self.selectedRecipe.recipeId)
-                .asObservable()
                 .map { results in
                     self.mapTo(recipe: results[0], state: state)
                 }
@@ -103,10 +94,9 @@ class DetailViewModel: BaseViewModel {
                       ingradients: state.ingradients.asDriver(),
                       methods: state.methods.asDriver())
     }
-    
+
     func mapTo(recipe: Recipe, state: State) {
         state.ingradients.accept(recipe.cookingIngredients)
         state.methods.accept(recipe.cookingMethod)
     }
 }
-
