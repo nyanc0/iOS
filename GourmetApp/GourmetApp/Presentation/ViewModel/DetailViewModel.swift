@@ -26,7 +26,7 @@ class DetailViewModel: BaseViewModel {
     struct Output {
         let load: Driver<Void>
         let favoriteLoad: Driver<Void>
-        let recipe: Driver<[Recipe]>
+        let recipe: Driver<Recipe?>
         let error: Driver<Error>
         let isAdded: Driver<Bool>
         let tap: Driver<Void>
@@ -35,7 +35,7 @@ class DetailViewModel: BaseViewModel {
     }
 
     struct State {
-        let content: ArrayTracker<Recipe> = ArrayTracker<Recipe>()
+        let content: BehaviorRelay<Recipe?> = BehaviorRelay(value: nil)
         let error = ErrorTracker()
         let isSaved = BehaviorRelay(value: false)
         let ingradients: BehaviorRelay<[CookingIngredients]> = BehaviorRelay(value: [])
@@ -56,11 +56,10 @@ class DetailViewModel: BaseViewModel {
         let load = input.trigger.flatMap { [unowned self] _ in
             self.detailUseCase
                 .loadDetail(recipeId: self.selectedRecipe.recipeId)
-                .trackArray(state.content)
-                .map { results in
-                    self.mapTo(recipe: results[0], state: state)
+                .map { result in
+                    state.content.accept(result[0])
                 }
-                .asDriverOnErrorJustComplete()
+                .asDriver(onErrorJustReturn: nil)
                 .mapToVoid()
         }
 

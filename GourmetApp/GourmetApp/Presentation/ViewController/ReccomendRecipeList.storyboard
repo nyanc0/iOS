@@ -71,7 +71,7 @@
         <!--ホーム-->
         <scene sceneID="1Wt-JE-gFc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EkJ-wB-ozp" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EkJ-wB-ozp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="ホーム" image="ic_home" selectedImage="ic_home" id="JFO-nY-KlG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FpL-y8-8u0">

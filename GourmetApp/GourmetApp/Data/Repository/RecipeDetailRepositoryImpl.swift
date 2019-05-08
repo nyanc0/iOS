@@ -11,8 +11,7 @@ import RxSwift
 
 class RecipeDetailRepositoryImpl: RecipeDetailRepository {
     func getRecipeDetail(_ recipeId: String) -> Single<[Recipe]> {
-        return WebAPIManager
-            .observe(RecipeDetailRequest(recipeId: recipeId))
+        return WebAPIManager.observe(RecipeDetailRequest(recipeId: recipeId))
     }
 }
 

@@ -14,7 +14,7 @@
         <!--お気に入り-->
         <scene sceneID="Axa-Xk-obF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mCN-KK-coT" customClass="RecipeNavigationController" customModule="GourmetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mCN-KK-coT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="お気に入り" image="ic_star_orange" selectedImage="ic_star_orange" id="GEM-Z1-wUE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ypU-fh-Sma">
