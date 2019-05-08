@@ -21,7 +21,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
     @IBOutlet private weak var methodTableView: UITableView!
     @IBOutlet private weak var ingredientsTableHeight: NSLayoutConstraint!
     @IBOutlet private weak var methodsTableHeight: NSLayoutConstraint!
-    
+
     private let disposeBag = DisposeBag()
     private var viewModel: DetailViewModel!
 
@@ -31,7 +31,13 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         initViewModel()
         bindViewModel()
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ingredientsTableHeight.constant = ingradientTableView.contentSize.height
+        methodsTableHeight.constant = methodTableView.contentSize.height
+    }
+
     func initViewModel(with recipe: Recipe? = nil) {
         guard let checked = recipe else {
             return
@@ -40,13 +46,17 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
     }
 
     private func initTableView() {
-//        detailTableView.rx.setDelegate(self).disposed(by: disposeBag)
-//        detailTableView.sectionHeaderHeight = 230
-//        detailTableView.register(MainImageView.self, forHeaderFooterViewReuseIdentifier: "MainImageView")
-    }
-    
-    private func initImageView() {
-        
+        ingradientTableView.sectionHeaderHeight = 50
+        ingradientTableView.rowHeight = 30
+        ingradientTableView.rx.setDelegate(self).disposed(by: disposeBag)
+        ingradientTableView.register(UINib(nibName: "IngredientViewCell", bundle: nil), forCellReuseIdentifier: "IngredientViewCell")
+        ingradientTableView.tableFooterView = UIView()
+
+        methodTableView.sectionHeaderHeight = 50
+        methodTableView.rowHeight = 30
+        methodTableView.rx.setDelegate(self).disposed(by: disposeBag)
+        methodTableView.register(UINib(nibName: "MethodViewCell", bundle: nil), forCellReuseIdentifier: "MethodViewCell")
+        methodTableView.tableFooterView = UIView()
     }
 
     private func bindViewModel() {
@@ -61,15 +71,24 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         output.load
             .drive()
             .disposed(by: disposeBag)
-        
+
         output.recipe
             .asObservable()
             .bind { result in
-                self.mainImageView.sd_setImage(with: URL(string: result?.mainUrl ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"), options: SDWebImageOptions(rawValue: 0), completed: {(image, error, cacheType, imageURL) in
-                    guard let image = image else { return }
-                    self.mainImageView.image = image.resize(size: CGSize(width: UIScreen.main.bounds.size.width, height: self.getImgeHeight()))
-                })
+                self.setMainImage(url: result?.mainUrl)
             }.disposed(by: disposeBag)
+
+        let ingradientDataSource = IngredientDataSource()
+        output.ingradients
+            .asObservable()
+            .bind(to: ingradientTableView.rx.items(dataSource: ingradientDataSource))
+            .disposed(by: disposeBag)
+
+        let methodDataSource = MethodDataSource()
+        output.methods
+            .asObservable()
+            .bind(to: methodTableView.rx.items(dataSource: methodDataSource))
+            .disposed(by: disposeBag)
 
         output.favoriteLoad
             .drive()
@@ -89,25 +108,45 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
             .drive()
             .disposed(by: disposeBag)
     }
-    
-    func getImgeHeight() -> CGFloat {
+
+    /// メイン画像のセット
+    /// - parameter : 画像URL
+    private func setMainImage(url: String?) {
+        mainImageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"),
+                                  options: SDWebImageOptions(rawValue: 0), completed: {image, _, _, _ in
+                                    guard let image = image else { return }
+                                    self.mainImageView.image = image.resize(cgSize: CGSize(width: UIScreen.main.bounds.size.width, height: self.getImgeHeight()))
+        })
+    }
+
+    /// MainImageViewの高さサイズを返す.
+    private func getImgeHeight() -> CGFloat {
         return ((UIScreen.main.bounds.width * 4) / CGFloat(5))
+    }
+
+    private func checkTableView(_ tableView: UITableView) {
+        if tableView.tag == 0 {
+
+        } else {
+
+        }
     }
 }
 
+/// ここに書くのは微妙だけどここでしかつかわないので...
 extension UIImage {
-    func resize(size _size: CGSize) -> UIImage? {
-        let widthRatio = _size.width / size.width
-        let heightRatio = _size.height / size.height
+    func resize(cgSize: CGSize) -> UIImage? {
+        let widthRatio = cgSize.width / size.width
+        let heightRatio = cgSize.height / size.height
         let ratio = widthRatio < heightRatio ? widthRatio : heightRatio
-        
+
         let resizedSize = CGSize(width: size.width * ratio, height: size.height * ratio)
-        
+
         UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0) // 変更
         draw(in: CGRect(origin: .zero, size: resizedSize))
         let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         return resizedImage
     }
 }

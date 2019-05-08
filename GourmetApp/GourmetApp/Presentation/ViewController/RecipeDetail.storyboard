@@ -22,25 +22,24 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-fN-FI8">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4w8-uV-BMJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="377" height="700"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4w8-uV-BMJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="377" height="300"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ggo-yj-aVi" userLabel="MainImageView">
-                                                <rect key="frame" x="1" y="0.0" width="375" height="300"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="300"/>
                                             </imageView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-wz-y8N" userLabel="IngradientsTableView">
-                                                <rect key="frame" x="0.0" y="300" width="377" height="200"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-wz-y8N" userLabel="IngradientsTableView">
+                                                <rect key="frame" x="0.0" y="300" width="377" height="0.0"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="gcp-wX-9Ps"/>
+                                                    <constraint firstAttribute="height" id="gcp-wX-9Ps"/>
                                                 </constraints>
-                                                <color key="sectionIndexBackgroundColor" name="ColorAccent"/>
                                             </tableView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbW-iB-4cd" userLabel="MethodTableView">
-                                                <rect key="frame" x="0.0" y="500" width="377" height="200"/>
+                                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbW-iB-4cd" userLabel="MethodTableView">
+                                                <rect key="frame" x="0.0" y="300" width="377" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="NLF-hJ-kCW"/>
+                                                    <constraint firstAttribute="height" id="NLF-hJ-kCW"/>
                                                 </constraints>
                                                 <color key="sectionIndexBackgroundColor" name="ColorPrimary"/>
                                             </tableView>
@@ -49,7 +48,9 @@
                                             <constraint firstAttribute="trailing" secondItem="vbW-iB-4cd" secondAttribute="trailing" id="4IY-pj-Wnf"/>
                                             <constraint firstAttribute="trailing" secondItem="zIF-wz-y8N" secondAttribute="trailing" id="6De-aG-nqr"/>
                                             <constraint firstItem="zIF-wz-y8N" firstAttribute="top" secondItem="Ggo-yj-aVi" secondAttribute="bottom" id="9yn-3U-LNN"/>
+                                            <constraint firstAttribute="width" constant="377" id="GBC-Jb-jcm"/>
                                             <constraint firstItem="vbW-iB-4cd" firstAttribute="leading" secondItem="4w8-uV-BMJ" secondAttribute="leading" id="khj-oq-v13"/>
+                                            <constraint firstAttribute="height" constant="300" id="pPN-CQ-hTX"/>
                                             <constraint firstItem="vbW-iB-4cd" firstAttribute="top" secondItem="zIF-wz-y8N" secondAttribute="bottom" id="wJf-5W-FXS"/>
                                             <constraint firstItem="zIF-wz-y8N" firstAttribute="leading" secondItem="4w8-uV-BMJ" secondAttribute="leading" id="wUi-5f-a98"/>
                                             <constraint firstAttribute="bottom" secondItem="vbW-iB-4cd" secondAttribute="bottom" id="xrf-SF-QZT"/>
@@ -101,7 +102,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_star_border_orange" width="72" height="72"/>
+        <image name="ic_star_border_orange" width="36" height="36"/>
         <namedColor name="ColorAccent">
             <color red="1" green="0.792156862745098" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -46,6 +46,10 @@
 		DA3ED2DC227FE8D900D80C78 /* DetailUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2DB227FE8D800D80C78 /* DetailUseCaseTest.swift */; };
 		DA3ED2E22281C2CF00D80C78 /* MainImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA3ED2E12281C2CF00D80C78 /* MainImageView.xib */; };
 		DA3ED2E42281C4B100D80C78 /* MainImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2E32281C4B100D80C78 /* MainImageView.swift */; };
+		DA3ED2E622830C8E00D80C78 /* IngredientHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA3ED2E522830C8E00D80C78 /* IngredientHeaderView.xib */; };
+		DA3ED2E822830EFC00D80C78 /* IngredientHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2E722830EFC00D80C78 /* IngredientHeaderView.swift */; };
+		DA3ED2EA22831D6700D80C78 /* IngredientDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2E922831D6700D80C78 /* IngredientDataSource.swift */; };
+		DA3ED2EC2283302C00D80C78 /* MethodDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2EB2283302C00D80C78 /* MethodDataSource.swift */; };
 		DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE478224A74EC001E0350 /* BaseRealmModel.swift */; };
 		DA5AE47B224A752D001E0350 /* FavoriteRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47A224A752D001E0350 /* FavoriteRealmModel.swift */; };
 		DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE47C224A75D7001E0350 /* BaseDao.swift */; };
@@ -129,6 +133,10 @@
 		DA3ED2DB227FE8D800D80C78 /* DetailUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCaseTest.swift; sourceTree = "<group>"; };
 		DA3ED2E12281C2CF00D80C78 /* MainImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainImageView.xib; sourceTree = "<group>"; };
 		DA3ED2E32281C4B100D80C78 /* MainImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageView.swift; sourceTree = "<group>"; };
+		DA3ED2E522830C8E00D80C78 /* IngredientHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientHeaderView.xib; sourceTree = "<group>"; };
+		DA3ED2E722830EFC00D80C78 /* IngredientHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientHeaderView.swift; sourceTree = "<group>"; };
+		DA3ED2E922831D6700D80C78 /* IngredientDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDataSource.swift; sourceTree = "<group>"; };
+		DA3ED2EB2283302C00D80C78 /* MethodDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodDataSource.swift; sourceTree = "<group>"; };
 		DA5AE478224A74EC001E0350 /* BaseRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmModel.swift; sourceTree = "<group>"; };
 		DA5AE47A224A752D001E0350 /* FavoriteRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRealmModel.swift; sourceTree = "<group>"; };
 		DA5AE47C224A75D7001E0350 /* BaseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
@@ -245,6 +253,10 @@
 				385BA49422825D2600170525 /* IngredientViewCell.xib */,
 				385BA4972282608900170525 /* MethodViewCell.swift */,
 				385BA4982282608900170525 /* MethodViewCell.xib */,
+				DA3ED2E522830C8E00D80C78 /* IngredientHeaderView.xib */,
+				DA3ED2E722830EFC00D80C78 /* IngredientHeaderView.swift */,
+				DA3ED2E922831D6700D80C78 /* IngredientDataSource.swift */,
+				DA3ED2EB2283302C00D80C78 /* MethodDataSource.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -488,6 +500,7 @@
 			files = (
 				385BA49A2282608900170525 /* MethodViewCell.xib in Resources */,
 				DA2FEFD9226C7A6700F179AA /* RecipeItemCell.xib in Resources */,
+				DA3ED2E622830C8E00D80C78 /* IngredientHeaderView.xib in Resources */,
 				385BA49622825D2600170525 /* IngredientViewCell.xib in Resources */,
 				DA2FEFEB2278816100F179AA /* RecipeDetail.storyboard in Resources */,
 				DA2FEFE52276E50100F179AA /* FavoriteRecipeList.storyboard in Resources */,
@@ -676,6 +689,7 @@
 				38EB88802256D81B0091058C /* Observable+Ext.swift in Sources */,
 				DA3C5EBF22413C2B00625893 /* AppDelegate.swift in Sources */,
 				3874EC23224DDAF1009FB846 /* DetailUseCase.swift in Sources */,
+				DA3ED2EC2283302C00D80C78 /* MethodDataSource.swift in Sources */,
 				DA2FEFDB226C871E00F179AA /* ReccomendRecipeListViewController.swift in Sources */,
 				DA5AE47B224A752D001E0350 /* FavoriteRealmModel.swift in Sources */,
 				DA74AA47225657CA005874E1 /* ErrorTracker.swift in Sources */,
@@ -690,12 +704,14 @@
 				DA5AE47D224A75D7001E0350 /* BaseDao.swift in Sources */,
 				3874EC1F224C4DEC009FB846 /* FavoriteRepositoryImpl.swift in Sources */,
 				DA2FEFD8226C7A6700F179AA /* RecipeItemCell.swift in Sources */,
+				DA3ED2E822830EFC00D80C78 /* IngredientHeaderView.swift in Sources */,
 				DA5AE47F224A7B7D001E0350 /* FavoriteDao.swift in Sources */,
 				DA37AC7622465D55007F0721 /* APIConst.swift in Sources */,
 				DA3C5EFE2243B7B700625893 /* RecipeListUseCase.swift in Sources */,
 				385BA49522825D2600170525 /* IngredientViewCell.swift in Sources */,
 				DA3ED2D42279D71500D80C78 /* DetailNavigator.swift in Sources */,
 				DAC876AD2247CAA700A296E1 /* RecipeListRepository.swift in Sources */,
+				DA3ED2EA22831D6700D80C78 /* IngredientDataSource.swift in Sources */,
 				385BA4992282608900170525 /* MethodViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

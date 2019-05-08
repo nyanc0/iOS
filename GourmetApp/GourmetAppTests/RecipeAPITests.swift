@@ -96,7 +96,7 @@ class RecipeAPITest: XCTestCase {
             XCTFail(error.localizedDescription)
         }
     }
-    
+
     func testGetReccomendRecipe() {
         self.stub(uri("http://localhost:3000/recipe?recommended_flg=1"), jsonData(reccomendResult! as Data, status: 200))
         do {

@@ -58,6 +58,12 @@ class DetailViewModel: BaseViewModel {
                 .loadDetail(recipeId: self.selectedRecipe.recipeId)
                 .map { result in
                     state.content.accept(result[0])
+
+                    let ingredients = result[0].cookingIngredients
+                    state.ingradients.accept(ingredients)
+
+                    let methods = result[0].cookingMethod
+                    state.methods.accept(methods)
                 }
                 .asDriver(onErrorJustReturn: nil)
                 .mapToVoid()

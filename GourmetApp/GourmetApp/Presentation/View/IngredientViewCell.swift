@@ -12,7 +12,7 @@ class IngredientViewCell: UITableViewCell {
 
     @IBOutlet private weak var materialLabel: UILabel!
     @IBOutlet private weak var quantityLabel: UILabel!
-    
+
     func setData(cookingIngredients: CookingIngredients) {
         materialLabel.text = cookingIngredients.material
         quantityLabel.text = cookingIngredients.quantity
