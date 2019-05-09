@@ -11,7 +11,7 @@ import UIKit
 class MethodViewCell: UITableViewCell {
 
     @IBOutlet private weak var numLabel: UILabel!
-    @IBOutlet weak var methodLabel: UILabel!
+    @IBOutlet private weak var methodLabel: UILabel!
 
     func setData(cookingMethod: CookingMethod) {
         numLabel.text = cookingMethod.procedureNo

@@ -24,11 +24,10 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initNavifationItem()
         initCollectionView()
         initViewModel()
         bindViewModel()
-
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,12 +47,15 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
                     return CGSize.zero
                 }
                 cellSizeCache = CGSize(width: cell.getCellWidth(), height: cell.getCellHeight())
-                return cellSizeCache!
+                return cellSizeCache
         }
         return cache
     }
 
-    /// CollectionViewの初期化
+    private func initNavifationItem() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+
     private func initCollectionView() {
         favoriteCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         favoriteCollectionView.register(UINib(nibName: "RecipeItemCell", bundle: nil), forCellWithReuseIdentifier: "RecipeItemCell")
@@ -62,8 +64,6 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
         }
     }
 
-    /// ViewModelの初期化
-    /// UseCaseとかImplをここで渡すのは微妙だけどDIコンテナまで入れるのは大変そうなので...
     private func initViewModel() {
         viewModel = FavoriteListViewModel(favoriteUseCase: FavoriteListUseCase(favoriteRepository: FavoriteRepositoryImpl(recipeListRepository: RecipeListRepositoryImpl())), navigator: DetailNavigator(viewController: self))
     }
@@ -76,6 +76,10 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
         )
 
         let output = viewModel.transform(input: input)
+
+        output.load
+            .drive()
+            .disposed(by: disposeBag)
 
         output.recipeList
             .asObservable()
@@ -95,10 +99,6 @@ class FavoriteRecipeListViewController: UIViewController, UICollectionViewDelega
                 self.favoriteCollectionView.isHidden = true
                 self.errorView.isHidden = false
             }
-            .disposed(by: disposeBag)
-
-        output.load
-            .drive()
             .disposed(by: disposeBag)
 
         output.isLoading

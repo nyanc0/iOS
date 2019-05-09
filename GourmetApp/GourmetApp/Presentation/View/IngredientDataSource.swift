@@ -38,15 +38,7 @@ class IngredientDataSource: NSObject, UITableViewDataSource, RxTableViewDataSour
         Binder(self) { dataSource, element in
             dataSource.itemModels = element
             tableView.reloadData()
-            }
-            .on(observedEvent)
+        }
+        .on(observedEvent)
     }
-
-    //    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "IngredientHeaderView") as? IngredientHeaderView else {
-    //            fatalError("The dequeued cell is not instance of IngredientTableViewCell.")
-    //        }
-    //        return header
-    //    }
-
 }

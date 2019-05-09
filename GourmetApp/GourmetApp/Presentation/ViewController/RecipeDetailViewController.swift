@@ -79,9 +79,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         output.recipe
             .asObservable()
             .bind { result in
-                self.navigationItem.title = result?.recipeName
-                self.setMainImage(url: result?.mainUrl)
-                self.setIntroduction(introduction: result?.introduction)
+                self.setMainContent(recipe: result)
             }.disposed(by: disposeBag)
 
         let ingradientDataSource = IngredientDataSource()
@@ -103,11 +101,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         output.isAdded
             .asObservable()
             .bind { isSaved in
-                if isSaved {
-                    self.favoriteButton.setImage(UIImage(named: "ic_star_orange"), for: .normal)
-                } else {
-                    self.favoriteButton.setImage(UIImage(named: "ic_star_border_orange"), for: .normal)
-                }
+                self.setFavoriteButtonImage(isSaved: isSaved)
             }.disposed(by: disposeBag)
 
         output.tap
@@ -117,25 +111,27 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         output.isLoading
             .asObservable()
             .bind { isLoading in
-                self.recipeContentView.isHidden = isLoading
-                self.loadingIndicator.isHidden = !isLoading
+                self.setIndicatorVisibility(isLoading: isLoading)
             }
             .disposed(by: disposeBag)
     }
 
-    /// メイン画像のセット
-    /// - parameter : 画像URL
-    private func setMainImage(url: String?) {
-        mainImageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"))
+    private func setMainContent(recipe: Recipe?) {
+        navigationItem.title = recipe?.recipeName
+        mainImageView.sd_setImage(with: URL(string: recipe?.mainUrl ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"))
+        introductionLabel.text = recipe?.introduction ?? ""
     }
 
-    /// 紹介文のセット
-    private func setIntroduction(introduction: String?) {
-        self.introductionLabel.text = introduction ?? ""
+    private func setIndicatorVisibility(isLoading: Bool) {
+        recipeContentView.isHidden = isLoading
+        loadingIndicator.isHidden = !isLoading
     }
 
-    /// MainImageViewの高さサイズを返す.
-    private func getImgeHeight() -> CGFloat {
-        return ((UIScreen.main.bounds.width * 4) / CGFloat(5))
+    private func setFavoriteButtonImage(isSaved: Bool) {
+        if isSaved {
+            self.favoriteButton.setImage(UIImage(named: "ic_star_orange"), for: .normal)
+        } else {
+            self.favoriteButton.setImage(UIImage(named: "ic_star_border_orange"), for: .normal)
+        }
     }
 }

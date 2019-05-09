@@ -22,17 +22,17 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        initNavigationItem()
         initCollectionView()
         initViewModel()
         bindViewModel()
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toRecipeDetailController" {
-            if let vc = segue.destination as? RecipeDetailViewController,
+            if let viewController = segue.destination as? RecipeDetailViewController,
                 let recipe = sender as? Recipe {
-                vc.initViewModel(with: recipe)
+                viewController.initViewModel(with: recipe)
             }
         }
     }
@@ -45,12 +45,15 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
                     return CGSize.zero
                 }
                 cellSizeCache = CGSize(width: cell.getCellWidth(), height: cell.getCellHeight())
-                return cellSizeCache!
+                return cellSizeCache
         }
         return cache
     }
 
-    /// CollectionViewの初期化
+    private func initNavigationItem() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+
     private func initCollectionView() {
         recipeCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         recipeCollectionView.register(UINib(nibName: "RecipeItemCell", bundle: nil), forCellWithReuseIdentifier: "RecipeItemCell")
@@ -59,8 +62,6 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
         }
     }
 
-    /// ViewModelの初期化
-    /// UseCaseとかImplをここで渡すのは微妙だけどDIコンテナまで入れるのは大変そうなので...
     private func initViewModel() {
         viewModel = ReccomendListViewModel(recipeListUseCase: RecipeListUseCase(recipeListRepository: RecipeListRepositoryImpl()), navigator: DetailNavigator(viewController: self))
     }
@@ -74,15 +75,15 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
 
         let output = viewModel.transform(input: input)
 
+        output.load
+            .drive()
+            .disposed(by: disposeBag)
+
         output.recipeList
             .asObservable()
             .bind(to: recipeCollectionView.rx.items(cellIdentifier: "RecipeItemCell", cellType: RecipeItemCell.self)) {  _, element, cell in
                 cell.setData(recipe: element)
             }
-            .disposed(by: disposeBag)
-
-        output.load
-            .drive()
             .disposed(by: disposeBag)
 
         output.isLoading
@@ -94,6 +95,5 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
             .disposed(by: disposeBag)
 
         output.select.drive().disposed(by: disposeBag)
-
     }
 }

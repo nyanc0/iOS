@@ -6,7 +6,6 @@
 //  Copyright © 2019年 yurina fukuoka. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class DetailNavigator {

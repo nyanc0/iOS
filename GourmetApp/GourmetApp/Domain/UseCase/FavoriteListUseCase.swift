@@ -19,5 +19,4 @@ class FavoriteListUseCase {
     func loadFavoriteList() -> Single<[Recipe]> {
         return favoriteRepository.getFavoriteList()
     }
-
 }
