@@ -62,7 +62,9 @@
         <scene sceneID="SyG-1o-yuM">
             <objects>
                 <viewControllerPlaceholder storyboardName="RecipeDetail" id="Umv-D1-w71" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="k8L-qn-ASf"/>
+                    <navigationItem key="navigationItem" id="k8L-qn-ASf">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="qun-6Z-fws"/>
+                    </navigationItem>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIM-nA-R0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +96,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_home" width="72" height="72"/>
+        <image name="ic_home" width="36" height="36"/>
         <namedColor name="ColorPrimary">
             <color red="0.96078431372549022" green="0.31764705882352939" blue="0.090196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

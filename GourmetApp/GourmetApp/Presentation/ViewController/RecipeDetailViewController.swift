@@ -22,7 +22,10 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
     @IBOutlet private weak var methodTableView: UITableView!
     @IBOutlet private weak var ingredientsTableHeight: NSLayoutConstraint!
     @IBOutlet private weak var methodsTableHeight: NSLayoutConstraint!
+    @IBOutlet private weak var contentStackViewWidth: NSLayoutConstraint!
+    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
 
+    @IBOutlet private weak var recipeContentView: UIScrollView!
     private let disposeBag = DisposeBag()
     private var viewModel: DetailViewModel!
 
@@ -31,12 +34,14 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         initTableView()
         initViewModel()
         bindViewModel()
+
+        contentStackViewWidth.constant = UIScreen.main.bounds.size.width
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         ingredientsTableHeight.constant = ingradientTableView.contentSize.height
-        methodsTableHeight.constant = methodTableView.contentSize.height
+        methodsTableHeight.constant = methodTableView.contentSize.height + favoriteButton.frame.size.height + 16
     }
 
     func initViewModel(with recipe: Recipe? = nil) {
@@ -74,6 +79,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         output.recipe
             .asObservable()
             .bind { result in
+                self.navigationItem.title = result?.recipeName
                 self.setMainImage(url: result?.mainUrl)
                 self.setIntroduction(introduction: result?.introduction)
             }.disposed(by: disposeBag)
@@ -107,49 +113,29 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
         output.tap
             .drive()
             .disposed(by: disposeBag)
+
+        output.isLoading
+            .asObservable()
+            .bind { isLoading in
+                self.recipeContentView.isHidden = isLoading
+                self.loadingIndicator.isHidden = !isLoading
+            }
+            .disposed(by: disposeBag)
     }
 
     /// メイン画像のセット
     /// - parameter : 画像URL
     private func setMainImage(url: String?) {
-        mainImageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"), options: SDWebImageOptions(rawValue: 0), completed: {image, _, _, _ in
-            guard let image = image else { return }
-            self.mainImageView.image = image.resize(cgSize: CGSize(width: UIScreen.main.bounds.size.width, height: self.getImgeHeight()))
-        })
+        mainImageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"))
     }
 
     /// 紹介文のセット
     private func setIntroduction(introduction: String?) {
-        let paragraphStyle = NSMutableParagraphStyle()
-
-        paragraphStyle.firstLineHeadIndent = 16
-        paragraphStyle.headIndent = 16
-        paragraphStyle.tailIndent = -20
-
-        let attributedString = NSAttributedString(string: introduction ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
-        self.introductionLabel.attributedText = attributedString
+        self.introductionLabel.text = introduction ?? ""
     }
 
     /// MainImageViewの高さサイズを返す.
     private func getImgeHeight() -> CGFloat {
         return ((UIScreen.main.bounds.width * 4) / CGFloat(5))
-    }
-}
-
-/// ここに書くのは微妙だけどここでしかつかわないので...
-extension UIImage {
-    func resize(cgSize: CGSize) -> UIImage? {
-        let widthRatio = cgSize.width / size.width
-        let heightRatio = cgSize.height / size.height
-        let ratio = widthRatio < heightRatio ? widthRatio : heightRatio
-
-        let resizedSize = CGSize(width: size.width * ratio, height: size.height * ratio)
-
-        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0) // 変更
-        draw(in: CGRect(origin: .zero, size: resizedSize))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return resizedImage
     }
 }

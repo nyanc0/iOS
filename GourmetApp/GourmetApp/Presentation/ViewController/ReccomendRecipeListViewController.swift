@@ -25,6 +25,7 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
         initCollectionView()
         initViewModel()
         bindViewModel()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

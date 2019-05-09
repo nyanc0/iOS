@@ -32,6 +32,7 @@ class DetailViewModel: BaseViewModel {
         let tap: Driver<Void>
         let ingradients: Driver<[CookingIngredients]>
         let methods: Driver<[CookingMethod]>
+        let isLoading: Driver<Bool>
     }
 
     struct State {
@@ -40,6 +41,7 @@ class DetailViewModel: BaseViewModel {
         let isSaved = BehaviorRelay(value: false)
         let ingradients: BehaviorRelay<[CookingIngredients]> = BehaviorRelay(value: [])
         let methods: BehaviorRelay<[CookingMethod]> = BehaviorRelay(value: [])
+        let isLoading = ActivityIndicator()
     }
 
     private let detailUseCase = DetailUseCase(favoriteRepository: FavoriteRepositoryImpl(recipeListRepository: RecipeListRepositoryImpl()), recipeDetailRepository: RecipeDetailRepositoryImpl())
@@ -56,6 +58,7 @@ class DetailViewModel: BaseViewModel {
         let load = input.trigger.flatMap { [unowned self] _ in
             self.detailUseCase
                 .loadDetail(recipeId: self.selectedRecipe.recipeId)
+                .trackActivity(state.isLoading)
                 .map { result in
                     state.content.accept(result[0])
 
@@ -97,7 +100,8 @@ class DetailViewModel: BaseViewModel {
                       isAdded: state.isSaved.asDriver(),
                       tap: tap,
                       ingradients: state.ingradients.asDriver(),
-                      methods: state.methods.asDriver())
+                      methods: state.methods.asDriver(),
+                      isLoading: state.isLoading.asDriver())
     }
 
     func mapTo(recipe: Recipe, state: State) {
