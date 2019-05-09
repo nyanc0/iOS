@@ -204,13 +204,13 @@
 			path = NW;
 			sourceTree = "<group>";
 		};
-		387176E82249E6F400163B48 /* DB */ = {
+		387176E82249E6F400163B48 /* DS */ = {
 			isa = PBXGroup;
 			children = (
 				DA5AE47C224A75D7001E0350 /* BaseDao.swift */,
 				DA5AE47E224A7B7D001E0350 /* FavoriteDao.swift */,
 			);
-			path = DB;
+			path = DS;
 			sourceTree = "<group>";
 		};
 		3874EC24224DDC30009FB846 /* Presentation */ = {
@@ -335,12 +335,12 @@
 			children = (
 				DA3C5EFC2243B79600625893 /* UseCase */,
 				DA3C5EF92243B1C100625893 /* Repository */,
-				DA3C5EF022413EBA00625893 /* Entities */,
+				DA3C5EF022413EBA00625893 /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		DA3C5EF022413EBA00625893 /* Entities */ = {
+		DA3C5EF022413EBA00625893 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				DA3C5EF122413FCD00625893 /* CookingIngredients.swift */,
@@ -349,7 +349,7 @@
 				DA5AE478224A74EC001E0350 /* BaseRealmModel.swift */,
 				DA5AE47A224A752D001E0350 /* FavoriteRealmModel.swift */,
 			);
-			path = Entities;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		DA3C5EF92243B1C100625893 /* Repository */ = {
@@ -375,7 +375,7 @@
 		DA3C5EFF2243C15B00625893 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				387176E82249E6F400163B48 /* DB */,
+				387176E82249E6F400163B48 /* DS */,
 				387176E12249C0A300163B48 /* NW */,
 				38C6333E2248BB3D004EBDC7 /* Repository */,
 			);
