@@ -63,6 +63,7 @@ class ReccomendRecipeListViewController: UIViewController, UICollectionViewDeleg
     }
 
     private func initViewModel() {
+        // ここで具象クラス渡すのは微妙...
         viewModel = ReccomendListViewModel(recipeListUseCase: RecipeListUseCase(recipeListRepository: RecipeListRepositoryImpl()), navigator: DetailNavigator(viewController: self))
     }
 
