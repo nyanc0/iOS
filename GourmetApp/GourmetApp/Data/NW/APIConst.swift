@@ -23,7 +23,7 @@ extension BaseAPIProtocol {
 }
 
 protocol BaseRequestProtocol: BaseAPIProtocol {
-    var queries: [URLQueryItem] {get}
+    var queries: [URLQueryItem] { get }
 }
 
 enum HTTPMethodAndPayload {

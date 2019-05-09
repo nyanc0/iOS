@@ -12,13 +12,12 @@ import RxCocoa
 import Mockingjay
 import RxTest
 import RxBlocking
+
 @testable import GourmetApp
 class FavoriteRepositoryTest: XCTestCase {
 
     var favoriteRepository: FavoriteRepository!
-    let jsonSingleResult = "[{\"cooking_ingredients\": [{\"material\": \"合いびき肉\",\"quantity\": \"200ｇ\"},{\"material\": \"玉ねぎ\",\"quantity\": \"1個\"},{\"material\": \"卵\",\"quantity\": \"1個\"},{\"material\": \"パン粉\",\"quantity\": \"大2\"},{\"material\": \"牛乳\",\"quantity\": \"大1\"},{\"material\": \"塩コショウ\",\"quantity\": \"少々\"},{\"material\": \"●酒\",\"quantity\": \"大2\"},{\"material\": \"玉ねぎ\",\"quantity\": \"1個\"},{\"material\": \"●ケチャップ\",\"quantity\": \"大2\"},{\"material\": \"●中濃ソース\",\"quantity\": \"大1\"},{\"material\": \"●砂糖\",\"quantity\": \"大1\"},{\"material\": \"●醤油\",\"quantity\": \"大1\"}],\"cooking_method\": [{\"procedure_no\": \"1\",\"procedure\": \"玉ねぎはみじん切りにし、●以外の材料すべてをボウルに入れて手でよくこねる。\"},{\"procedure_no\": \"2\",\"procedure\": \"成形し、フライパンに油（分量外）をひき、中火で焼き目がつくように焼き、ふたをして中に火が通るように蒸す。\"},{\"procedure_no\": \"3\",\"procedure\": \"ハンバーグを皿に取り、そのフライパンに●をすべて入れて、弱火で煮立つまで温め、ハンバーグにかけたら完成です。\"}],\"genre_cd\": \"G01\",\"genre_name\": \"お肉のおかず\",\"recipe_id\": \"001\",\"recipe_name\": \"洋食屋さんのハンバーグ\",\"introduction\": \"味も見た目もよし！のハンバーグです。\",\"main_gazo\": \"http://localhost:3000/assets/images/recipe_001.png\",\"recommended_flg\": \"1\"}]"
-
-    let json = "[{\"cooking_ingredients\": [{\"material\": \"合いびき肉\",\"quantity\": \"200ｇ\"},{\"material\": \"玉ねぎ\",\"quantity\": \"1個\"},{\"material\": \"卵\",\"quantity\": \"1個\"},{\"material\": \"パン粉\",\"quantity\": \"大2\"},{\"material\": \"牛乳\",\"quantity\": \"大1\"},{\"material\": \"塩コショウ\",\"quantity\": \"少々\"},{\"material\": \"●酒\",\"quantity\": \"大2\"},{\"material\": \"玉ねぎ\",\"quantity\": \"1個\"},{\"material\": \"●ケチャップ\",\"quantity\": \"大2\"},{\"material\": \"●中濃ソース\",\"quantity\": \"大1\"},{\"material\": \"●砂糖\",\"quantity\": \"大1\"},{\"material\": \"●醤油\",\"quantity\": \"大1\"}],\"cooking_method\": [{\"procedure_no\": \"1\",\"procedure\": \"玉ねぎはみじん切りにし、●以外の材料すべてをボウルに入れて手でよくこねる。\"},{\"procedure_no\": \"2\",\"procedure\": \"成形し、フライパンに油（分量外）をひき、中火で焼き目がつくように焼き、ふたをして中に火が通るように蒸す。\"},{\"procedure_no\": \"3\",\"procedure\": \"ハンバーグを皿に取り、そのフライパンに●をすべて入れて、弱火で煮立つまで温め、ハンバーグにかけたら完成です。\"}],\"genre_cd\": \"G01\",\"genre_name\": \"お肉のおかず\",\"recipe_id\": \"001\",\"recipe_name\": \"洋食屋さんのハンバーグ\",\"introduction\": \"味も見た目もよし！のハンバーグです。\",\"main_gazo\": \"http://localhost:3000/assets/images/recipe_001.png\",\"recommended_flg\": \"1\"},{\"cooking_ingredients\": [{\"material\": \"●豚バラ肉\",\"quantity\": \"500ｇ\"},{\"material\": \"●しょうが\",\"quantity\": \"1かけ\"},{\"material\": \"●ねぎの青い部分\",\"quantity\": \"1本\"},{\"material\": \"●酒\",\"quantity\": \"50ｃｃ\"},{\"material\": \"○大根\",\"quantity\": \"1/2本\"},{\"material\": \"○醤油\",\"quantity\": \"50ｃｃ\"},{\"material\": \"●酒\",\"quantity\": \"大2\"},{\"material\": \"○砂糖\",\"quantity\": \"大3\"},{\"material\": \"水\",\"quantity\": \"適量\"}],\"cooking_method\": [{\"procedure_no\": \"1\",\"procedure\": \"鍋に●の材料すべてと、水をいれます。水の量は、材料がすべてかくれるくらい。豚は、かたまりのままです。\"},{\"procedure_no\": \"2\",\"procedure\": \"沸騰するまで、強火。その後、ごく弱火で1時間煮ます。この時、キッチンパーパーで落としぶたをします。\"},{\"procedure_no\": \"3\",\"procedure\": \"火をとめ、少しさめるまでそのままに。あら熱がとれたら、豚肉以外の材料を捨て、豚肉を軽く水洗いします。この作業で豚肉の臭みとり。\"},{\"procedure_no\": \"4\",\"procedure\": \"大根は、皮をむいて、3ｃｍの輪切りに。大きいものは、半月切りにします。豚肉は5ｃｍ角くらいに切ります。\"},{\"procedure_no\": \"5\",\"procedure\": \"豚肉,大根、○の材料、材料がかくれるくらいの水を鍋に入れ、1時間ごく弱火で煮ます。この時も、キッチンペーパーで落としぶたをします。\"},{\"procedure_no\": \"6\",\"procedure\": \"その後、中強火で、水分を飛ばし、完成です。\"}],\"genre_cd\": \"G01\",\"genre_name\": \"お肉のおかず\",\"recipe_id\": \"002\",\"recipe_name\": \"基本の豚の角煮\",\"introduction\": \"とろとろの豚の角煮って美味しいですよね。家庭で作れたら最高！沢山煮込むのでとろとろですよ。\",\"main_gazo\": \"http://localhost:3000/assets/images/recipe_002.png\",\"recommended_flg\": \"1\"}]"
+    //    var multipleJson: NSData?
 
     override func setUp() {
         super.setUp()
@@ -26,23 +25,12 @@ class FavoriteRepositoryTest: XCTestCase {
     }
 
     func testGetFavoriteList() {
-        self.stub(uri("http://localhost:3000/recipe?recipe_id=001&recipe_id=002"), jsonData(json.data(using: .utf8)!))
-
-        _ = FavoriteDao.favoriteDao.addOrUpdate(recipeId: "001")
+        _ = FavoriteDao.favoriteDao.deleteAll()
         _ = FavoriteDao.favoriteDao.addOrUpdate(recipeId: "002")
 
         do {
             let result: [Recipe] = try favoriteRepository.getFavoriteList().toBlocking().single()
-            // 1つ目のレシピ
-            XCTAssertEqual(result[0].recipeId, "001")
-            XCTAssertEqual(result[0].recipeName, "洋食屋さんのハンバーグ")
-            XCTAssertEqual(result[0].cookingIngredients[0].material, "合いびき肉")
-            XCTAssertEqual(result[0].cookingMethod[0].procedure, "玉ねぎはみじん切りにし、●以外の材料すべてをボウルに入れて手でよくこねる。")
-            // 2つ目のレシピ
-            XCTAssertEqual(result[1].recipeId, "002")
-            XCTAssertEqual(result[1].recipeName, "基本の豚の角煮")
-            XCTAssertEqual(result[1].cookingIngredients[0].material, "●豚バラ肉")
-            XCTAssertEqual(result[1].cookingMethod[0].procedure, "鍋に●の材料すべてと、水をいれます。水の量は、材料がすべてかくれるくらい。豚は、かたまりのままです。")
+            XCTAssertEqual(result[0].recipeId, "002")
         } catch {
             XCTFail(error.localizedDescription)
         }
@@ -56,5 +44,64 @@ class FavoriteRepositoryTest: XCTestCase {
         } catch {
             XCTFail(error.localizedDescription)
         }
+    }
+
+    func testInsertRecipe() {
+        do {
+            _ = FavoriteDao.favoriteDao.deleteAll()
+            _ = favoriteRepository.insert(recipe: createRecipe())
+            let searchResult = try FavoriteDao.favoriteDao.findById(key: "002").toBlocking().single()
+            if searchResult != nil {
+                XCTAssertEqual(searchResult?.recipeId, "002")
+            } else {
+                XCTFail("Result is Nil")
+            }
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+
+    func testIsSaved() {
+        do {
+            _ = FavoriteDao.favoriteDao.deleteAll()
+            _ = favoriteRepository.insert(recipe: createRecipe())
+            let result = try favoriteRepository.isRecipeSaved(recipeId: "002").toBlocking().single()
+            XCTAssert(result)
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+
+    func testIsNotSaved() {
+        do {
+            _ = FavoriteDao.favoriteDao.deleteAll()
+            _ = favoriteRepository.insert(recipe: createRecipe())
+            let result = try favoriteRepository.isRecipeSaved(recipeId: "001").toBlocking().single()
+            XCTAssert(!result)
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+
+    private func createRecipe() -> Recipe {
+        let cookingIngredients: [CookingIngredients] = [ CookingIngredients(material: "卵", quantity: "1"),
+                                                         CookingIngredients(material: "ひき肉", quantity: "100g")
+        ]
+
+        let cookingMethod: [CookingMethod] = [
+            CookingMethod(procedureNo: "1", procedure: "よくこねる")
+        ]
+
+        return Recipe(
+            genreCd: "G001",
+            genreName: "お肉のおかず",
+            recipeId: "002",
+            recipeName: "洋食屋さんのハンバーグ",
+            introduction: "おすすめのレシピ",
+            mainUrl: "hogehoge",
+            recommendedFlg: "0",
+            cookingIngredients: cookingIngredients,
+            cookingMethod: cookingMethod
+        )
     }
 }

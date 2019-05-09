@@ -8,24 +8,30 @@
 
 import Foundation
 import RxSwift
+
 class DetailUseCase {
+
     private let favoriteRepository: FavoriteRepository
     private let recipeDetailRepository: RecipeDetailRepository
-    
+
     init(favoriteRepository: FavoriteRepository, recipeDetailRepository: RecipeDetailRepository) {
         self.favoriteRepository = favoriteRepository
         self.recipeDetailRepository = recipeDetailRepository
     }
-    
-    func loadDetail(recipeId: String) -> Single<Recipe?> {
+
+    func loadDetail(recipeId: String) -> Single<[Recipe]> {
         return recipeDetailRepository.getRecipeDetail(recipeId)
     }
-    
-    func saveRecipe(recipe: Recipe) -> Single<Bool> {
+
+    func saveRecipe(recipe: Recipe) -> Bool {
         return favoriteRepository.insert(recipe: recipe)
     }
-    
-    func deleteRecipe(recipe: Recipe) -> Single<Bool> {
-        return favoriteRepository.delete(recipe:recipe)
+
+    func deleteRecipe(recipe: Recipe) -> Bool {
+        return favoriteRepository.delete(recipe: recipe)
+    }
+
+    func checkRecipeSaved(recipeId: String) -> Single<Bool> {
+        return favoriteRepository.isRecipeSaved(recipeId: recipeId)
     }
 }

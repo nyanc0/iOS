@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+
 class FavoriteRepositoryImpl: FavoriteRepository {
 
     let recipeListRepository: RecipeListRepository
@@ -23,27 +24,24 @@ class FavoriteRepositoryImpl: FavoriteRepository {
                     favoriteModel.recipeId
                 }
             }.flatMap { ids in
-                return self.recipeListRepository.getRecipeList(recipeIds: ids)
+                self.recipeListRepository.getRecipeList(recipeIds: ids)
         }
     }
 
-    func insert(recipe: Recipe) -> Single<Bool> {
-        return Single<Bool>.create { observer in
-            if FavoriteDao.favoriteDao.addOrUpdate(recipeId: recipe.recipeId) {
-                observer(.success(true))
-            } else {
-                observer(.error(NSError(domain: "Could not insert record!!", code: -1, userInfo: nil)))
-            }
-            return Disposables.create()
-        }
+    func insert(recipe: Recipe) -> Bool {
+        return FavoriteDao.favoriteDao.addOrUpdate(recipeId: recipe.recipeId)
     }
 
-    func delete(recipe: Recipe) -> Single<Bool> {
+    func delete(recipe: Recipe) -> Bool {
+        return FavoriteDao.favoriteDao.delete(key: recipe.recipeId)
+    }
+
+    func isRecipeSaved(recipeId: String) -> Single<Bool> {
         return Single<Bool>.create { observer in
-            if FavoriteDao.favoriteDao.delete(key: recipe.recipeId) {
+            if FavoriteDao.favoriteDao.isSaved(key: recipeId) {
                 observer(.success(true))
             } else {
-                observer(.error(NSError(domain: "Could not delete record!!", code: -1, userInfo: nil)))
+                observer(.success(false))
             }
             return Disposables.create()
         }

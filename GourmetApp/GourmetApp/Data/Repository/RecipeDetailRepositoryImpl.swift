@@ -8,38 +8,29 @@
 
 import Foundation
 import RxSwift
+
 class RecipeDetailRepositoryImpl: RecipeDetailRepository {
+    func getRecipeDetail(_ recipeId: String) -> Single<[Recipe]> {
+        return WebAPIManager.observe(RecipeDetailRequest(recipeId: recipeId))
+    }
+}
 
-    struct RecipeDetailRequest: BaseRequestProtocol {
+struct RecipeDetailRequest: BaseRequestProtocol {
 
-        typealias ResponseType = [Recipe]
-        var recipeId: String?
+    typealias ResponseType = [Recipe]
+    var recipeId: String?
 
-        init(recipeId: String) {
-            self.recipeId = recipeId
-        }
-
-        var methodAndPayload: HTTPMethodAndPayload {
-            return HTTPMethodAndPayload.get
-        }
-        var path: String {
-            return "recipe"
-        }
-        var queries: [URLQueryItem] {
-            return [URLQueryItem(name: "recipe_id", value: recipeId)]
-        }
+    init(recipeId: String) {
+        self.recipeId = recipeId
     }
 
-    func getRecipeDetail(_ recipeId: String) -> Single<Recipe?> {
-        return WebAPIManager
-            .observe(RecipeDetailRequest(recipeId: recipeId))
-            .map {self.from(recipeList: $0)}
+    var methodAndPayload: HTTPMethodAndPayload {
+        return HTTPMethodAndPayload.get
     }
-
-    private func from(recipeList: [Recipe]) -> Recipe? {
-        if recipeList.isEmpty {
-            return nil
-        }
-        return recipeList[0]
+    var path: String {
+        return "recipe"
+    }
+    var queries: [URLQueryItem] {
+        return [URLQueryItem(name: "recipe_id", value: recipeId)]
     }
 }

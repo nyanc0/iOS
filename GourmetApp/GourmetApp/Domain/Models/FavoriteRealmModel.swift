@@ -8,8 +8,13 @@
 
 import Foundation
 import RealmSwift
-class FavoriteRealmModel: BaseRealmModel {
+
+class FavoriteRealmModel: Object {
+
     @objc dynamic var recipeId: String = ""
+    @objc dynamic var createdDate: Date = NSDate() as Date
+    @objc dynamic var updatedDate: Date = NSDate() as Date
+
     override static func primaryKey() -> String? {
         return "recipeId"
     }

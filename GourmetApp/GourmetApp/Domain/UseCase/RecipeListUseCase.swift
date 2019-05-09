@@ -12,14 +12,14 @@ class RecipeListUseCase {
 
     private let recipeListRepository: RecipeListRepository
 
-    init(with recipeListRepository: RecipeListRepository) {
+    init(recipeListRepository: RecipeListRepository) {
         self.recipeListRepository = recipeListRepository
     }
 
     func loadRecipeList() -> Single<[Recipe]> {
         return recipeListRepository.getRecipeList()
     }
-    
+
     func loadReccomendRecipe() -> Single<[Recipe]> {
         return recipeListRepository.getRecipeList(reccomendFlg: "1")
     }

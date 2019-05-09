@@ -13,10 +13,12 @@ import Mockingjay
 import RxTest
 import RxBlocking
 @testable import GourmetApp
+
 class FavoriteDaoTest: XCTestCase {
     var favoriteDao: FavoriteDao!
 
     override func setUp() {
+        super.setUp()
         favoriteDao = FavoriteDao.favoriteDao
     }
 
@@ -29,9 +31,13 @@ class FavoriteDaoTest: XCTestCase {
         _ = favoriteDao.addOrUpdate(recipeId: "001")
         _ = favoriteDao.addOrUpdate(recipeId: "002")
         do {
-            let result = try favoriteDao.findById(key: "001").toBlocking().single()
-            XCTAssertEqual(result?.recipeId, "001")
-        } catch let error {
+            let result = try favoriteDao.findById(key: "002").toBlocking().single()
+            if result != nil {
+                XCTAssertEqual(result!.recipeId, "002")
+            } else {
+                XCTFail("Result is Nil")
+            }
+        } catch {
             XCTFail(error.localizedDescription)
         }
     }
@@ -41,9 +47,10 @@ class FavoriteDaoTest: XCTestCase {
         _ = favoriteDao.addOrUpdate(recipeId: "002")
         do {
             let results = try favoriteDao.findAll().toBlocking().single()
+            XCTAssert(results.count == 2)
             XCTAssertEqual(results[0].recipeId, "001")
             XCTAssertEqual(results[1].recipeId, "002")
-        } catch let error {
+        } catch {
             XCTFail(error.localizedDescription)
         }
     }
@@ -51,12 +58,39 @@ class FavoriteDaoTest: XCTestCase {
     func testDeleteById() {
         _ = favoriteDao.addOrUpdate(recipeId: "001")
         _ = favoriteDao.addOrUpdate(recipeId: "002")
-        XCTAssert(favoriteDao.delete(key: "001"))
+        _ = favoriteDao.delete(key: "001")
+        do {
+            let resultDeleted = try favoriteDao.findById(key: "001").toBlocking().single()
+            let resultSaved = try favoriteDao.findById(key: "002").toBlocking().single()
+            if resultDeleted == nil && resultSaved != nil {
+                XCTAssertEqual(resultSaved!.recipeId, "002")
+            } else {
+                XCTFail("Result is Nil")
+            }
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+
     }
 
     func testDeleteAll() {
         _ = favoriteDao.addOrUpdate(recipeId: "001")
         _ = favoriteDao.addOrUpdate(recipeId: "002")
-        XCTAssert(favoriteDao.deleteAll())
+        _ = favoriteDao.deleteAll()
+
+        do {
+            let results = try favoriteDao.findAll().toBlocking().single()
+            XCTAssert(results.isEmpty)
+        } catch {
+            XCTFail(error.localizedDescription)
+        }
+    }
+
+    func testIsSaved() {
+        _ = favoriteDao.deleteAll()
+        _ = favoriteDao.addOrUpdate(recipeId: "001")
+
+        XCTAssert(favoriteDao.isSaved(key: "001"))
+        XCTAssert(!favoriteDao.isSaved(key: "002"))
     }
 }

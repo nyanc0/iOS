@@ -9,7 +9,8 @@
 import Foundation
 import RealmSwift
 import RxSwift
-class BaseDao<T: BaseRealmModel> {
+
+class BaseDao<T: Object> {
     static var realm: Realm {
         do {
             return try Realm()
@@ -42,14 +43,20 @@ class BaseDao<T: BaseRealmModel> {
         }
     }
 
+    func isSaved(key: String) -> Bool {
+        if BaseDao<T>.realm.object(ofType: T.self, forPrimaryKey: key) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+
     /// レコード追加
     /// - parameter data: 保存レコード
-    func addOrUpdate(data: T, updateFunc:(_ data: T) -> (T)) -> Bool {
+    func addOrUpdate(data: T) -> Bool {
         do {
             try BaseDao<T>.realm.write {
-                var updatingData = updateFunc(data)
-                updatingData = setDefaultColumnValue(data: data)
-                BaseDao<T>.realm.add(updatingData, update: true)
+                BaseDao<T>.realm.add(data, update: true)
             }
             return true
         } catch let error as NSError {
@@ -63,7 +70,6 @@ class BaseDao<T: BaseRealmModel> {
     func delete(data: T) -> Bool {
         do {
             try BaseDao<T>.realm.write {
-
                 BaseDao<T>.realm.delete(data)
             }
             return true
@@ -102,20 +108,5 @@ class BaseDao<T: BaseRealmModel> {
             print("\(error.localizedDescription) ")
         }
         return false
-    }
-
-    private func setDefaultColumnValue(data: T) -> (T) {
-        if BaseDao<T>.realm.isInWriteTransaction {
-            data.createdDate = Date()
-        } else {
-            do {
-                try BaseDao<T>.realm.write {
-                    data.updatedDate = Date()
-                }
-            } catch let error as NSError {
-                print("\(error.localizedDescription) ")
-            }
-        }
-        return data
     }
 }

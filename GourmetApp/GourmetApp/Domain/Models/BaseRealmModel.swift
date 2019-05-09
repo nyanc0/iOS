@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+
 class BaseRealmModel: Object {
     @objc dynamic var createdDate: Date = NSDate() as Date
     @objc dynamic var updatedDate: Date = NSDate() as Date

@@ -1,0 +1,1384 @@
+[
+  {
+    "cooking_ingredients": [
+      {
+        "material": "合いびき肉",
+        "quantity": "200ｇ"
+      },
+      {
+        "material": "玉ねぎ",
+        "quantity": "1個"
+      },
+      {
+        "material": "卵",
+        "quantity": "1個"
+      },
+      {
+        "material": "パン粉",
+        "quantity": "大2"
+      },
+      {
+        "material": "牛乳",
+        "quantity": "大1"
+      },
+      {
+        "material": "塩コショウ",
+        "quantity": "少々"
+      },
+      {
+        "material": "●酒",
+        "quantity": "大2"
+      },
+      {
+        "material": "玉ねぎ",
+        "quantity": "1個"
+      },
+      {
+        "material": "●ケチャップ",
+        "quantity": "大2"
+      },
+      {
+        "material": "●中濃ソース",
+        "quantity": "大1"
+      },
+      {
+        "material": "●砂糖",
+        "quantity": "大1"
+      },
+      {
+        "material": "●醤油",
+        "quantity": "大1"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "玉ねぎはみじん切りにし、●以外の材料すべてをボウルに入れて手でよくこねる。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "成形し、フライパンに油（分量外）をひき、中火で焼き目がつくように焼き、ふたをして中に火が通るように蒸す。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "ハンバーグを皿に取り、そのフライパンに●をすべて入れて、弱火で煮立つまで温め、ハンバーグにかけたら完成です。"
+      }
+    ],
+    "genre_cd": "G01",
+    "genre_name": "お肉のおかず",
+    "recipe_id": "001",
+    "recipe_name": "洋食屋さんのハンバーグ",
+    "introduction": "味も見た目もよし！のハンバーグです。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_001.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "●豚バラ肉",
+        "quantity": "500ｇ"
+      },
+      {
+        "material": "●しょうが",
+        "quantity": "1かけ"
+      },
+      {
+        "material": "●ねぎの青い部分",
+        "quantity": "1本"
+      },
+      {
+        "material": "●酒",
+        "quantity": "50ｃｃ"
+      },
+      {
+        "material": "○大根",
+        "quantity": "1/2本"
+      },
+      {
+        "material": "○醤油",
+        "quantity": "50ｃｃ"
+      },
+      {
+        "material": "●酒",
+        "quantity": "大2"
+      },
+      {
+        "material": "○砂糖",
+        "quantity": "大3"
+      },
+      {
+        "material": "水",
+        "quantity": "適量"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "鍋に●の材料すべてと、水をいれます。水の量は、材料がすべてかくれるくらい。豚は、かたまりのままです。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "沸騰するまで、強火。その後、ごく弱火で1時間煮ます。この時、キッチンパーパーで落としぶたをします。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "火をとめ、少しさめるまでそのままに。あら熱がとれたら、豚肉以外の材料を捨て、豚肉を軽く水洗いします。この作業で豚肉の臭みとり。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "大根は、皮をむいて、3ｃｍの輪切りに。大きいものは、半月切りにします。豚肉は5ｃｍ角くらいに切ります。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "豚肉,大根、○の材料、材料がかくれるくらいの水を鍋に入れ、1時間ごく弱火で煮ます。この時も、キッチンペーパーで落としぶたをします。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "その後、中強火で、水分を飛ばし、完成です。"
+      }
+    ],
+    "genre_cd": "G01",
+    "genre_name": "お肉のおかず",
+    "recipe_id": "002",
+    "recipe_name": "基本の豚の角煮",
+    "introduction": "とろとろの豚の角煮って美味しいですよね。家庭で作れたら最高！沢山煮込むのでとろとろですよ。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_002.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "鶏むね肉",
+        "quantity": "1枚"
+      },
+      {
+        "material": "小麦粉",
+        "quantity": "適量"
+      },
+      {
+        "material": "溶き卵",
+        "quantity": "2個分"
+      },
+      {
+        "material": "ゆで卵",
+        "quantity": "1個"
+      },
+      {
+        "material": "マヨネーズ",
+        "quantity": "大5"
+      },
+      {
+        "material": "玉ねぎ",
+        "quantity": "1/4個"
+      },
+      {
+        "material": "☆しょうゆ",
+        "quantity": "大2"
+      },
+      {
+        "material": "☆砂糖",
+        "quantity": "大さじ2"
+      },
+      {
+        "material": "☆酢",
+        "quantity": "大2"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "＜タルタルソース＞ /n ゆで卵を作って、みじん切りに。玉ねぎはみじん切りにして500wで1分半レンチン。マヨネーズを加えて、塩こしょうして、タルタルは完成。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "＜甘酢たれ＞ /n ☆を小鍋に入れて、一煮立ちさせておく。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "鶏肉は火が通りやすいように2cm幅にカット。小麦粉→溶き卵の順にくぐらせ、180℃の油で5分ずつ揚げていく。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "揚げた鶏肉を、いったんキッチンペーパーに取り出して油をきり、２の甘酢たれに絡ませる。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "お皿に盛りつけ、１のタルタルソースをかけて、あればパセリを振りかけて、完成♪"
+      }
+    ],
+    "genre_cd": "G01",
+    "genre_name": "お肉のおかず",
+    "recipe_id": "003",
+    "recipe_name": "簡単×時短！チキン南蛮",
+    "introduction": "甘酸っぱくて美味しいチキン南蛮＾＾小さくカットして揚げるので、時短です♪",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_003.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "豚挽き肉",
+        "quantity": "200ｇ"
+      },
+      {
+        "material": "玉ねぎ",
+        "quantity": "1個"
+      },
+      {
+        "material": "溶き卵",
+        "quantity": "半個分"
+      },
+      {
+        "material": "ピーマン",
+        "quantity": "3個"
+      },
+      {
+        "material": "塩コショウ",
+        "quantity": "少々"
+      },
+      {
+        "material": "片栗粉",
+        "quantity": "適量"
+      },
+      {
+        "material": "水",
+        "quantity": "大3"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "挽肉にみじん切りしたたまねぎ・溶き卵を加え塩コショウで味付けしてよく練っておきます。ピーマンは縦半分に切り種を取り除いて、少量の片栗粉を内側にふりかけます。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "ピーマンに挽肉タネをしっかり詰め、表面に片栗粉をまぶして、大さじ1の油で挽肉側から焼きます。弱火でふたをして焼くと中まで火が通りやすいです。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "挽肉面がきつね色になったらひっくり返し、水大さじ3を加えてふたをして蒸し焼きにします。弱火で4～5分ほど焼くと、水分が飛んで焼き上がりです。"
+      }
+    ],
+    "genre_cd": "G01",
+    "genre_name": "お肉のおかず",
+    "recipe_id": "004",
+    "recipe_name": "簡単で美味しい！ピーマンの肉詰め",
+    "introduction": "ピーマンも柔らかくなって、とっても美味しいです！夕飯はもちろんだけど、お弁当にもおすすめです！",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_004.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "スペアリブ",
+        "quantity": "500ｇ"
+      },
+      {
+        "material": "砂糖",
+        "quantity": "大１"
+      },
+      {
+        "material": "ハチミツ",
+        "quantity": "大２"
+      },
+      {
+        "material": "醤油",
+        "quantity": "大2"
+      },
+      {
+        "material": "みりん",
+        "quantity": "大1"
+      },
+      {
+        "material": "酢",
+        "quantity": "大1"
+      },
+      {
+        "material": "酒",
+        "quantity": "大1"
+      },
+      {
+        "material": "だし汁",
+        "quantity": "肉がひたるくらい"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "フライパンに油をひき、お肉を両面焼く。中に火が通っていなくても焦げ目がつけばＯＫ。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "圧力鍋に全ての材料を入れ、高圧で１５分。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "圧力が下がったら煮込んでできあがりー♪"
+      }
+    ],
+    "genre_cd": "G01",
+    "genre_name": "お肉のおかず",
+    "recipe_id": "005",
+    "recipe_name": "圧力鍋で超・簡単スペアリブ",
+    "introduction": "圧力鍋を使うので短時間でトロトロのスペアリブが出来ます☆",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_005.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "ぶり切り身",
+        "quantity": "4切れ"
+      },
+      {
+        "material": "大根",
+        "quantity": "1/2本"
+      },
+      {
+        "material": "水",
+        "quantity": "600cc"
+      },
+      {
+        "material": "酒",
+        "quantity": "200cc"
+      },
+      {
+        "material": "みりん・醤油",
+        "quantity": "大2"
+      },
+      {
+        "material": "おろししょうが",
+        "quantity": "大1"
+      },
+      {
+        "material": "砂糖",
+        "quantity": "大1"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "大根は1.5cm厚さのいちょう切りにして下茹でする。　※時間がないときはレンジ加熱でもOK。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "ぶりは食べやすい大きさに切って酒（分量外）をふりかけてしばらく置き、熱湯でさっと茹でる。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "鍋に水と調味料・おろししょうがを入れて煮立たせ、弱火にして大根・ぶりを加える。アクを取り、落し蓋をして30位煮込む。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "落し蓋をしたまま冷まして味をしみこませ、食べる直前に温め直す。"
+      }
+    ],
+    "genre_cd": "G02",
+    "genre_name": "魚介のおかず",
+    "recipe_id": "011",
+    "recipe_name": "定番おかず　ぶり大根",
+    "introduction": "お魚は骨の近くや血合いが栄養があっておいしいんですよね。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_011.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "さば（生）",
+        "quantity": "４切れ"
+      },
+      {
+        "material": "生姜",
+        "quantity": "１カケ"
+      },
+      {
+        "material": "水",
+        "quantity": "200cc"
+      },
+      {
+        "material": "和風だしの素（粉末）",
+        "quantity": "5g"
+      },
+      {
+        "material": "酒、みりん",
+        "quantity": "各１００cc"
+      },
+      {
+        "material": "味噌",
+        "quantity": "大3"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "サバは熱湯にサッとくぐらせ、冷水に取り血合いを綺麗に洗います。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "土生姜は薄くスライスし、みょうがは千切りにします。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "鍋にA、生姜を入れ煮立たせ、サバを加え落としふたをし、中火弱で１５～20分煮詰めます。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "（3）の落としふたを取り、Ｂを煮汁で溶いて加え、ひと煮立ちさせて火を止めます。"
+      }
+    ],
+    "genre_cd": "G02",
+    "genre_name": "魚介のおかず",
+    "recipe_id": "012",
+    "recipe_name": "鯖の味噌煮",
+    "introduction": "簡単で美味しい鯖の味噌煮です。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_012.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "鮭の切り身",
+        "quantity": "4切れ"
+      },
+      {
+        "material": "★粗塩",
+        "quantity": "少々"
+      },
+      {
+        "material": "★コショウ",
+        "quantity": "少々"
+      },
+      {
+        "material": "小麦粉",
+        "quantity": "大1"
+      },
+      {
+        "material": "オリーブ・オイル",
+        "quantity": "大2"
+      },
+      {
+        "material": "バターorマーガリン",
+        "quantity": "大2"
+      },
+      {
+        "material": "醤油",
+        "quantity": "小1"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "鮭に★をふりかけ、10分ほど置きます。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "キッチンペーパーで、鮭から出た水分を拭き取ります。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "小麦粉を両面に、薄くまぶします。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "熱したフライパンに、オリーブ・オイルを入れ中火で加熱します。③を重ならないように並べ、こんがり色付くまで焼きます。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "ひっくり返し、表同様焼きます。皮の部分を、フライパンの横に押し付け、こんがりと焼きます。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "火を止め、バターorマーガリンを入れ、予熱で溶かします。火を中火にし、鮭にバターorマーガリンを絡め、鮭を取り出して、盛り付けます。"
+      },
+      {
+        "procedure_no": "7",
+        "procedure": "⑥に醤油を加え、ひと混ぜしたら、鮭の上にかけます。"
+      }
+    ],
+    "genre_cd": "G02",
+    "genre_name": "魚介のおかず",
+    "recipe_id": "013",
+    "recipe_name": "鮭のムニエル",
+    "introduction": "皮はパリッと、身はしっとり。バターが香るムニエルです。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_013.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "マカロニ",
+        "quantity": "70ｇ"
+      },
+      {
+        "material": "鶏肉",
+        "quantity": "100g"
+      },
+      {
+        "material": "むきえび",
+        "quantity": "10匹"
+      },
+      {
+        "material": "タマネギ",
+        "quantity": "1個"
+      },
+      {
+        "material": "牛乳",
+        "quantity": "400cc"
+      },
+      {
+        "material": "小麦粉",
+        "quantity": "大3"
+      },
+      {
+        "material": "バター",
+        "quantity": "20g"
+      },
+      {
+        "material": "コンソメ顆粒",
+        "quantity": "大1"
+      },
+      {
+        "material": "塩コショウ",
+        "quantity": "適量"
+      },
+      {
+        "material": "とろけるチーズ",
+        "quantity": "適量"
+      },
+      {
+        "material": "にんにく",
+        "quantity": "適量"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "マカロニは表示通りゆで、ザルにあげたらオリーブオイルを少量たらし、ひっつかないようにする。タマネギは薄切り、鶏肉は小さく切る。エビはにんにくと塩コショウで下味をつけておく。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "ボールに小麦粉を入れ、牛乳を数回に分けてダマにならないように混ぜてあわせておく。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "熱したフライパンにバターを引き、鶏肉・タマネギ・エビの順に炒める。タマネギがトロッとしてきたら弱火にし、②を加えマカロニも加える。コンソメと塩コショウで味付けをする。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "ホワイトソースがごげつかないように、よくかき混ぜ、お好み加減のトロミがついたら、お皿にもる。チーズをのせて、トースターで焼き色がつくまで焼いたら完成☆"
+      }
+    ],
+    "genre_cd": "G03",
+    "genre_name": "ごはんもの",
+    "recipe_id": "016",
+    "recipe_name": "とろーりエビグラタン",
+    "introduction": "失敗知らず！簡単で美味しいグラタンレシピです。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_016.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "鶏もも肉 1枚",
+        "quantity": "300g"
+      },
+      {
+        "material": "玉ねぎ",
+        "quantity": "1個"
+      },
+      {
+        "material": "にんじん",
+        "quantity": "1/4本"
+      },
+      {
+        "material": "ヨーグルト",
+        "quantity": "大2"
+      },
+      {
+        "material": "市販のカレールゥ　185g入り",
+        "quantity": "1/2箱"
+      },
+      {
+        "material": "クミンパウダー",
+        "quantity": "小さじ1/4～1/2"
+      },
+      {
+        "material": "バター",
+        "quantity": "10g"
+      },
+      {
+        "material": "塩、胡椒",
+        "quantity": "各少々"
+      },
+      {
+        "material": "水",
+        "quantity": "700ml"
+      },
+      {
+        "material": "ローリエ　あれば",
+        "quantity": "1枚"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "鶏肉を大き目の一口大に切り、クミンパウダー小さじ1/4,ヨーグルトをかけてもみこむ。玉ねぎ、にんじんを微塵切りにする。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "鍋に油を引き、中火で加熱して玉ねぎ、にんじんを炒め、塩、胡椒する。玉ねぎがしんなりして、薄めのあめ色になったら、皿に取り出す。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "鍋にバターを入れ中火で加熱し、1の鶏肉を加え、塩、胡椒し焼き色を付ける。2の野菜を鍋に戻し、水、ローリエを加え中火で加熱し、沸騰したら強めの弱火にして15分煮込む。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "あくを取り、火を止めて、カレールゥを割り入れ溶かす。弱火で５～10分加熱して味見をする。クミンパウダーを少しずつ加え、好みの辛さにする。"
+      }
+    ],
+    "genre_cd": "G03",
+    "genre_name": "ごはんもの",
+    "recipe_id": "017",
+    "recipe_name": "絶品チキンカレー",
+    "introduction": "市販のカレールーで作る、簡単で本格的な味になるチキンカレーです。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_017.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "米",
+        "quantity": "2合"
+      },
+      {
+        "material": "カレールー",
+        "quantity": "3かけ"
+      },
+      {
+        "material": "玉ねぎ",
+        "quantity": "1/2個"
+      },
+      {
+        "material": "にんじん",
+        "quantity": "1/3本"
+      },
+      {
+        "material": "ベーコン",
+        "quantity": "2～3枚"
+      },
+      {
+        "material": "冷凍コーン",
+        "quantity": "大4"
+      },
+      {
+        "material": "酒",
+        "quantity": "大1"
+      },
+      {
+        "material": "濃縮つゆ、またはしょうゆ",
+        "quantity": "大1"
+      },
+      {
+        "material": "乾燥パセリ",
+        "quantity": "適量"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "玉ねぎとにんじんはみじん切りにする。ベーコンは1ｃｍの細切りにする。カレールーは粗みじん切りにする。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "炊飯器にお米、具とカレールーと調味料を入れ、水加減は2合のところにあわせてスイッチオン！"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "炊き上がったら5分ほど蒸らしてからよく混ぜ合わせる。お好みで塩コショウで味を調える。盛り付け後に乾燥パセリをふる。"
+      }
+    ],
+    "genre_cd": "G03",
+    "genre_name": "ごはんもの",
+    "recipe_id": "018",
+    "recipe_name": "炊飯器で簡単カレーピラフ",
+    "introduction": "炊飯器1つで簡単においしくできます。具材は残り物でOK。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_018.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "強力粉",
+        "quantity": "130ｇ"
+      },
+      {
+        "material": "薄力粉",
+        "quantity": "120ｇ"
+      },
+      {
+        "material": "ぬるま湯",
+        "quantity": "150cc"
+      },
+      {
+        "material": "オリーブオイル",
+        "quantity": "大2"
+      },
+      {
+        "material": "ドライイースト",
+        "quantity": "小1"
+      },
+      {
+        "material": "砂糖",
+        "quantity": "大3"
+      },
+      {
+        "material": "塩",
+        "quantity": "小1/2"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "水とオリーブオイル以外の材料をビニール袋に入れて材料が出ないように先をつまんで振って混ぜる。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "1に水とオリーブオイルを入れて更に混ぜて材料が混ざりこむように５分位揉む。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "混ざったらビニール袋の先を軽くしばり１時間置く。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "発酵して脹らんだらギュッと空気を抜きながらつぶす。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "ビニール袋を破いて打ち粉に強力粉を使って成形する。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "成形できたら２５０度のオーブン余熱無して約2５分焼く。（オーブンによって違いがあるので様子を見ながら）"
+      }
+    ],
+    "genre_cd": "G03",
+    "genre_name": "ごはんもの",
+    "recipe_id": "019",
+    "recipe_name": "簡単フォカッチャ",
+    "introduction": "ビニール袋に材料をポイポイ。５分揉んで１時間置いて好きな形にして焼くだけ。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_019.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "ご飯",
+        "quantity": "1膳"
+      },
+      {
+        "material": "※ごま油",
+        "quantity": "小1"
+      },
+      {
+        "material": "※味の素",
+        "quantity": "二振り"
+      },
+      {
+        "material": "鮭フレーク",
+        "quantity": "大さじ1強"
+      },
+      {
+        "material": "白ごま",
+        "quantity": "小1"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "あつあつご飯を茶碗によそり、※を加えてひと混ぜします。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "1に鮭フレークを乗せ、白ごまを振ったら、出来上がり♪"
+      }
+    ],
+    "genre_cd": "G03",
+    "genre_name": "ごはんもの",
+    "recipe_id": "020",
+    "recipe_name": "風味が良い♪鮭ご飯",
+    "introduction": "ひと手間で美味しい鮭ご飯",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_020.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "スパゲッティー",
+        "quantity": "200g"
+      },
+      {
+        "material": "ひき肉（豚肉or合挽き肉）",
+        "quantity": "100g"
+      },
+      {
+        "material": "玉ねぎ",
+        "quantity": "1/2個"
+      },
+      {
+        "material": "にんじん",
+        "quantity": "1/2本"
+      },
+      {
+        "material": "オリーブオイル",
+        "quantity": "大さじ1"
+      },
+      {
+        "material": "※ケチャップ",
+        "quantity": "大さじ5"
+      },
+      {
+        "material": "※お好みソース",
+        "quantity": "大さじ2"
+      },
+      {
+        "material": "※しょうゆ",
+        "quantity": "大さじ1"
+      },
+      {
+        "material": "※バルサミコ酢",
+        "quantity": "大さじ1"
+      },
+      {
+        "material": "※砂糖",
+        "quantity": "小さじ1"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "スパゲッティーを1Lの水に対し、塩大さじ1を加えて、記載の茹で時間より1分短めに茹でる。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "玉ねぎ・にんじんをみじん切りにする。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "フライパンでオリーブオイルを温め、ひき肉を炒める。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "3に2の玉ねぎ・にんじんを加えて、更に炒める。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "具に火が通ったら、※を加え全体の味をまとめる。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "に茹で上がったスパゲッティーと茹で汁（お玉1～2杯）を加え、スパゲッティーにソースを絡めたら、出来上がり♪"
+      }
+    ],
+    "genre_cd": "G04",
+    "genre_name": "麺",
+    "recipe_id": "023",
+    "recipe_name": "簡単！ボロネーゼ",
+    "introduction": "トマト缶を使わず、有り合わせ調味料で簡単！",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_023.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "スパゲティ",
+        "quantity": "１５０ｇ"
+      },
+      {
+        "material": "マーガリン",
+        "quantity": "３０ｇ"
+      },
+      {
+        "material": "シメジ",
+        "quantity": "半パック"
+      },
+      {
+        "material": "カレー",
+        "quantity": "お玉２＋１"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "パスタは指定のゆで時間湯がきます。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "フライパンを熱して、マーガリンを入れてシメジっをソテーします。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "３にお玉２杯のカレーを入れます。これにゆであがったパスタを加えて混ぜます。"
+      }
+    ],
+    "genre_cd": "G04",
+    "genre_name": "麺",
+    "recipe_id": "024",
+    "recipe_name": "残りもので！カレーパスタ",
+    "introduction": "カレーうどんより簡単にできます。混ぜるだけ！",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_024.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "パスタ",
+        "quantity": "320～360g"
+      },
+      {
+        "material": "キャベツ",
+        "quantity": "1/2玉"
+      },
+      {
+        "material": "ツナ",
+        "quantity": "大1缶(小2缶)"
+      },
+      {
+        "material": "バター",
+        "quantity": "20g"
+      },
+      {
+        "material": "和風だしの素",
+        "quantity": "小さじ2"
+      },
+      {
+        "material": "醤油",
+        "quantity": "小さじ2"
+      },
+      {
+        "material": "塩",
+        "quantity": "少々"
+      },
+      {
+        "material": "ブラックペッパー",
+        "quantity": "少々"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "鍋にお湯を沸かしている間にキャベツを芯と葉に分け、食べやすい大きさに切る。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "お湯が沸いたら塩（分量外）を入れ、パスタを茹で始める。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "パスタが茹で上がる5分程前になったら、キャベツも同じ鍋に入れて一緒に茹でる。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "茹で上がったらザルにあげ、まだ水分が少し残っている間に大きめのボウルに移す。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "バター、だしの素、醤油を加えて混ぜ合わせ、ツナをオイルごと全部加えてよく混ぜ合わせる。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "味をみて、足りなければ塩を足し、お皿に盛ったら仕上げにブラックペッパーをかけて出来上がり♪"
+      }
+    ],
+    "genre_cd": "G04",
+    "genre_name": "麺",
+    "recipe_id": "025",
+    "recipe_name": "ウチの定番＊キャベツとツナのパスタ",
+    "introduction": "キャベツのやさしい甘味、和風味が後引く美味しさです。キャベツがたっぷり食べられます♪",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_025.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "パスタ",
+        "quantity": "200g"
+      },
+      {
+        "material": "ミートソース缶",
+        "quantity": "1缶"
+      },
+      {
+        "material": "茄子",
+        "quantity": "2本"
+      },
+      {
+        "material": "ベーコン",
+        "quantity": "2枚"
+      },
+      {
+        "material": "にんにくチューブ",
+        "quantity": "3センチ"
+      },
+      {
+        "material": "塩コショウ",
+        "quantity": "少々"
+      },
+      {
+        "material": "塩",
+        "quantity": "小さじ1"
+      },
+      {
+        "material": "オリーブオイル",
+        "quantity": "大さじ1"
+      },
+      {
+        "material": "とろけるチーズ",
+        "quantity": "一つかみ"
+      },
+      {
+        "material": "粉チーズ",
+        "quantity": "適量"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "茄子は輪切りにして水に少しさらす。ベーコンは1センチ幅程に切る。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "パスタをゆでる。（水1ℓに対し塩小さじ1を入れる）"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "フライパンにオリーブオイルをひき、中火でベーコン、塩コショウをふった茄子を炒める。茄子に少し焼き目がついてきたらにんにくチューブ、ミートソース缶を入れる。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "ソースが温まったらとろけるチーズを加え、ゆでたパスタも加え、火を止めて混ぜる。皿に盛り、粉チーズをかければ出来上がり！"
+      }
+    ],
+    "genre_cd": "G04",
+    "genre_name": "麺",
+    "recipe_id": "026",
+    "recipe_name": "茄子とベーコンのパスタ",
+    "introduction": "ひと手間でミートソース缶をかけるだけの物よりとてもおいしいパスタに変身します！",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_026.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "バター",
+        "quantity": "130g"
+      },
+      {
+        "material": "粉砂糖",
+        "quantity": "70g"
+      },
+      {
+        "material": "卵",
+        "quantity": "1/2個"
+      },
+      {
+        "material": "ココア",
+        "quantity": "40g"
+      },
+      {
+        "material": "薄力粉",
+        "quantity": "150g"
+      },
+      {
+        "material": "お好みのナッツ（刻んだもの）",
+        "quantity": "50g"
+      },
+      {
+        "material": "塩",
+        "quantity": "一つまみ"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "ナッツはフライパンでから炒りしておきます。室温に戻したバターと粉砂糖をクリーム状になるまで混ぜます。卵を加えてさらによく混ぜます。塩を加えて軽く混ぜます。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "ふるった薄力粉とココアを入れ、混ぜます。だいたい混ざったら、ナッツを加えて、なめらかになるように手早く混ぜます。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "打ち粉をしながら、直径5cm程度の棒状にまとめ、ラップかオーブンシートでくるみ、冷蔵庫で約2時間冷やします。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "厚さ5～7mm程度にカットして、170℃に温めたオーブンで約15分焼きます。"
+      }
+    ],
+    "genre_cd": "G05",
+    "genre_name": "お菓子",
+    "recipe_id": "030",
+    "recipe_name": "ココアクッキー",
+    "introduction": "ココアとナッツとバターの香りがふんわり。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_030.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "薄力粉",
+        "quantity": "150g"
+      },
+      {
+        "material": "ベーキングパウダー",
+        "quantity": "小さじ1/2"
+      },
+      {
+        "material": "バター",
+        "quantity": "80g"
+      },
+      {
+        "material": "砂糖",
+        "quantity": "100g"
+      },
+      {
+        "material": "塩",
+        "quantity": "小さじ1/2"
+      },
+      {
+        "material": "チョコレートチップ",
+        "quantity": "150g"
+      },
+      {
+        "material": "マカダミアナッツ",
+        "quantity": "100g"
+      },
+      {
+        "material": "クルミ",
+        "quantity": "100g"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "＜下準備＞/n・マカダミアナッツ、クルミはロースとして、大きい目に刻んでおきます。/n・バターは温室に戻しておきます。/n・薄力粉、ベーキングパウダー、塩を一緒にふるっておきます。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "ボウルにバターを入れ、泡立て器やハンドミキサーでクリーム状にします。そこに砂糖、卵、バニラエッセンスを加えて良く混ぜ合わせます。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "手順2に、下準備しておいた粉類（薄力粉、ベーキングパウダー、塩）を混ぜ合わせます。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "そこにチョコチップ、マカダミアナッツ、クルミを加え良く混ぜ合わせます。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "天板にベーキングペーパー（クッキングペーパー）を敷きます。スプーンで生地をすくい、天板に並べます。少し膨らむので間隔を少し開けて下さい。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "180℃に余熱したオーブンで15分ほど焼きあげ、できあがり！"
+      }
+    ],
+    "genre_cd": "G05",
+    "genre_name": "お菓子",
+    "recipe_id": "031",
+    "recipe_name": "チョコチップクッキー",
+    "introduction": "たっぷりのチョコレートとナッツがたまりません。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_031.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "生クリームと牛乳あわせて",
+        "quantity": "300ｃｃ"
+      },
+      {
+        "material": "バニラオイル",
+        "quantity": "少々"
+      },
+      {
+        "material": "砂糖",
+        "quantity": "30～40ｇ"
+      },
+      {
+        "material": "卵黄",
+        "quantity": "４個"
+      },
+      {
+        "material": "仕上げ用　ブラウンシュガー",
+        "quantity": "適宜"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "なべに生クリームと牛乳を入れて沸騰直前まであたため、バニラオイルを入れて少し冷ましておきます。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "ボウルに卵黄と砂糖をいれてよ～～くすり混ぜておきます。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "２に１をいれて、濾してから冷蔵庫で３０分ほど寝かせます。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "ココット３～４個に均等に流しいれ、１６０℃のオーブンで３０～４０分ほど焼きます。仕上げ用の砂糖をふりかけ、バーナーで、もしくはグリルで焼き目をつけて、冷蔵庫で冷やして完成です。"
+      }
+    ],
+    "genre_cd": "G05",
+    "genre_name": "お菓子",
+    "recipe_id": "032",
+    "recipe_name": "濃厚クリームブリュレ",
+    "introduction": "生クリームを多くすると濃厚に、牛乳をおおくすればあっさり目に仕上がります。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_032.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "小麦粉",
+        "quantity": "40g"
+      },
+      {
+        "material": "お湯",
+        "quantity": "40cc"
+      },
+      {
+        "material": "白玉粉",
+        "quantity": "130g"
+      },
+      {
+        "material": "砂糖",
+        "quantity": "40g"
+      },
+      {
+        "material": "水",
+        "quantity": "85～95cc"
+      },
+      {
+        "material": "こし餡",
+        "quantity": "100g"
+      },
+      {
+        "material": "白ごま",
+        "quantity": "適量"
+      },
+      {
+        "material": "揚げ油",
+        "quantity": "適量"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "こし餡を16等分しておく。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "ボールに小麦粉とお湯を入れ、よく混ぜる。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "ボールに、白玉粉と砂糖を加え、耳たぶ位の柔らかさになるまで、水の量を調節しながらしっかり捏ねる。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "生地を16等分する。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "生地でこし餡を包み、白ごまをまぶしつける作業を16個分行う。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "140～160℃の油でゆっくり揚げ、浮いてきたら色づくまで揚げる。"
+      },
+      {
+        "procedure_no": "7",
+        "procedure": "揚がったら、油を切り、器に盛り付けて完成。"
+      }
+    ],
+    "genre_cd": "G05",
+    "genre_name": "お菓子",
+    "recipe_id": "033",
+    "recipe_name": "簡単！ごま団子",
+    "introduction": "外はカリッ。中はもちっり。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_033.png",
+    "recommended_flg": "1"
+  },
+  {
+    "cooking_ingredients": [
+      {
+        "material": "卵白",
+        "quantity": "30g"
+      },
+      {
+        "material": "グラニュー糖",
+        "quantity": "20g"
+      },
+      {
+        "material": "粉砂糖",
+        "quantity": "40g"
+      },
+      {
+        "material": "アーモンドプードル",
+        "quantity": "40g"
+      },
+      {
+        "material": "食紅",
+        "quantity": "少々"
+      }
+    ],
+    "cooking_method": [
+      {
+        "procedure_no": "1",
+        "procedure": "グラニュー糖、粉砂糖、アーモンドプードルを混ぜ合わせ、ふるいにかけておく。"
+      },
+      {
+        "procedure_no": "2",
+        "procedure": "卵白を泡だて器でメレンゲ状にする。"
+      },
+      {
+        "procedure_no": "3",
+        "procedure": "２、に１、をすこしずついれて混ぜ、食紅を少しずついれて好みのピンクにする。"
+      },
+      {
+        "procedure_no": "4",
+        "procedure": "ゴムべらでボウルの底に押し付けるように、中心にまとめて混ぜる。"
+      },
+      {
+        "procedure_no": "5",
+        "procedure": "ビニール袋に４、を入れて角を切り、クッキングシートの上に直径３．５センチくらいの大きさになるように出す。"
+      },
+      {
+        "procedure_no": "6",
+        "procedure": "そのまま３０分ほど放置して表面を乾かす。"
+      },
+      {
+        "procedure_no": "7",
+        "procedure": "オーブン１２０度で１０分焼く。"
+      },
+      {
+        "procedure_no": "8",
+        "procedure": "生地が焼きあがったらクリームやジャムを挟んでできあがり！"
+      }
+    ],
+    "genre_cd": "G05",
+    "genre_name": "お菓子",
+    "recipe_id": "034",
+    "recipe_name": "簡単マカロン",
+    "introduction": "混ぜて焼くだけで簡単にマカロン出来ますよ。",
+    "main_gazo": "http://localhost:3000/assets/images/recipe_034.png",
+    "recommended_flg": "1"
+  }
+]

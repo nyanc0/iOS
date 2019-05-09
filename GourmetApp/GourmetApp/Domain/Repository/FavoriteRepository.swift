@@ -8,8 +8,10 @@
 
 import Foundation
 import RxSwift
+
 protocol FavoriteRepository {
     func getFavoriteList() -> Single<[Recipe]>
-    func insert(recipe: Recipe) -> Single<Bool>
-    func delete(recipe: Recipe) -> Single<Bool>
+    func insert(recipe: Recipe) -> Bool
+    func delete(recipe: Recipe) -> Bool
+    func isRecipeSaved(recipeId: String) -> Single<Bool>
 }
