@@ -19,22 +19,22 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nfJ-cU-ReR">
-                        <rect key="frame" x="8" y="8" width="304" height="33.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nfJ-cU-ReR">
+                        <rect key="frame" x="16" y="8" width="288" height="33.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bN-eh-4aR" userLabel="NumLabel">
-                                <rect key="frame" x="0.0" y="7" width="20" height="20"/>
+                                <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                 <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="JuD-8q-qjD"/>
-                                    <constraint firstAttribute="width" constant="20" id="Ykz-wF-dKV"/>
+                                    <constraint firstAttribute="width" constant="20" id="ROW-yD-D8h"/>
+                                    <constraint firstAttribute="height" constant="20" id="Y2e-KM-Xft"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="MethodMethodMethodMethodMethod" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvE-OO-67k" userLabel="MethodLabel">
-                                <rect key="frame" x="28" y="0.0" width="276" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="MethodMethodMethodMethodMethod" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvE-OO-67k" userLabel="MethodLabel">
+                                <rect key="frame" x="28" y="0.0" width="260" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,10 +43,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="nfJ-cU-ReR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Bo5-Lg-frK"/>
-                    <constraint firstAttribute="bottom" secondItem="nfJ-cU-ReR" secondAttribute="bottom" constant="8" id="TYM-Zt-jXi"/>
-                    <constraint firstAttribute="trailing" secondItem="nfJ-cU-ReR" secondAttribute="trailing" constant="8" id="jt9-fD-DKI"/>
-                    <constraint firstItem="nfJ-cU-ReR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="xtQ-9r-W4l"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="nfJ-cU-ReR" secondAttribute="trailing" id="76E-Jn-oPO"/>
+                    <constraint firstItem="nfJ-cU-ReR" firstAttribute="leadingMargin" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="9Gs-bh-afv"/>
+                    <constraint firstItem="nfJ-cU-ReR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="DK8-zb-Q9l"/>
+                    <constraint firstAttribute="bottom" secondItem="nfJ-cU-ReR" secondAttribute="bottom" constant="8" id="iUp-9z-a20"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

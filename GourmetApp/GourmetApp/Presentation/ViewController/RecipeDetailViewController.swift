@@ -17,11 +17,12 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet private weak var favoriteButton: MDCFloatingButton!
     @IBOutlet private weak var mainImageView: UIImageView!
+    @IBOutlet private weak var introductionLabel: UILabel!
     @IBOutlet private weak var ingradientTableView: UITableView!
     @IBOutlet private weak var methodTableView: UITableView!
-    @IBOutlet weak var ingredientsTableHeight: NSLayoutConstraint!
-    @IBOutlet weak var methodsTableHeight: NSLayoutConstraint!
-    
+    @IBOutlet private weak var ingredientsTableHeight: NSLayoutConstraint!
+    @IBOutlet private weak var methodsTableHeight: NSLayoutConstraint!
+
     private let disposeBag = DisposeBag()
     private var viewModel: DetailViewModel!
 
@@ -46,17 +47,11 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
     }
 
     private func initTableView() {
-        ingradientTableView.estimatedRowHeight = 0
-        ingradientTableView.estimatedSectionHeaderHeight = 0
-        ingradientTableView.estimatedSectionFooterHeight = 0
         ingradientTableView.rowHeight = UITableView.automaticDimension
         ingradientTableView.rx.setDelegate(self).disposed(by: disposeBag)
         ingradientTableView.register(UINib(nibName: "IngredientViewCell", bundle: nil), forCellReuseIdentifier: "IngredientViewCell")
         ingradientTableView.tableFooterView = UIView(frame: CGRect.zero)
 
-        methodTableView.estimatedRowHeight = 0
-        methodTableView.estimatedSectionHeaderHeight = 0
-        methodTableView.estimatedSectionFooterHeight = 0
         methodTableView.rowHeight = UITableView.automaticDimension
         methodTableView.rx.setDelegate(self).disposed(by: disposeBag)
         methodTableView.register(UINib(nibName: "MethodViewCell", bundle: nil), forCellReuseIdentifier: "MethodViewCell")
@@ -80,6 +75,7 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
             .asObservable()
             .bind { result in
                 self.setMainImage(url: result?.mainUrl)
+                self.setIntroduction(introduction: result?.introduction)
             }.disposed(by: disposeBag)
 
         let ingradientDataSource = IngredientDataSource()
@@ -116,23 +112,27 @@ class RecipeDetailViewController: UIViewController, UITableViewDelegate {
     /// メイン画像のセット
     /// - parameter : 画像URL
     private func setMainImage(url: String?) {
-        mainImageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"),options: SDWebImageOptions(rawValue: 0), completed: {image, _, _, _ in
+        mainImageView.sd_setImage(with: URL(string: url ?? ""), placeholderImage: UIImage(named: "ic_no_image.png"), options: SDWebImageOptions(rawValue: 0), completed: {image, _, _, _ in
             guard let image = image else { return }
             self.mainImageView.image = image.resize(cgSize: CGSize(width: UIScreen.main.bounds.size.width, height: self.getImgeHeight()))
         })
     }
 
+    /// 紹介文のセット
+    private func setIntroduction(introduction: String?) {
+        let paragraphStyle = NSMutableParagraphStyle()
+
+        paragraphStyle.firstLineHeadIndent = 16
+        paragraphStyle.headIndent = 16
+        paragraphStyle.tailIndent = -20
+
+        let attributedString = NSAttributedString(string: introduction ?? "", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        self.introductionLabel.attributedText = attributedString
+    }
+
     /// MainImageViewの高さサイズを返す.
     private func getImgeHeight() -> CGFloat {
         return ((UIScreen.main.bounds.width * 4) / CGFloat(5))
-    }
-
-    private func checkTableView(_ tableView: UITableView) {
-        if tableView.tag == 0 {
-
-        } else {
-
-        }
     }
 }
 

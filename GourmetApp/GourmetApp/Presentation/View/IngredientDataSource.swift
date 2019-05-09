@@ -27,7 +27,7 @@ class IngredientDataSource: NSObject, UITableViewDataSource, RxTableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientViewCell", for: indexPath) as? IngredientViewCell else {
-            fatalError("The dequeued cell is not instance of MealTableViewCell.")
+            fatalError("The dequeued cell is not instance of IngredientTableViewCell.")
         }
         let element = itemModels[indexPath.row]
         cell.setData(cookingIngredients: element)
@@ -41,4 +41,12 @@ class IngredientDataSource: NSObject, UITableViewDataSource, RxTableViewDataSour
             }
             .on(observedEvent)
     }
+
+    //    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "IngredientHeaderView") as? IngredientHeaderView else {
+    //            fatalError("The dequeued cell is not instance of IngredientTableViewCell.")
+    //        }
+    //        return header
+    //    }
+
 }
