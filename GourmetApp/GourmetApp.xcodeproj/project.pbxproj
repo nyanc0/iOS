@@ -43,8 +43,6 @@
 		DA3ED2D42279D71500D80C78 /* DetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2D32279D71500D80C78 /* DetailNavigator.swift */; };
 		DA3ED2D6227B171400D80C78 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2D5227B171400D80C78 /* DetailViewModel.swift */; };
 		DA3ED2DC227FE8D900D80C78 /* DetailUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2DB227FE8D800D80C78 /* DetailUseCaseTest.swift */; };
-		DA3ED2E22281C2CF00D80C78 /* MainImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA3ED2E12281C2CF00D80C78 /* MainImageView.xib */; };
-		DA3ED2E42281C4B100D80C78 /* MainImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2E32281C4B100D80C78 /* MainImageView.swift */; };
 		DA3ED2EA22831D6700D80C78 /* IngredientDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2E922831D6700D80C78 /* IngredientDataSource.swift */; };
 		DA3ED2EC2283302C00D80C78 /* MethodDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3ED2EB2283302C00D80C78 /* MethodDataSource.swift */; };
 		DA5AE479224A74EC001E0350 /* BaseRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5AE478224A74EC001E0350 /* BaseRealmModel.swift */; };
@@ -127,8 +125,6 @@
 		DA3ED2D32279D71500D80C78 /* DetailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigator.swift; sourceTree = "<group>"; };
 		DA3ED2D5227B171400D80C78 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		DA3ED2DB227FE8D800D80C78 /* DetailUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCaseTest.swift; sourceTree = "<group>"; };
-		DA3ED2E12281C2CF00D80C78 /* MainImageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainImageView.xib; sourceTree = "<group>"; };
-		DA3ED2E32281C4B100D80C78 /* MainImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImageView.swift; sourceTree = "<group>"; };
 		DA3ED2E922831D6700D80C78 /* IngredientDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDataSource.swift; sourceTree = "<group>"; };
 		DA3ED2EB2283302C00D80C78 /* MethodDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodDataSource.swift; sourceTree = "<group>"; };
 		DA5AE478224A74EC001E0350 /* BaseRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRealmModel.swift; sourceTree = "<group>"; };
@@ -241,8 +237,6 @@
 			children = (
 				DA2FEFD6226C7A6700F179AA /* RecipeItemCell.swift */,
 				DA2FEFD7226C7A6700F179AA /* RecipeItemCell.xib */,
-				DA3ED2E12281C2CF00D80C78 /* MainImageView.xib */,
-				DA3ED2E32281C4B100D80C78 /* MainImageView.swift */,
 				385BA49322825D2600170525 /* IngredientViewCell.swift */,
 				385BA49422825D2600170525 /* IngredientViewCell.xib */,
 				385BA4972282608900170525 /* MethodViewCell.swift */,
@@ -497,7 +491,6 @@
 				DA3C5ECC22413C2E00625893 /* LaunchScreen.storyboard in Resources */,
 				DA74AA5B2264C929005874E1 /* ReccomendRecipeList.storyboard in Resources */,
 				DA3C5EC922413C2E00625893 /* Assets.xcassets in Resources */,
-				DA3ED2E22281C2CF00D80C78 /* MainImageView.xib in Resources */,
 				DA3C5EC422413C2B00625893 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,7 +679,6 @@
 				3874EC21224DD906009FB846 /* FavoriteListUseCase.swift in Sources */,
 				385BA491228140DC00170525 /* Reactive.swift in Sources */,
 				DA3ED2D6227B171400D80C78 /* DetailViewModel.swift in Sources */,
-				DA3ED2E42281C4B100D80C78 /* MainImageView.swift in Sources */,
 				DA74AA3F2253A1D8005874E1 /* ReccomendListViewModel.swift in Sources */,
 				DA74AA45225653A7005874E1 /* ArrayTracker.swift in Sources */,
 				DA2FEFE22276E41200F179AA /* FavoriteRecipeListViewController.swift in Sources */,
