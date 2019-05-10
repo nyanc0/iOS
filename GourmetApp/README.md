@@ -3,6 +3,7 @@
 - 基本とりあえず書きながら勉強する、で書いているので基礎がなっていない部分が多々あります。
 - RxSwiftを勉強のために入れているが、iOSでどうRxを使うのか？を深く勉強できてはいないので、使い方が微妙な面があるかも。
 - UIの勉強はそれほどしてないので画面の作りおかしい(特に詳細)かも＆時間の都合上、UIの細かい調整はしてないです。
+- Lint対応も全部はできてません・・・。
 
 JavaとちょっとだけKotlin触っている人が突貫で書いたコードだと思って、  
 暖かい目でみてください。
@@ -14,6 +15,7 @@ MVVM + Clean Architecture
 
 ### 構造
 
+![](https://github.com/nyanc0/iOS/blob/master/images/app_architecture.png?raw=true)
 
 ### パッケージ構成
 ```
@@ -35,27 +37,16 @@ GourmetApp
 ```
 
 ### ライブラリ
-```
-# Pods for GourmetApp
-pod 'SwiftLint'
-pod 'RxSwift', '~> 4.0'
-pod 'RxCocoa', '~> 4.0'
-pod 'R.swift', '~> 4.0.0'
-pod 'RealmSwift'
-pod 'SDWebImage', '~> 4.0'
-pod 'RxDataSources', '~> 3.0'
-pod 'MaterialComponents'
 
-target 'GourmetAppTests' do
-  inherit! :search_paths
-  # Pods for testing
-  pod 'RxBlocking', '~> 4.0'
-  pod 'RxTest',     '~> 4.0'
-  pod 'Mockingjay'
-end
-```
-
-
-- SDWebImage
-- RealmSwift
-- Codable protocol
+|ライブラリ名|用途|
+|---|---|
+|SwiftLint|Lintチェック|
+|RxSwift|各層のつなぎ,Event通知,ViewへのBinding|
+|RxCocoa|各層のつなぎ,Event通知,ViewへのBinding|
+|RealmSwift|データ保存|
+|SDWebImage|画像ロード|
+|RxDataSources|Collection,TableViewで利用|
+|MaterialComponents|FloatingButton, CardViewの利用|
+|RxBlocking|ObservableをBlockingObservableに変換して結果が返ってくるまでロックし、テストできるようにする|
+|RxTest|指定した時刻にObservableにイベントを発行することができるスケジューラ|
+|Mockingjay|APIのMock|
